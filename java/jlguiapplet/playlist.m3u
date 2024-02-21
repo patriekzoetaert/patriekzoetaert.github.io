@@ -1,0 +1,53 @@
+#EXTINF:-1,radio 1
+http://internetradio.vrt.be/dab/hoeluisteren/pc/help/gebruiksvoorwaarden/stream_11.m3U
+#EXTINF:-1,radio 2 ovl
+http://internetradio.vrt.be/dab/hoeluisteren/pc/help/gebruiksvoorwaarden/stream_24.m3U
+#EXTINF:-1,radio klara
+http://internetradio.vrt.be/dab/hoeluisteren/pc/help/gebruiksvoorwaarden/stream_31.m3U
+#EXTINF:-1,radio klara continue
+http://internetradio.vrt.be/dab/hoeluisteren/pc/help/gebruiksvoorwaarden/stream_32.m3U
+#EXTINF:-1,radio donna
+http://internetradio.vrt.be/dab/hoeluisteren/pc/help/gebruiksvoorwaarden/stream_51.m3U
+#EXTINF:-1,radio donna hitbits
+http://internetradio.vrt.be/dab/hoeluisteren/pc/help/gebruiksvoorwaarden/stream_52.m3U
+#EXTINF:-1,radio stubru
+http://internetradio.vrt.be/dab/hoeluisteren/pc/help/gebruiksvoorwaarden/stream_41.m3U
+#EXTINF:-1,radio 1
+http://mp3.streampower.be/radio1-low.mp3
+#EXTINF:-1,radio 1
+http://mp3.streampower.be/radio1-mid.mp3
+#EXTINF:-1,radio 1
+http://mp3.streampower.be/radio1-high.mp3
+#EXTINF:-1,radio sporza
+http://internetradio.vrt.be/dab/hoeluisteren/pc/help/gebruiksvoorwaarden/stream_12.m3U
+
+http://mp3.streampower.be/sporza-mid.mp3
+http://mp3.streampower.be/stubru-high.mp3
+http://mp3.streampower.be/donnahitbits-high.mp3
+http://mp3.streampower.be/donna-high.mp3
+http://mp3.streampower.be/klaracontinuo-high.mp3
+http://mp3.streampower.be/klara-high.mp3
+http://mp3.streampower.be/ra2ovl-low.mp3
+
+
+
+#EXTINF:-1,Digitally Imported (128K MP3 Trance Stream)
+http://193.201.220.87:8000
+#EXTINF:-1, Latin
+http://66.28.214.138:8032
+#EXTINF:-1, Salsa
+http://205.188.234.65:8026
+#EXTINF:-1, Salsa World
+http://24.73.241.37:7998
+#EXTINF:-1,(01:00) Queen
+http://users.pandora.be/patriek.zoetaert/sound/iwia.mp3
+#EXTINF:-1, Hofman
+http://users.pandora.be/patriek.zoetaert/sound/hofman.mp3
+#EXTINF:-1, Patricia Manterola 
+http://users.pandora.be/patriek.zoetaert/sound/pm.mp3
+#EXTINF:-1, mobistar
+http://users.pandora.be/patriek.zoetaert/sound/m1.mp3
+
+
+
+

@@ -1,0 +1,45 @@
+server 	           www.blaxxun.com
+port                2000
+
+# dans les deux lignes qui suivent
+# remplacez "Sz Sample" par le nom de VOTRE monde
+# tel qu'il apparaîtra dans la liste des mondes ouverts
+# ATTENTION : même nom sur les deux lignes
+# ATTENTION : juste de l'alphanumérique de base (de a à z, de A à Z, de 0 à 9)
+
+scene               contact.bxx house of peace
+sname               house of peace
+
+# l'URL de votre monde, y compris le nom du fichier
+
+3dscene             szsample.wrl
+
+frameset            contact.htm
+htmlframe           HTML
+
+voicesupport        1
+clientvoiceenable   1
+
+# Message d'accueil qui s'inscrira dans le Chat
+# Evitez les accents, restez à l'alphanumérique de base
+# Le message commence à "Bienvenue" spas ? Changez pas "message"
+# Après, supprimez les lignes qui commencent par "#", c'est des commentaires
+# Comme cette ligne-ci :)
+# Et celle-ci :)
+# Et bisou les ptits loups :)
+
+message             Bienvenue dans mon nouveau monde
+
+panelbackrgb        0, 0, 0
+paneltextrgb        255, 228, 181
+inputtextchatrgb    255, 255, 255
+systemtextchatrgb   192, 234, 240
+historytextchatrgb  255, 250, 224
+owntextchatrgb      255, 255, 255
+othertextchatrgb    255, 228, 181
+   
+
+   
+
+   
+

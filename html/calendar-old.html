@@ -1,0 +1,898 @@
+<!-- This script has been in the http://www.javascripts.com Javascript Public Library! -->
+<!-- Note that though this material may have been in a public depository, certain author copyright restrictions may apply. -->
+<html>
+
+<head>
+
+<script type="text/javascript" language="JavaScript1.2"> 
+//if (window != window.top) top.location.href = location.href;
+NS4 = (document.layers) ? 1 : 0;
+IE4 = (document.all) ? 1 : 0;
+ver4 = (NS4 || IE4) ? 1 : 0;
+
+</script>
+
+<title>Smart Calendar</title>
+
+</head>
+
+
+<body bgcolor="black" text="white" link="#0000ff" vlink="#0000ff" alink="#0000ff" onLoad="smartCalendar()">
+
+
+<script language="JavaScript1.2">
+
+
+// SMART BUSINESS HOURS CALENDAR
+//
+// This script will produce a perpetual SMART BUSINESS HOURS CALENDAR. It will generate a 
+// calendar for the current month on the fly. It incorporates the ability to adjust
+// for dayling savings time or standard time notations (the USA version). It also 
+// automatically generates U.S. national holidays (plus Easter).
+//
+// The script allows you to program business hours for each day. It also allows you 
+// to override the automatically generated schedule with whatever you like - vacation 
+// days, for example - and you can add information/links to your schedule for a given day (i.e for 
+// sales and promotions).
+//
+// Copyright©1998 by John Hinshaw. All rights reserved. You may use
+// or modify this script for any use as long as this notice stays with it. 
+// If you use it, I would I appreciate an e-mail so I can steal any 
+// new ideas from you. Thanks.
+// hinshaw@webpundits.com
+
+//********************************************************************************************
+//
+// SMART BUSINESS CALENDAR Setup
+//
+// setup the user variables
+
+var typecolor = "black"				   // the default color for the calendar days font
+var wkdaybgcolor = "pink" /*"#e5e5e5"*/           // weekday background color
+var wkendbgcolor = "yellow" /*"white"*/             // weekend background color
+var todaybgcolor = "#c0c0c0"           // background color for current day
+var defmsgcolor = "black"              // font color for the default business hours
+var replmsgcolor = "darkgreen"               // font color for messages that override the default business hours
+var captioncolor = "blue"              // font color for captions
+var holicolor = "red"                // font color for holiday notations
+
+// You may use the following to setup default business hours or messages. If you decide
+// to display messages other than business hours, turn off the Time Notations in the section
+// below this one. If you don't want to use any messages, then make the message two pair of 
+// quotes with nothing between them (i.e. ""). Note, however, that if there is no default message, 
+// there can be no replacement message or additional caption. Holidays will still show. To get
+// around this, instead of having nothing between the quotes, put a space between them. (i.e. " ")
+// This won't work if you have 'useTimeNotations' set to 'true' because you would have a Time Notation
+// without any time before it.
+// 
+var dymsg = new Array(7)
+dymsg[0] = "zondag"                    // Default message for Sunday
+dymsg[1] = "9am - 5pm"           // Default message for Monday
+dymsg[2] = "9am - 5pm"           // Default message for Tuesday
+dymsg[3] = "9am - 5pm"           // Default message for Wednesday
+dymsg[4] = "9am - 5pm"           // Default message for Thursday
+dymsg[5] = "9am - 5pm"           // Default message for Friday
+dymsg[6] = "9am - 1pm"           // Default message for Saturday
+
+// --- Standard Time/Daylight Savings Time notations ---
+// Use the 'myStandardTime' and 'myDaylightTime' variables to name your locales notation
+// (i.e. cst = Central Standard Time and cdt = Central Daylight Time)
+// If you don't want to use Time notations, set the 'useTimeNotations' variable to 'false'
+
+var useTimeNotations = true
+
+var myStandardTime = "w.u." /*"cst"*/
+var myDaylightTime = "z.u." /*"cdt"*/
+
+// OK, now, pay attention. We are going to list the U.S. holidays that this program
+// understands. Next to each, indicate whether or not to display the default message. In
+// other words, if you'll be open for business as usual that day, assign "yes" to the variable.
+// The program will then display the default hours. Answer "no" if you do not want to
+// display the default hours. We will assign replacement messages in the next segment.
+
+//hier
+
+var NewYear = "no"               // Show default hours on New Year's Day?
+var MLKing = "no"                // Show default hours on Martin Luther King, Jr. Day?
+var President = "yes"            // Show default hours on President's Day?
+var Easter = "no"                // Show default hours on Easter Sunday?
+var Memorial = "no"              // Show default hours on Memorial Day?
+var Independence = "no"          // Show default hours on Independence Day?
+var Labor = "no"                 // Show default hours on Labor Day?
+var Columbus = "no"              // Show default hours on Columbus Day?
+var Veteran = "yes"              // Show default hours on Veteran's Day?
+var Thanksgiving = "no"          // Show default hours on Thanksgiving Day?
+var Christmas = "no"             // Show default hours on Christmas Day?
+var Birthday = "no"
+
+
+// Now assign replacement messages for those holidays where you assigned "no" to the variable.
+// Just enter the message you want displayed (i.e. "Closed"). If you want to display different 
+// hours as opposed to a text message, start the message with a '+' sign.
+//
+// If you place a message for a holiday where you have already
+// told the program to display the default hours (in the section above), the default hours
+// will still be displayed. 
+
+// hier
+
+var msgNewYear = "Closed"          // Replacement message for New Year's Day
+var msgMLKing = "Closed"           // Replacement message for Martin Luther King, Jr. Day
+var msgPresident = ""              // Replacement message for President's Day
+var msgEaster = "Closed"           // Replacement message for Easter Sunday
+var msgMemorial = "Closed"         // Replacement message for Memorial Day
+var msgIndependence = "Closed"     // Replacement message for Independence Day
+var msgLabor = "Closed"            // Replacement message for Labor Day
+var msgColumbus = "+10am - 2pm"    // Replacement message for Columbus Day
+var msgVeteran = ""                // Replacement message for Veteran's Day
+var msgThanksgiving = "Closed"     // Replacement message for Thanksgiving Day
+var msgChristmas = "Closed"        // Replacement message for Christmas Day
+var msgBirthday = "+Happy Birthday"
+
+// CREATE SPECIAL CAPTIONS	
+//
+// Begin by adding another 'tDay[x] =' (where x is the next number.)
+// Then - in quotes - enter the exact day of your message followed by the vertical bar ("|"),
+// and immediately follow that with your message. (see the example that is next)
+//
+// tDay[2] = "December 12, 1998|Start Christmas Vacation"	
+//
+// This will replace your default message with whatever you want.
+//
+// If you want to add captions/links to your schedule for special days (info or promotions)
+// and not replace your schedule, simply place a "+" in front of the caption/link like:
+// 
+// tDay[5]="November 14, 1998|+Mens' Suits<br>Special Sale"
+//
+// or if you want it to be a link to another page
+// tDay[3] = "November 17, 1998|+<a href='http://www.bridge-software.com/suitsale.html'>Facility Booking Software</a>"
+// 
+// These captions will then be placed on the line below your default message in the 'caption' color.
+//
+// MESSAGES THAT SUPERCEDE ALL OTHER MESSAGES
+// If you want to supercede all business hours and holiday replacement messages, (i.e. for vacation days)
+// place an "@" in front of the caption like:
+// 
+// tDay[5]="April 12, 1999|@On Vacation"
+//
+// The dates do not have to be in any specific order, but you may want to replace old info with
+// new on a regular basis. The list may also be as long as you like, but, remember, the longer
+// the list is, the longer it will take it to load.
+//
+// Programming this information starts 10 lines down from here.
+//********************************************************************************************
+
+function getMsg(dayNumber) {
+
+//********************************************************************************************
+//
+// Start programming captions for individual days here
+
+// hier feestdagen
+
+	var tDay = new Array()
+	tDay[0] = "November 24, 203|+What a day!!"
+	tDay[1] = "November 1, 2003|+Allerheiligen"
+	tDay[2] = "December 12, 2003|+Start Christmas Vacation"	
+	tDay[3] = "May 17, 2003|+<a href='http://users.pandora.be/patriek.zoetaert'>The new site</a>"
+	tDay[5] = "March 16, 2003|+Happy birthday to you"
+	tDay[6] = "May 1, 2003|1 mei"
+	tDay[7] = "July 21, 2003|nationale feestdag"
+	tDay[100] = "May 20, 2003|tmab<br>Brussels Expo, Halls 5-9-Patio<br>1 pm - 8 pm"
+	tDay[101] = "May 21, 2003|tmab<br>10 am - 6 pm"
+	tDay[102] = "May 22, 2003|tmab<br>10 am - 6 pm"
+		
+	
+	
+// End of programming captions for individual days
+//
+//********************************************************************************************
+	var msgDate = (nMonth + " " + dayNumber + ", " + year)
+	var lenCaption = 0
+	var ii = tDay.length
+	var i
+	var totalMsg
+	var replDate
+	var stopNum
+	
+	for (var i = 0; i < ii; i++) {
+	totalMsg = tDay[i]
+		if (totalMsg > "") {
+		stopNum = totalMsg.indexOf("|")
+		replDate = totalMsg.substr(0, stopNum)	
+			if (replDate == msgDate) {
+			replMsg = totalMsg.substr(stopNum + 1, totalMsg.length - (stopNum + 1))	
+			}
+		}
+	}
+
+	
+	
+
+	if (replMsg > "" && replMsg.charAt(0) == "@") {
+			lenCaption = replMsg.length - 1
+			superCap = replMsg.substr(1, lenCaption)
+	} else if (replMsg > "" && replMsg.charAt(0) == "+") {
+			addTo = true
+			lenCaption = replMsg.length - 1
+			replMsg = "<br>" + replMsg.substr(1, lenCaption)
+	} 
+	
+	showDST = ""
+	
+
+	var nDate = new Date(nMonth + dayNumber + ", " + year)
+	
+	// start check for daylight savings time
+	var fDayMonth = new Date(year, 3, 1)	
+	var dayFirst = fDayMonth.getDay()
+	fDayMonth = null
+	
+/*	// find the first Sunday in April
+	var startDST = (7 - dayFirst) + 1
+	if (startDST > 7) startDST = startDST - 7
+	var sDST = "April " + startDST + ", " + year
+
+
+*/
+/*hier winter zomer  uur */
+
+	// find the last Sunday in March
+	var lDayMonth2 = new Date(year, 3, 31)
+	var lastDay2 = lDayMonth2.getDay() 
+	lDayMonth2 = null	
+	var startDST = 31 - lastDay2 + 3
+	var sDST = "March " + startDST + ", " + year
+	
+	
+		
+	// find the last Sunday in October
+	var lDayMonth = new Date(year, 9, 31)
+	var lastDay = lDayMonth.getDay()
+	lDayMonth = null	
+	var endDST = 31 - lastDay
+	
+	// do the comparison
+	var eDST = "October " + endDST + ", " + year
+	if (useTimeNotations == true) {
+			
+		if (Date.parse(nDate) >= Date.parse(sDST) && Date.parse(nDate) < Date.parse(eDST)) {	
+			showDST = " " + myDaylightTime
+		} else {	
+			showDST = " " + myStandardTime	
+		} 
+	}
+
+	// Schedule for individual days of the week
+	//
+		var dyWk = nDate.getDay()
+	   	if (dymsg[dyWk] > "") {
+	   		isDyMsg = true
+			if (addTo == true && replMsg > "") {
+	 			return  "<font color=" + defmsgcolor + ">" + dymsg[dyWk] + showDST + "</font><br><font color=" + captioncolor + ">" + replMsg + "</font>"
+			} else if (addTo != true && replMsg > ""){
+				return "<font color=" + replmsgcolor + ">" + replMsg + "</font>"
+			} else {
+				return "<font color=" + defmsgcolor + ">" + dymsg[dyWk] + showDST + "</font>"
+			}
+		} else {
+			superCap = ""
+			return ""
+		}
+}
+
+
+// setup the date variables 
+
+var now
+var tDay
+var year
+var month
+var date
+var nMonth
+
+var nxtMonth
+var nextMonthName
+var nxtYear
+var nxtBtn
+
+var prvMonth
+var prevMonthName
+var prvYear
+var prvBtn
+
+var showDST
+
+
+now = new Date()
+tDay = now.getDate()
+year = now.getYear()
+month = now.getMonth()
+nMonth = getnMonth(month)
+today = new Date(nMonth  + " " + tDay + ", " + year)
+
+	
+// make it year 2000 compliant
+
+if (year < 2000){
+	if (year < 50) {	
+		year = year + 2000	
+	} else {	
+		year = year + 1900	
+	}
+}
+
+	
+function chgMonth(offset) {	
+if (offset == 1) {
+month = month + 1
+if (month == 12) {
+year = year + 1
+month = 0
+}
+offset = 5
+nMonth = getnMonth(month)
+smartCalendar()
+}
+
+if (offset == 0) {
+month = month - 1 
+if (month == -1) {
+year = year - 1
+month = 11
+}
+offset = 5
+nMonth = getnMonth(month)
+smartCalendar()
+
+}	
+
+}
+	
+	
+// other global variables
+
+var holiDate = false
+var holiMsg = ""
+var showDST = ""
+var addTo = false
+var superCap = ""
+var replMsg = ""
+var isDyMsg = false
+
+
+// Calculate and display U.S. National Holidays (plus Easter)
+
+// hier jaarlijkse feestdagen
+
+function getHolidates(dayNumber) {
+
+		if (month == 0) {
+	
+		// Show New Year's Day
+		
+			if (dayNumber == 1) {
+				if (NewYear == "no") {
+					holiDate = true
+					holiMsg = msgNewYear
+				}
+			return '<font color=' + holicolor + '>New Year\'s Day</font>'
+			} 
+		
+		
+		
+	
+		// Calculate Martin Luther King, Jr. Day
+ 
+            var n3 = new Date("January 1, " + year)
+            var n4 = 2
+            var n6 = n3.getDay() + 1
+            n6 = 7 - n6
+            var n8 = (14 + n4) + n6 + 1
+            if (n4 + n6 >= 7) {
+				n8 = n8 - 7
+			}
+            if (n8 == dayNumber) {
+				if (MLKing == "no") {
+					holiDate = true
+					holiMsg = msgMLKing
+				}
+			return '<font color=' + holicolor + '>M. L. King, Jr. Day</font>'
+			} 
+		}
+            
+        // End Martin Luther King, Jr. Day
+		
+		
+		if (month == 1) {
+	
+			// Calculate President's Day
+ 
+            var n3 = new Date("February 1, " + year)
+            var n4 = 2
+            var n6 = n3.getDay() + 1
+            n6 = 7 - n6
+            var n8 = (14 + n4) + n6 + 1
+            if (n4 + n6 >= 7) {
+				n8 = n8 - 7
+			}
+            if (n8 == dayNumber) {
+				if (President == "no") {
+					holiDate = true
+					holiMsg = msgPresident
+				}
+			return  '<font color=' + holicolor + '>President\'s Day</font>'
+			} 
+            
+        	// End President's Day
+		}
+
+
+	
+
+		
+
+
+
+	if (month == 2 || month == 3) {
+	
+
+	
+	
+
+        //  Calculate Easter
+		//  Thanks to Marcos Montes for posting the Carter algorithm
+		//  (http://www.smart.net/~mmontes/carter.html)
+ 
+            var b = 225 - 11 * (year % 19)
+			var d = ((b-21) % 30) + 21
+			if (d > 48) {
+				d = d - 1
+			}
+			var e = Math.floor((year + (year/4) + d + 1) % 7)
+			var q = d + 7 - e
+			if (q > 31) {
+				q = q - 31
+				var m = 3
+			} else {
+				var m = 2
+			}
+			if (m == month && q == dayNumber) {
+				if (Easter == "no") {
+					holiDate = true
+					holiMsg = msgEaster
+				}
+			return '<font color=' + holicolor + '>Easter</font>'
+			}
+			
+        // End Easter
+        
+       
+        
+        
+  /*pz*/
+
+	if (month == 2) {
+	
+		// Show birth Day
+		
+			if (dayNumber == 16) {
+				if (Birthday == "no") {
+					holiDate = true
+					holiMsg = msgBirthday
+				}
+			return '<font color=' + holicolor + '>Happy Birthday to you !</font>'
+			} 
+		
+		}
+       
+        
+        
+        
+        
+		} /*maart*/
+		
+		
+		if (month == 4) {
+		
+        // Calculate Memorial Day
+		
+        	var mWeek = new Date("May 31, " + year)
+			var lDay = mWeek.getDay()
+			if (lDay == 0) {
+				lDay = 6
+				}else{
+				lDay = lDay - 1
+			}
+			var mDay = 31 - lDay
+			if (mDay == dayNumber) {
+				if (Memorial == "no") {
+					holiDate = true
+					holiMsg = msgMemorial
+				}
+			return '<font color=' + holicolor + '>Memorial Day</font>'
+			}
+		}
+           
+        // End Memorial Day
+		
+		if (month == 6) {
+		
+			// Show Independence Day
+			
+			if (dayNumber == 4) {
+			if (Memorial == "no") {
+				holiDate = true
+				holiMsg = msgMemorial
+			}
+			return '<font color=' + holicolor + '>Independence Day</font>'
+			}
+		}
+		
+		if (month == 8) {
+		
+			// Calculate Labor Day
+ 
+            var n3 = new Date("September 1, " + year)
+            var n4 = 2
+            var n6 = n3.getDay() + 1
+            n6 = 7 - n6
+            var n8 = n4 + n6 + 1
+            if (n4 + n6 >= 7) {
+				n8 = n8 - 7
+			}
+            if (n8 == dayNumber) {
+				if (Labor == "no") {
+					holiDate = true
+					holiMsg = msgLabor
+				}
+			return '<font color=' + holicolor + '>Labor Day</font>'
+			}
+            
+        	// End Labor Day
+		}
+		
+		if (month == 9) {
+		
+			// Calculate Columbus Day
+ 
+            var n3 = new Date("October 1, " + year)
+            var n4 = 2
+            var n6 = n3.getDay() + 1
+            n6 = 7 - n6
+            var n8 = (7 + n4) + n6 + 1
+            if (n4 + n6 >= 7) {
+				n8 = n8 - 7
+			}
+            if (n8 == dayNumber) {
+				if (Columbus == "no") {
+					holiDate = true
+					holiMsg = msgColumbus
+				}
+			return '<font color=' + holicolor + '>Columbus Day</font>'
+			}
+            
+        	// End Columbus Day
+		}
+		
+		if (month == 10) {
+		
+			// Show Veteran's Day
+			
+			if (dayNumber == 11) {
+			if (Veteran == "no") {
+				holiDate = true
+				holiMsg = msgVeteran
+			}
+			return '<font color=' + holicolor + '>Veteran\'s Day</font>'
+			}
+			
+			
+		
+			// Calculate Thanksgiving Day
+ 
+            var n3 = new Date("November 1, " + year)
+            var n4 = 5
+            var n6 = n3.getDay() + 1
+            n6 = 7 - n6
+            var n8 = (21 + n4) + n6 + 1
+            if (n4 + n6 >= 7) {
+				n8 = n8 - 7
+			}
+            if (n8 == dayNumber) {
+				if (Thanksgiving == "no") {
+					holiDate = true
+					holiMsg = msgThanksgiving
+				}
+			return '<font color=' + holicolor + '>Thanksgiving Day</font>'
+			}
+            
+        	// End Thanksgiving Day
+		}
+		
+		if (month == 11) {
+		
+			// Show Christmas Day
+			
+			if (dayNumber == 25) {
+			if (Christmas == "no") {
+				holiDate = true
+				holiMsg = msgChristmas
+			}
+			return '<font color=' + holicolor + '>Christmas Day</font>'
+			}
+		}
+		
+	return ""
+}
+
+function leapYear(year) {
+	if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0))
+		return true 
+		return false 
+}
+
+function getDays(month, year) {
+	var mDays = new Array(12)
+	mDays[0] = 31 // January
+	mDays[1] = (leapYear(year)) ? 29 : 28 // February
+	mDays[2] = 31 // March
+	mDays[3] = 30 // April
+	mDays[4] = 31 // May
+	mDays[5] = 30 // June
+	mDays[6] = 31 // July
+	mDays[7] = 31 // August
+	mDays[8] = 30 // September
+	mDays[9] = 31 // October
+	mDays[10] = 30 // November
+	mDays[11] = 31 // December
+	return mDays[month]
+}
+
+function getnMonth(month) {
+	var mon = new Array(12)
+	mon[0] = "January"
+	mon[1] = "February"
+	mon[2] = "March"
+	mon[3] = "April"
+	mon[4] = "May"
+	mon[5] = "June"
+	mon[6] = "July"
+	mon[7] = "August"
+	mon[8] = "September"
+	mon[9] = "October"
+	mon[10] = "November"
+	mon[11] = "December"
+	return mon[month]
+}
+
+function getNextMonth(nxtMonth) {
+	var nxmon = new Array(12)
+	nxmon[0] = "Jan"
+	nxmon[1] = "Feb"
+	nxmon[2] = "Mar"
+	nxmon[3] = "Apr"
+	nxmon[4] = "May"
+	nxmon[5] = "Jun"
+	nxmon[6] = "Jul"
+	nxmon[7] = "Aug"
+	nxmon[8] = "Sep"
+	nxmon[9] = "Oct"
+	nxmon[10] = "Nov"
+	nxmon[11] = "Dec"
+	return nxmon[nxtMonth]
+}
+
+function getPrevMonth(prvMonth) {
+	var pvmon = new Array(12)
+	pvmon[0] = "Jan"
+	pvmon[1] = "Feb"
+	pvmon[2] = "Mar"
+	pvmon[3] = "Apr"
+	pvmon[4] = "May"
+	pvmon[5] = "Jun"
+	pvmon[6] = "Jul"
+	pvmon[7] = "Aug"
+	pvmon[8] = "Sep"
+	pvmon[9] = "Oct"
+	pvmon[10] = "Nov"
+	pvmon[11] = "Dec"
+	return pvmon[prvMonth]
+}
+
+function smartCalendar() {
+
+
+
+nxtYear = year
+nxtMonth = month + 1
+if (nxtMonth == 12) {
+nxtYear = nxtYear + 1
+nxtMonth = 0
+}
+nextMonthName = getNextMonth(nxtMonth)
+nxtBtn = ">>>  " + nextMonthName + "  " + nxtYear
+nxtBtn = "<input type=\"Button\" name=\"Next\" value=\"" + nxtBtn + "\" onClick=\"chgMonth(1)\">"
+
+
+
+prvYear = year
+prvMonth = month - 1
+if (prvMonth == -1) {
+prvYear = prvYear - 1
+prvMonth = 11
+}
+prevMonthName = getPrevMonth(prvMonth)
+prvBtn = prevMonthName + "  " + prvYear + "  <<<"
+prvBtn = "<input type=\"Button\" name=\"Prev\" value=\"" + prvBtn + "\" onClick=\"chgMonth(0)\">"
+
+
+
+	// find out what day of the week is the first day of the month
+	var fDayMonth = new Date(year, month, 1)
+	var dayFirst = fDayMonth.getDay()
+	fDayMonth = null
+
+	// number of days in current month
+	var days = getDays(month, year)
+
+	// draw the calendar
+	createCalendar(dayFirst + 1, days, date, nMonth, year)
+}
+
+
+// The following code is somewhat derived from an original by 
+// Tomer and Yehuda Shiran (http://www.geocities.com/SiliconValley/9000/)
+
+function createCalendar(dayFirst, dayLast, date, nMonth, year) {
+
+	var text = "" 
+
+	
+	text += '<center><form>'
+	text += '<table width="90%" height="90%" border=0 cellspacing=4>' // table settings
+	text += '<tr>'
+	text += '<td height="2%" width="75" colspan="1" align="left">'
+	text +=  prvBtn + '</td>'
+	text += '<td height="2%" colspan="5" align="center">'
+	text += '<font size="6" font color=' + wkdaybgcolor + ' face="verdana, helvetica, arial">' // set font for table header
+	text +=  nMonth + ' ' + year
+	text += '</font></td>'
+	text += '<td height="2%" width="75" colspan="1" align="right">'
+	text += nxtBtn + '</td>'
+	text += '</tr>'
+	text += '</form>'	
+
+	var weekDay = new Array(7)
+	weekDay[0] = "Sunday"
+	weekDay[1] = "Monday"
+	weekDay[2] = "Tuesday"
+	weekDay[3] = "Wednesday"
+	weekDay[4] = "Thursday"
+	weekDay[5] = "Friday"
+	weekDay[6] = "Saturday"
+
+	// setup the column headers
+	text += '<tr align="center" valign="center"><font face="verdana, helvetica, arial" color=' + wkdaybgcolor + '>'
+	for (var dayNum = 0; dayNum < 7; ++dayNum) {
+	
+		text += '<td width="14%" height="2%" align="center" valign="middle">'
+		text += '<font size="2" face="verdana, helvetica, arial" color=' + wkdaybgcolor + '><b>'
+		text += weekDay[dayNum]
+		text += '</b></font></td>'
+	}
+	text += '</font></tr>'
+
+	var dayNumber = 1
+	var thisDate = 1
+	
+	for (var row = 1; row <= Math.ceil((dayLast + dayFirst - 1) / 7); ++row) {
+		text += '<tr align="left" valign="top">'
+		for (var col = 1; col <= 7; ++col) {
+			if (dayNumber > dayLast)
+				break
+			if (thisDate < dayFirst) {
+				text += '<td></td>';
+				thisDate++
+			} else {
+					var interim = getMsg(dayNumber)
+					var currDate = new Date(nMonth + " " + dayNumber + ", " + year)
+
+					if (currDate.toString() == today.toString()) {
+					
+						text += '<td height="15%" bgcolor=' + todaybgcolor + '>'
+					} else {
+						if (col == 1 || col == 7) {
+						text += '<td height="15%" bgcolor=' + wkendbgcolor + '>'
+					} else {
+						text += '<td height="15%" bgcolor=' + wkdaybgcolor + '>'
+					}
+					}
+				
+					text += '<font size=1 face="verdana, helvetica, arial">'					
+					if (currDate.toString() == today.toString()) {
+						text += '<b><font color=' + replmsgcolor + '>'					
+					} else {					
+						text += '<font color=' + typecolor + '>'					
+					}
+
+					text += dayNumber					
+					if (currDate.toString() == today.toString()) {
+						text += '</b>'
+					}
+
+					text += '</font><br>'
+					text += '<font size=1 Face="ms sans serif, verdana, helvetica, arial">'
+					var isHolidates = getHolidates(dayNumber)
+
+					if (isHolidates != null) {
+						text += '<center>' + isHolidates + '<br>'
+						} else {
+						text += '<center><br>'
+					}
+
+					if (superCap > "") {
+						text += '<font color=' + replmsgcolor + '>' + superCap + '</font>'			
+					} else if (holiMsg > "" && holiDate == true && isDyMsg == true) {
+						if (holiMsg > "" && holiMsg.charAt(0) == "+") {
+						lenCaption = holiMsg.length - 1
+						holiMsg = holiMsg.substr(1, lenCaption)
+						holiMsg = holiMsg + showDST
+					} 
+						text += '<font color=' + defmsgcolor + '>' + holiMsg + '</font>'					
+					} else {		
+						text += interim
+					}
+
+					text += '</center></font>'
+					text += '</td>'
+					holiDate = false
+					addTo = false
+					superCap = ""
+					replMsg = ""
+					isDyMsg = false
+				dayNumber++
+			}
+		}
+		text += '</tr>'
+	}	
+
+	text += '</table>'
+	text += '</center></form>'
+	
+var whichEl
+
+
+if (NS4) {
+whichEl = document.layers.Cal.document;
+whichEl.open();
+whichEl.write(text);
+whichEl.close();    
+} else if (IE4) {
+whichEl = document.all.Cal
+whichEl.innerHTML = text;
+}else {
+document.write("This Calendar requires Netscape 4 or better or Internet Explorer 4 or better")
+}
+}
+
+</script>
+
+
+
+<div align="CENTER" id="Cal" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%">
+      
+</DIV>
+
+
+<NOSCRIPT>   
+<br><br><br><br><br><br><br>
+<p align="center">This page requires 'Javascript1.2'.
+
+</NOSCRIPT></P>
+
+</body>
+</html>
+
+<!-- Tommy Raven (Min) says Moo. -->
+

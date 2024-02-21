@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>Home</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<!--- *** BEGIN CUT - Demo starts here *** --->
+<!--  (* Another free JavaScript © from JavaScript-FX.com *) -->
+
+
+<SCRIPT LANGUAGE="JavaScript" SRC="sprites.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript">
+function JSFX_StartEffects()
+{
+	JSFX.AddGhost("praticles.jpg");
+	JSFX.AddGhost("fisch.gif");
+	JSFX.AddGhost("hydra.jpg");
+
+	JSFX.AddGhost("angel1.jpg");
+	JSFX.AddGhost("angel2.jpg");
+	
+	JSFX.AddGhost("sphinx1.gif");
+	JSFX.AddGhost("sphinx2.gif");
+}
+</SCRIPT>
+<!--- *** END   CUT - Demo ends   here *** --->
+
+
+
+
+
+
+</head>
+
+
+<BODY STYLE="overflow:hidden" bgcolor="black" TEXT="#999999" LINK="yellow" VLINK="yellow" ALINK="red" onLoad="JSFX_StartEffects()">
+<CENTER>
+<FONT FACE="Arial" SIZE="5">
+Brought to you by...
+</FONT>
+<br>
+<FONT FACE="Arial"> <A HREF="http://users.pandora.be/patriek.zoetaert" TARGET="_blank">Praticles</A></font> 
+<br>
+</CENTER>
+
+  
+
+
+</body>
+
+
+
+
+<script>
+<!--Write the background's sound URL between the "" like in the example below-->
+var sound1="../../sound/iwia.mp3"
+var sound2="../../sound/m1.mp3"
+var sound3="../../sound/pm.mp3"
+var x=Math.random()*10
+if (x<=3) x=sound1
+else if (x<=6) x=sound2
+else 
+x=sound3
+
+musi=x
+<!--Don't edit from here on-->
+function mus1()
+{
+if (t.options.selectedIndex==0){
+mus.innerHTML="<embed src="+musi+" loop=-1>"
+}
+if (t.options.selectedIndex==1){
+mus.innerHTML=""
+}
+}
+document.write("<span id='mus' style='position:absolute;top:-90000'><embed src="+musi+" width=0 height=0 loop=true></span>")
+</script>
+<br>
+<center>
+	<select name="t" onchange=mus1()>
+		<option>Enable background music 
+		<option>Disable background music 
+	</select>
+</center>
+
+
+
+<!-- Script Size:  1.29 KB -->
+</body>
+
+
+</html>
+

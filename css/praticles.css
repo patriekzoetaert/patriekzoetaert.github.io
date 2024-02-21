@@ -1,0 +1,133 @@
+
+
+BODY 
+{ 
+
+
+cursor: crosshair; 	
+background-color: #BAFFFF;
+scrollbar-base-color: #1478EB;     /*blauw*/ 
+	
+scrollbar-arrow-color:red;
+	
+/*
+scrollbar-3dlight-color:#336699;
+scrollbar-arrow-color:#999966;
+scrollbar-base-color:#CCCC99;
+scrollbar-darkshadow-color:#336699;
+scrollbar-face-color: #A9A9A9;
+scrollbar-highlight-color:#CD853F;
+scrollbar-shadow-color:#5A857B;
+scrollbar-track-color:#999966;
+*/
+
+font-family : Arial, Helvetica;
+color : navy;
+font-size : 13px; font-weight: bold;        
+}
+
+a:link { color: 696969; font-weight: bold; text-decoration: none
+  }
+a:active { color: blue; font-weight: bold; text-decoration: none}
+ 
+a:visited { color: #666666; font-weight: bold; text-decoration: none}
+ }
+a:hover { color: #336699; text-decoration: underline; background: #D3D3D3; }
+font.descrip { font-family: Twentieth Century Poster1, verdana; font-size: 13pt; color: #999966; }
+font.title { padding:20px; font-family: tahoma; font-size: 14pt; color: #5A857B; font-weight:bold; font-style: oblique; ;}  font.date {font-family : Arial, Helvetica, color:#FF6347; font-weight:bold; font-size : 14px; font-style:italic; } 
+H1 { text-align:center;}
+font.date { font-family:Comic Sans MS;
+	font-style:oblique;
+	font-size:20px;
+	color : #999966; } 
+	.tip {
+	font-family: creepy; color: orange; font-weight: bold; background-color: #D3D3D3; font-size: 14pt; font-style: italic;
+} 
+.button {
+	color:#336699;
+	font-weight:bold;
+	background-color:#999966;
+	font-family:verdana;
+	font-size:12px;
+	border: 1px dashed #cd853F;
+	}
+ .time { behavior: url(#default#time2);}
+
+A:hover.menu {background-color: 5A857B; color: CCCC99; font-size: 12px;}
+
+#tvframe {position:absolute;
+
+        left: 190px;
+
+        top: 183px;
+
+        width: 330px;
+
+        height: 180px;
+
+        z-index: 100
+
+       }
+
+#channelmenu {position:absolute;
+
+        left: 480px;
+
+        top: 183px;
+
+        width: 330px;
+
+        height: 180px;
+
+        z-index: 100
+
+       }
+
+#tvimage {position:absolute;
+
+        left: 170px;
+
+        top: 140px;
+
+            }
+
+#framemenu {position:absolute;
+
+        left: 110px;
+
+        top: 1px;
+
+            }
+#framedescrip {position:absolute;
+
+        left: 180px;
+
+        top: 47px;
+font-style: italic; font-size:14pt;
+            }
+
+.menu {
+	color: #336699; font-family: tahoma; font-size: 11px; background-color: #D3D3D3; }
+
+.button {
+	color:#336699;
+	font-weight:bold;
+	background-color:#999966;
+	font-family:verdana;
+	font-size:12px;
+	border: 1px dashed #cd853f
+	}
+.browserbutton {
+	background-color: 009900;
+	font-family: tahoma;;
+	color: FFFFFF;
+	font-weight: bold;
+border-style : dashed; font-size: 10pt; border-color: lime; border-width: 1px;
+}
+.browsertext  {color: 5A857B; background-color: CCCC99; border: 1px solid #666666; font-family: verdana; font-weight: bold;}
+.news{
+	border-style: dashed; border-color: #669966; background-color: #CCCC99; border-width: 2px; font-family: arial; font-size: 13px; color: #CD853F; font-weight: bold; padding: 10px; 
+}
+H2 {text-align: center}
+XMP {font-family: arial}
+NAME {color: 999966; text-transform: uppercase;}

@@ -1,0 +1,12 @@
+<?wpl version="1.0"?>
+<smil>
+    <head>
+        <meta name="Generator" content="Microsoft Windows Media Player -- 9.0.0.3075"/>
+        <title>klara</title>
+    </head>
+    <body>
+        <seq>
+            <media src="mms://streampower.belgacom.be/klaralow"/>
+        </seq>
+    </body>
+</smil>

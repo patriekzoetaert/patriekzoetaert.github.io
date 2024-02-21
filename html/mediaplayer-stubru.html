@@ -1,0 +1,58 @@
+<HTML>
+ <HEAD>
+<TITLE>Praticles © Media Player</TITLE>
+<link rel="stylesheet" href="../css/praticles.css">
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="Patriek Zoetaert">
+<meta name="keywords" content="JavaScript programmeur, progress, analist-programmeur, cobol, webdsign, praticles, zpower">
+<meta name="author" content="Patriek Zoetaert">
+<meta name="company" content="ZPOWER">
+<meta name="copyright" content="Copyright © 2003 Patriek Zoetaert. All rights reserved">
+<meta name="robots" content="index,follow">
+
+<script type="text/javascript" src="js/string.js"></script>
+<script type="text/javascript" src="js/navsec.js"></script>
+<SCRIPT TYPE="text/javascript">
+
+
+
+function play()
+{
+var file = document.mform.filename.value;
+
+document.all.musicdiv.innerHTML="<center><EMBED onBeforeLoad='document.write(Loading)' TITLE='Praticles/Real Player Plugin' SRC='"+file+"' AUTOSTART='true'  height='50' width='400' info='Praticles'></EMBED></center>"; /*height='480' width='570'*/
+
+
+}
+
+function stop()
+{
+var file ="";
+document.all.musicdiv.innerHTML="";
+}
+
+
+</SCRIPT>
+</head>
+
+
+<body>
+<center>
+<h1>Praticles© Media Player</h1>
+<form name="mform">
+
+<img src="../images/stubru.gif" alt="stubru" ><br>stubru</img>
+
+<br><br>
+
+
+<input type="hidden" name="filename"  value="http://users.pandora.be/patriek.zoetaert/files/radio/stubru.wpl" style="width:800;text:ffffff;background:FFCC33">
+<input type="button" value="Play!" class="browserbutton" onClick="play()">
+<input type="button" value="Stop!" class="browserbutton" onClick="stop()">
+</form>
+<div id="musicdiv"> </div>
+</center>
+</body>
+</html>

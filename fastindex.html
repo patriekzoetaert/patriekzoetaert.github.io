@@ -1,0 +1,833 @@
+<html>
+<head>
+<title>Patriek Zoetaert</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="Patriek Zoetaert">
+<meta name="keywords" content="Patriek Zoetaert,JavaScript programmeur, progress, analist-programmeur, cobol, webdsign">
+<meta name="robots" content="index,follow">
+<script type="text/javascript" src="html/js/navsec.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-76485789-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KNNDFBMZRZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KNNDFBMZRZ');
+</script>
+
+
+<style>
+<!--
+table	{
+
+/*	border-color:yellow;
+	border-style: solid;
+	border-width:2;
+*/
+}
+
+img	{
+	border-color: black;
+
+	border-width:1;
+	width="70" ;
+	height="80";
+
+}
+
+
+img.s	{
+	border-color: black;
+
+	border-width:1;
+	width="70" ;
+	height="80";
+
+}
+
+
+img.1	{
+	border-color: black;
+
+	border-width:1;
+	width="78" ;
+	height="19";
+
+
+}
+
+img.2	{
+	border-color: black;
+
+	border-width:1;
+	width="78" ;
+	height="40";
+
+
+}
+
+
+tr {
+	color:black;
+	background-color : black;
+
+
+	vertical-align:top;
+}
+
+
+td	{
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+        padding-bottom: 15px;
+	width :"90";
+	height:"100";
+	border-color:red;
+	border-style: solid;
+	border-width:1;
+	vertical-align:top;
+}
+
+span { color:yellow;
+}
+
+
+
+.simple {
+border: 1px solid #cccccc; padding: 5px; text-align: center
+}
+-->
+</style>
+<SCRIPT TYPE="text/javascript">
+
+
+
+function play()
+{
+var file = document.mform.filename.value;
+
+
+ if(file==""){
+    alert("Please select station first.");
+      }
+ else{
+
+
+    document.all.musicdiv.innerHTML="<center> <img  src='images/box.gif' ></img> <EMBED onBeforeLoad='document.write(Loading)' TITLE='Praticles/Real Player Plugin' SRC='"+file+"' AUTOSTART='true'  height='100' width='500' info='Praticles'></EMBED> <img  src='images/box.gif' ></img></center>"; /*height='480' width='570'*/
+
+  }
+}
+
+function stop()
+{
+var file ="";
+document.all.musicdiv.innerHTML="";
+}
+
+
+</SCRIPT>
+<script type="text/javascript">
+<!-- Begin
+/* This script and many more are available free online at
+The JavaScript Source!! http://javascript.internet.com
+Created by: Cat Arriola :: http://astrodiva.journalspace.com */
+
+function fixImgs(whichId, maxW,maxH) {
+var pix=document.getElementById(whichId).getElementsByTagName('img');
+  for (i=0; i<pix.length; i++) {
+    w=pix[i].width;
+    h=pix[i].height;
+    if (w > maxW) {
+      f=1-((w - maxW) / w);
+      pix[i].width=w * f;
+      pix[i].width=maxW;
+
+    }
+    if (h > maxH) {
+      f=1-((h - maxH) / h);
+
+      pix[i].height=h * f;
+      pix[i].height=maxH;
+    }
+    pix[i].width=maxW;
+    pix[i].height=maxH;
+
+  }
+}
+
+
+function fixTab(whichId, maxW,maxH) {
+var pix=document.getElementById(whichId).getElementsByTagName('td');
+  for (i=0; i<pix.length; i++) {
+    w=pix[i].width;
+    h=pix[i].height;
+  /*  if (w > maxW) {
+      f=1-((w - maxW) / w);
+      pix[i].width=w * f;
+      pix[i].width=maxW;
+
+    }
+    if (h > maxH) {
+      f=1-((h - maxH) / h);
+
+      pix[i].height=h * f;
+      pix[i].height=maxH;
+    }
+*/
+    pix[i].width=maxW;
+    pix[i].height=maxH;
+
+
+
+  }
+}
+
+
+//-->
+</script>
+
+</head>
+
+
+
+<BODY bgcolor="black"; onload="fixImgs('photos', 70,80);fixTab('photos', 90,100) ";  >
+
+
+<center>
+
+<script>
+	<!--Write the background's sound URL between the "" like in the example below-->
+	var sound1="sound/smooth.mid"
+
+
+	x=sound1;
+	x='';
+	musi=x
+	<!--Don't edit from here on-->
+	function mus1()
+	{
+	if (t.options.selectedIndex==0){
+//	mus.innerHTML="<embed src="+musi+" loop=-1>"
+	mus.innerHTML="<bgsound src="+musi+" loop=-1>"
+	}
+	if (t.options.selectedIndex==1){
+	mus.innerHTML=""
+	}
+	}
+//	document.write("<span id='mus' style='position:absolute;top:-90000'><embed src="+musi+" width=0 height=0 loop=true></span>")
+	document.write("<span id='mus' style='position:absolute;top:-90000'><bgsound src="+musi+" width=0 height=0  loop=true></span>")
+
+
+</script>
+
+<!--
+
+
+		<select name="t" onchange=mus1()>
+			<option>Enable background music
+			<option>Disable background music
+		</select>
+
+-->
+
+
+
+<center>
+<form name="mform">
+
+<A HREF="index.html" target='_top'><img class='1' src="images/terug.gif" alt="Terug"></img></a>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<img class='2' src="images/jumping-radio.gif" alt="Praticles© Radio Player" ></img>
+
+
+&nbsp; &nbsp;
+
+<SELECT class=inputbox  name="filename" style="text:ffffff;background:FFCC33">
+		  <OPTION value="" selected>Select Radio Station...
+		  <OPTION value=http://users.pandora.be/patriek.zoetaert/files/radio/radio1.wpl>vrt radio1
+		  <OPTION value=http://users.pandora.be/patriek.zoetaert/files/radio/radio2.wpl>vrt radio2
+		  <OPTION value=http://users.pandora.be/patriek.zoetaert/files/radio/klara.wpl>vrt klara
+		  <OPTION value=http://users.pandora.be/patriek.zoetaert/files/radio/donna.wpl>vrt donna
+		  <OPTION value=http://users.pandora.be/patriek.zoetaert/files/radio/stubru.wpl>vrt stubru
+
+
+		  <OPTION value=http://www.bbc.co.uk/radio1/realaudio/media/r1livev7.ram>BBC Radio 1
+		  <OPTION value=http://www.bbc.co.uk/radio2/realmedia/fmg2.ram>BBC Radio 2
+		  <OPTION value=http://www.bbc.co.uk/radio3/ram/r3g2.ram>BBC Radio 3
+
+
+		  </OPTION>
+	  </SELECT>
+
+
+
+<!--
+<input type="hidden" name="filename"  value="http://users.pandora.be/patriek.zoetaert/files/radio/donna.wpl" style="width:800;text:ffffff;background:FFCC33">
+-->
+
+<input type="button" value="Play!" class="browserbutton" onClick="play()">
+<input type="button" value="Stop!" class="browserbutton" onClick="stop()">
+
+</form>
+<div id="musicdiv">
+
+</div>
+</center>
+
+
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+<table  id="photos">
+
+<tr>
+
+
+<td>
+<a name="main"></a>
+<center>
+<A HREF="menu.html" target='_top'>
+<img class='s'  src="images/praticles.jpg" alt="Praticles Main menu"><br>Main Site</img>
+</a>
+</center>
+
+</td>
+
+<td>
+<center>
+<A HREF="index.html" target='_top'>
+<img class='s' src="images/praticles.jpg" alt="Praticles index"><br>Index</img>
+</a>
+</center>
+
+</td>
+
+
+
+
+</tr>
+
+<tr>
+
+
+<td>
+<a name="portfolio"></a>
+<center>
+
+<A HREF="http://www.acv-lokeren.be" target='_top'>
+<img class='s'  src="images/acvwd.jpg" alt="acv lokeren"><br>acv lokeren</img>
+</a>
+
+</center>
+
+</td>
+
+
+
+
+<td>
+<a name="portfolio"></a>
+<center>
+
+<A HREF="http://www.acv-zele.be" target='_top'>
+<img class='s'  src="images/acvwd.jpg" alt="acv zele"><br>acv zele</img>
+</a>
+
+</center>
+
+</td>
+
+
+
+<td>
+<a name="portfolio"></a>
+<center>
+
+<A HREF="http://www.acv-berlare.be" target='_top'>
+<img class='s'  src="images/acvwd.jpg" alt="acv berlare"><br>acv berlare</img>
+</a>
+
+</center>
+
+</td>
+
+
+
+
+
+</tr>
+
+
+
+
+
+
+<tr>
+
+
+
+
+<td>
+<a name="info"></a>
+<center>
+<A HREF="http://gids.omroep.nl/" target='_blank'>
+<img  class='s' src="images/television_flipping_channels_prv.gif" alt="TV GIDS"><br>TV GIDS</img>
+</a>
+</center>
+</td>
+
+<td>
+<center>
+<A HREF="html/weer.html" target='_blank'>
+<img  class='s' src="images/astronomy_moon_eclipse.gif" alt="Weer"><br>Weer</img>
+</a>
+</center>
+</td>
+
+
+<td>
+<center>
+<A HREF="http://www.donna.be/donna_master/systeem/d_verkeersapp_start/index.html" target='_blank'>
+<img  class='s' src="images/verkeer.gif" alt="Verkeer"><br>Verkeer</img>
+</a>
+</center>
+</td>
+
+<td>
+<center>
+<A HREF="http://www.mappy.be/" target='_blank'>
+<img class='s'  src="images/globe.gif" alt="Map"><br>Map</img>
+</a>
+</center>
+</td>
+
+<td>
+<center>
+<A HREF="http://www.goudengids.be/" target='_blank'>
+<img  class='s'  src="images/phone_rings.gif" alt="gouden gids"><br>gouden gids</img>
+</a>
+</center>
+</td>
+
+<td>
+<center>
+<A HREF="html/calendar.html" target='_blank'>
+<img  class='s' src="images/cal.gif" alt="kalender"><br>kalender</img>
+</a>
+</center>
+</td>
+
+<td>
+<center>
+<A HREF="html/feestdag.html" target='_blank'>
+<img class='s'  src="images/cal.gif" alt="feestdagen"><br>Feestdag</img>
+</a>
+</center>
+</td>
+
+
+
+
+
+
+</tr>
+
+<tr>
+
+
+<td>
+<a name="sports"></a>
+<center>
+<A HREF="http://www.wielerstrijd.dewielersite.net/db2/wielersite/tvinfo.php" target='_blank'>
+<img  class='s' src="images/cal.gif" alt="koerskalender"><br>koerskalender</img>
+</a>
+</center>
+</td>
+
+
+
+
+<td>
+<center>
+<A HREF="http://www.sport.be/nl/" target='_blank'>
+<img  class='s' src="images/sport-be.gif" alt="Sport BE"><br>Sport</img>
+</a>
+</center>
+</td>
+
+
+<td>
+<center>
+<A HREF="http://www.letour.fr/" target='_blank'>
+<img class='s'  src="images/tour.gif" alt="Tour"><br>Tour</img>
+</a>
+</center>
+</td>
+
+<td>
+<center>
+<A HREF="http://www.giroditalia.it/" target='_blank'>
+<img  class='s' src="images/giro.gif" alt="Giro"><br>Giro</img>
+</a>
+</center>
+</td>
+
+<td>
+<center>
+<A HREF="http://www.lavuelta.com/" target='_blank'>
+<img  class='s' src="images/vuelta.jpg" alt="Vuelta"><br>Vuelta</img>
+</a>
+</center>
+</td>
+
+
+
+
+<td>
+<center>
+<A HREF="http://www.wielren.com/" target='_blank'>
+<img  class='s' src="images/tour.jpg" alt="Wielren"><br>Wielren</img>
+</a>
+</center>
+</td>
+
+<td>
+<center>
+<A HREF="http://www.dewielersite.net/" target='_blank'>
+<img  class='s' src="images/vandamme_e.jpg" alt="de wielersite"><br>wielersite</img>
+</a>
+</center>
+</td>
+
+
+
+
+</tr><tr>
+
+<td>
+<a name="services"></a>
+<center>
+<A HREF="http://pub17.bravenet.com/cartoon/show.php?usernum=1432044645&cpv=1" target='_blank'>
+<img  class='s' src="images/bart.gif" alt="Lol"><br>Lol</img>
+</a>
+</center>
+</td>
+
+<td>
+<center>
+<A HREF="http://pub17.bravenet.com/forum/show.php?usernum=1432044645&cpv=1" target='_blank'>
+<img class='s'  src="images/praticles.jpg" alt="Forum" ><br>forum</img>
+</a>
+</center>
+</td>
+
+<td>
+<center>
+<A HREF="http://pub17.bravenet.com/guestbook/show.php?usernum=1432044645&cpv=1" target='_blank'>
+<img  class='s' src="images/guestbook.gif" alt="Guestbook" ><br>Guestbook</img>
+</a>
+</center>
+</td>
+
+<td>
+<center>
+<A HREF="http://pub17.bravenet.com/chat/show.php?usernum=1432044645&cpv=1" target='_blank'>
+<img  class='s' src="images/chatroom.gif" alt="Chatroom" ><br>Chatroom </img>
+</a>
+</center>
+</td>
+
+
+<td>
+<center>
+<A HREF="mailto: patriek.zoetaert@pandora.be?subject=Request for information from your website&cc=patriekzoetaert@hotmail.com&bcc=patriekzoetaert@hotmail.com&body=Beste Patriek, I want a request for information from your website.">
+<img  class='s' src="images/mail.gif" alt="Mail" ><br>Mail</img>
+</a>
+</center>
+</td>
+</tr>
+
+<tr>
+
+<td>
+<a name="multimedia"></a>
+<center>
+<A HREF="html/vibesound.html" target='_blank'>
+<img  class='s' src="images/box.gif" alt="Music player" ><br>Mp3 Player</img>
+</a>
+</center>
+</td>
+
+<td>
+<center>
+<A HREF="java/jlguiapplet/playerapplet.html" target='_blank'>
+<img  class='s' src="images/dj.gif" alt="JAVA  mp3 player" ><br>java Mp3 Player</img>
+</a>
+</center>
+</td>
+
+
+<td>
+<center>
+<A HREF="http://www.javazoom.net/jlgui/jws/jlgui_jnlp.jsp?skin=metrix&song=http%3A%2F%2Fusers.pandora.be%2Fpatriek.zoetaert%2Fjava%2Fjlguiapplet%2Fplaylist.m3u&start=true&showplaylist=true" target='_blank'>
+<img  class='s' src="images/box.gif" alt="JAVA  mp3 player via WS" ><br>java Mp3 Player via WS</img>
+</a>
+</center>
+</td>
+
+
+
+
+
+
+<td>
+<center>
+<A HREF="html/mediaplayer.html" target='_blank'>
+<img  class='s' src="images/tballnew.gif" alt="Media player" ><br>Media Player</img>
+</a>
+</center>
+</td>
+
+<td>
+<center>
+<A HREF="html/video-browse.html" target='_blank'>
+<img  class='s' src="images/disco.gif" alt="Media player" ><br>2° Media Player</img>
+</a>
+</center>
+</td>
+
+
+
+<td>
+<center>
+<A HREF="html/scroller/foto-scroller.html" target='_blank'>
+<img  class='s' src="images/lisa.jpg" alt="Fotoalbum"><br>Fotoalbum</img>
+</a>
+</center>
+</td>
+
+
+<td>
+<center>
+<A HREF="html/fotoviewer/index.html" target='_blank'>
+<img  class='s' src="images/enter.gif" alt="Fotoalbum extended"><br>Fotoalbum extended</img>
+</a>
+</center>
+</td>
+
+
+<td>
+<center>
+<A HREF="html/foto-anim.html" target='_blank'>
+<img  class='s' src="images/garflap.gif" alt="Fotos animated"><br>Fotos animated</img>
+</a>
+</center>
+</td>
+
+
+
+</tr>
+
+
+
+
+
+<tr>
+<td>
+<center>
+<A HREF="html\radioplayer.html" target='_blank'>
+<img  class='s' src="images/jumping-radio.gif" alt="radioplayer" ><br>radioplayer</img>
+</a>
+</center>
+</td>
+
+<td>
+<center>
+<A HREF="html\Internet Radio Tuner.html" target='_blank'>
+<img  class='s' src="images/jumping-radio.gif" alt="Internet Radio Tuner" ><br>Internet Radio Tuner</img>
+</a>
+</center>
+</td>
+
+
+
+
+
+</tr>
+
+
+
+
+<tr>
+<td>
+<center>
+<A HREF="html\mediaplayer-radio1.html" target='_blank'>
+<img  class='s' src="images/radio1.gif" alt="radio1" ><br>radio 1</img>
+</a>
+</center>
+</td>
+
+<td>
+<center>
+<A HREF="html\mediaplayer-radio2.html" target='_blank'>
+<img  class='s' src="images/radio2.jpg" alt="radio2" ><br>radio 2</img>
+</a>
+</center>
+</td>
+
+<td>
+<center>
+<A HREF="html\mediaplayer-klara.html" target='_blank'>
+<img class='s'  src="images/klara.gif" alt="klara" ><br>klara</img>
+</a>
+</center>
+</td>
+
+
+<td>
+<center>
+<A HREF="html\mediaplayer-donna.html" target='_blank'>
+<img  class='s' src="images/donna.jpg" alt="donna" ><br>donna</img>
+</a>
+</center>
+</td>
+
+<td>
+<center>
+<A HREF="html\mediaplayer-stubru.html" target='_blank'>
+<img class='s'  src="images/stubru.gif" alt="stubru" ><br>stubru</img>
+</a>
+</center>
+</td>
+
+
+
+
+</tr>
+
+
+</table>
+
+</center>
+
+
+<script>
+
+
+// Edit speaking interval (seconds)
+ var speakinginterval=60
+
+// Do not edit the code below this line
+var thistime= new Date()
+var hours=thistime.getHours()
+var minutes=thistime.getMinutes()
+var ampm
+var pad = 'html/time/soundfiles/'
+speakinginterval=1000*speakinginterval
+
+if (hours<12) {
+	ampm="am"
+}
+else if (hours>=12) {
+	ampm="pm"
+	if (hours!=12) {
+		hours=hours-12
+	}
+}
+
+function speakthetimeis() {
+	document.all.typesound.src= pad +"the_time_is.wav"
+	var timer=setTimeout("speakhours()",1200)
+}
+
+function speakhours() {
+	document.all.typesound.src=pad+hours+".wav"
+	if (minutes<10) {
+		var timer=setTimeout("speakzerominutes()",1200)
+	}
+	else {
+		var timer=setTimeout("speakminutes()",1200)
+	}
+}
+
+function speakzerominutes() {
+	document.all.typesound.src=pad+"0.wav"
+	var timer=setTimeout("speakminutes()",600)
+}
+
+function speakminutes() {
+	document.all.typesound.src=pad+minutes+".wav"
+	var timer=setTimeout("speakampm()",1200)
+}
+
+function speakampm() {
+	document.all.typesound.src=pad+ampm+".wav"
+	thistime= new Date()
+	hours=thistime.getHours()
+	minutes=thistime.getMinutes()
+	if (hours<12) {
+		ampm="am"
+	}
+	else if (hours>=12) {
+		ampm="pm"
+		if (hours!=12) {
+			hours=hours-12
+		}
+	}
+	var content="<embed src=\""+pad+hours+".wav\" autostart=\"false\" hidden=\"true\">"
+	content+="<embed src=\""+pad+minutes+".wav\" autostart=\"false\" hidden=\"true\">"
+	soundcontainer.innerHTML=content
+	var timer=setTimeout("speakthetimeis()",speakinginterval)
+}
+
+if (document.all) {
+	document.write("<span id=\"soundcontainer\" style=\"position:relative;\">")
+	document.write("<embed src=\""+pad+hours+".wav\" autostart=\"false\" hidden=\"true\">")
+	document.write("<embed src=\""+pad+minutes+".wav\" autostart=\"false\" hidden=\"true\">")
+	document.write("<embed src=\""+pad+ampm+".wav\" autostart=\"false\" hidden=\"true\">")
+	document.write("</span>")
+	document.write("<embed src=\""+pad+"0.wav\" autostart=\"false\" hidden=\"true\">")
+	document.write("</span>")
+	window.onload=speakthetimeis
+}
+
+</script>
+<embed src=pad+"the_time_is.wav" autostart="true" hidden="" width="0" height="0">
+<bgsound id="typesound">
+
+
+
+
+
+
+
+
+
+</body>
+
+
+</html>
+

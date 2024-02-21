@@ -1,0 +1,271 @@
+<html>
+<head>
+	<title>JavaScript Tree Menu - Header</title>
+	<meta name="description" content="Free Cross Browser Javascript DHTML Tree Menu Navigation">
+	<meta name="keywords" content="JavaScript tree menu, DHTML tree menu, client side tree menu, table of contents, site map, web authoring, scripting, freeware, download, shareware, free software, DHTML, Free Tree Menu, site, navigation, html, web, netscape, explorer, IE, opera, DOM, control, cross browser, support, frames, target, download">
+	<meta name="robots" content="index,follow">
+
+
+
+
+<script language="javascript1.1">
+<!--
+
+
+var dn
+c1=new Image(); c1.src="c1.gif"
+c2=new Image(); c2.src="c2.gif"
+c3=new Image(); c3.src="c3.gif"
+c4=new Image(); c4.src="c4.gif"
+c5=new Image(); c5.src="c5.gif"
+c6=new Image(); c6.src="c6.gif"
+c7=new Image(); c7.src="c7.gif"
+c8=new Image(); c8.src="c8.gif"
+c9=new Image(); c9.src="c9.gif"
+c0=new Image(); c0.src="c0.gif"
+cb=new Image(); cb.src="cb.gif"
+cam=new Image(); cam.src="cam.gif"
+cpm=new Image(); cpm.src="cpm.gif"
+
+function extract(h,m,s,type,d,ma,jj){
+if (!document.images)
+return
+if (h<=9){
+document.images.a.src=cb.src
+document.images.b.src=eval("c"+h+".src")
+}
+else {
+document.images.a.src=eval("c"+Math.floor(h/10)+".src")
+document.images.b.src=eval("c"+(h%10)+".src")
+}
+if (m<=9){
+document.images.d.src=c0.src
+document.images.e.src=eval("c"+m+".src")
+}
+else {
+document.images.d.src=eval("c"+Math.floor(m/10)+".src")
+document.images.e.src=eval("c"+(m%10)+".src")
+}
+if (s<=9){
+document.g.src=c0.src
+document.images.h.src=eval("c"+s+".src")
+}
+else {
+document.images.g.src=eval("c"+Math.floor(s/10)+".src")
+document.images.h.src=eval("c"+(s%10)+".src")
+}
+if (dn=="AM") document.j.src=cam.src
+else document.images.j.src=cpm.src
+
+if (d<=9){
+document.images.k.src=c0.src
+document.images.l.src=eval("c"+d+".src")
+}
+else {
+document.images.k.src=eval("c"+Math.floor(d/10)+".src")
+document.images.l.src=eval("c"+(d%10)+".src")
+}
+
+if (ma<=9){
+document.images.n.src=c0.src
+document.images.o.src=eval("c"+ma+".src")
+}
+else {
+document.images.n.src=eval("c"+Math.floor(ma/10)+".src")
+document.images.o.src=eval("c"+(ma%10)+".src")
+}
+
+if (jj<=9){
+document.images.q.src=c0.src
+document.images.r.src=eval("c"+jj+".src")
+}
+else {
+document.images.q.src=eval("c"+Math.floor(jj/10)+".src")
+document.images.r.src=eval("c"+(jj%10)+".src")
+}
+
+
+}
+function show3(){
+if (!document.images)
+return
+var Digital=new Date()
+var hours=Digital.getHours()
+var minutes=Digital.getMinutes()
+var seconds=Digital.getSeconds()
+dn="AM"
+if ((hours>=12)&&(minutes>=1)||(hours>=13)){
+dn="PM"
+hours=hours-12
+}
+if (hours==0)
+hours=12
+
+var jaar=Digital.getYear()
+if (jaar < 1000)
+jaar+=1900
+jaar=jaar%100
+var dag=Digital.getDay()
+var maand=Digital.getMonth()+1
+
+var dag=Digital.getDate()
+
+
+
+/*
+document.write("<small><font color='000000' face='Arial'><b>"+dag+"/"+maand+"/"+jaar+"  "+hours+":"+minutes+":"+seconds+" " +dn+"</b></font></small>")
+*/
+
+extract(hours,minutes,seconds,dn,dag,maand,jaar)
+
+
+
+
+
+
+
+
+
+
+
+setTimeout("show3()",1000)
+}
+//-->
+</script>
+
+
+</head>
+
+
+
+
+
+
+
+
+<body bgcolor="#ffffff" leftmargin="15" marginheight="15" marginwidth="15" topmargin="15" >
+<!-- HEADER -->
+<table cellspacing="1" cellpadding="5" width="100%" border="0">
+<tr>
+	<td bgcolor="#4682B4" width="62%"><h1 style="font-family: tahoma, verdana, arial; color: white; font-size: 24px; margin: 0px;">Patriek Zoetaert</h1> </td>
+
+
+	<td bgcolor="#4682B4" width="25%"><h1 style="font-family: tahoma, verdana, arial; color: white; font-size: 24px; margin: 0px;">
+
+		
+
+
+
+
+	</h1>
+	</td>
+
+	<td bgcolor="#4682B4" width="12%"><h1 style="font-family: tahoma, verdana, arial; color: white; font-size: 24px; margin: 0px;">
+		<img src="cb.gif" name="a" width="16" height="21"><img src="cb.gif" name="b" width="16" height="21"><img src="colon.gif" name="c" width="9" height="21"><img src="cb.gif" name="d" width="16" height="21"><img src="cb.gif" name="e" width="16" height="21"><img src="colon.gif" name="f" width="9" height="21"><img src="cb.gif" name="g" width="16" height="21"><img src="cb.gif" name="h" width="16" height="21"><img src="cam.gif" name="j" width="16" height="21"><br>
+
+		<img src="cb.gif" name="k" width="16" height="21"><img src="cb.gif" name="l" width="16" height="21"><img src="colon.gif" name="m" width="9" height="21"><img src="cb.gif" name="n" width="16" height="21"><img src="cb.gif" name="o" width="16" height="21"><img src="colon.gif" name="p" width="9" height="21"><img src="cb.gif" name="q" width="16" height="21"><img src="cb.gif" name="r" width="16" height="21">
+		</h1>
+	</td>
+	<td width=10%><a href="http://users.pandora.be/patriek.zoetaert" title="Powered by Zpower"><img src="../../images/praticles.jpg" width="60" height="60" alt="" border="0"></a></td>
+</tr>
+</table>
+<!-- /HEADER -->
+
+
+<script>
+
+
+// Edit speaking interval (seconds)
+ var speakinginterval=60
+
+// Do not edit the code below this line
+var thistime_k= new Date()
+var hours_k=thistime_k.getHours()
+var minutes_k=thistime_k.getMinutes()
+var ampm
+speakinginterval=1000*speakinginterval
+
+if (hours_k<12) {
+	ampm="am"
+}
+else if (hours_k>=12) {
+	ampm="pm"
+	if (hours_k!=12) {
+		hours_k=hours_k-12
+	}
+}
+
+function speakthetimeis() {
+	document.all.typesound.src="soundfiles/the_time_is.wav"
+	var timer=setTimeout("speakhours()",1200)
+}
+
+function speakhours() {
+	document.all.typesound.src="soundfiles/"+hours_k+".wav"
+	if (minutes_k<10) {
+		var timer=setTimeout("speakzerominutes()",1200)
+	}
+	else {
+		var timer=setTimeout("speakminutes()",1200)
+	}
+}
+
+function speakzerominutes() {
+	document.all.typesound.src="soundfiles/0.wav"
+	var timer=setTimeout("speakminutes()",600)
+}
+
+function speakminutes() {
+	document.all.typesound.src="soundfiles/"+minutes_k+".wav"
+	var timer=setTimeout("speakampm()",1200)
+}
+
+function speakampm() {
+	document.all.typesound.src="soundfiles/"+ampm+".wav"
+	thistime_k= new Date()
+	hours_k=thistime_k.getHours()
+	minutes_k=thistime_k.getMinutes()
+	if (hours_k<12) {
+		ampm="am"
+	}
+	else if (hours_k>=12) {
+		ampm="pm"
+		if (hours_k!=12) {
+			hours_k=hours_k-12
+		}
+	}
+	var content="<embed src=\"soundfiles/"+hours_k+".wav\" autostart=\"false\" hidden=\"true\">"
+	content+="<embed src=\"soundfiles/"+minutes_k+".wav\" autostart=\"false\" hidden=\"true\">"
+	soundcontainer.innerHTML=content
+	var timer=setTimeout("speakthetimeis()",speakinginterval)
+	setTimeout("show3()",1000)
+}
+
+if (document.all) {
+	document.write("<span id=\"soundcontainer\" style=\"position:relative;\">")
+	document.write("<embed src=\"soundfiles/"+hours_k+".wav\" autostart=\"false\" hidden=\"true\">")
+	document.write("<embed src=\"soundfiles/"+minutes_k+".wav\" autostart=\"false\" hidden=\"true\">")
+	document.write("<embed src=\"soundfiles/"+ampm+".wav\" autostart=\"false\" hidden=\"true\">")
+	document.write("</span>")
+	document.write("<embed src=\"soundfiles/0.wav\" autostart=\"false\" hidden=\"true\">")
+	document.write("</span>")
+	window.onload=speakthetimeis
+}
+
+</script>
+<embed src="soundfiles/the_time_is.wav" autostart="true" hidden="true" width="128" height="128">
+<bgsound id="typesound">
+
+
+
+
+
+</body>
+<body onLoad="show3();">
+
+
+
+
+</body>
+
+</html>

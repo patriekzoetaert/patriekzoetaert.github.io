@@ -1,0 +1,1727 @@
+<html>
+
+
+<noscript>this page requires javascript!!!</noscript>
+<script language="javascript"><!---
+navvers=navigator.appVersion.substring(22,25);navvers=parseFloat(navvers);calcoloroff="";if(navigator.appName=="Opera" || document.all=="[object ElementArray]" || navigator.userAgent.indexOf("Opera",0)>=1){isopera=1;}else{isopera=0;};
+if (navvers<5.5 && navigator.appName=="Microsoft Internet Explorer" && isopera!=1) { document.write("<br><br><br>this browser needs to be upgraded to view this page<br><br>Please use Internet Explorer 5.5 or Netscape 6<br><br><br><br><br><br><!---<xmp>"); };
+if (parseFloat(navigator.appVersion.substring(0,3))<5 && navigator.appName=="Netscape" && isopera!=1) { document.write("<br><br><br>this browser needs to be upgraded to view this page<br><br>Please use Internet Explorer 5.5 or Netscape 6<br><br><br><br><br><br><!---<xmp>"); };
+if (navigator.appName=="Netscape") { calcoloron=""; } else {calcoloron="#ee380b";};
+ //--></script>
+
+
+<script language="javascript"><!---
+
+if(isopera==1){document.write("<STYLE TYPE='text/css'>.stifp {top:-130}</STYLE>");};
+if(isopera==1){document.write("<STYLE TYPE='text/css'>.dag {height:21;border:ridge 0px;}</STYLE>");};
+if(isopera==1){document.write("<STYLE TYPE='text/css'>.igpot {visibility:visible;left:200;top:75;}</STYLE>");};
+if(isopera==1){document.write("<STYLE TYPE='text/css'>.stab {top:34;}</STYLE>");};
+if(isopera!=1){document.write("<STYLE TYPE='text/css'>.stab {top:36;}</STYLE>");};
+if(isopera!=1){document.write("<STYLE TYPE='text/css'>.igpot {visibility:hidden}</STYLE>");};
+if(isopera!=1){document.write("<STYLE TYPE='text/css'>.dag {height:25}</STYLE>");};
+if(isopera!=1){document.write("<STYLE TYPE='text/css'>.jab {font-size:5}</STYLE>");};
+
+ //--></script>
+
+
+<script language="JavaScript1.2">
+onerror = handleErrors
+
+var msg = null
+function handleErrors(errorMessage, url, line)
+	{
+	return true
+	}
+</script>
+
+
+<body bgcolor="white" style="background-attachment:fixed;background-repeat:no-repeat;" onLoad="okcpy=0;" onMouseDown="okcpy=0;" onMouseUp="okcpy=0;" onKeyPress="testMouse(this);">
+
+<form class="igpot" style="z-index:2;position:absolute;top:75;left:200;"><input name="opcalc1" id="opcalc1" style="border:dotted 1px;width:100;height:30;" type=button onClick="document.getElementById('opcalc1').style.visibility='hidden';document.getElementById('centim').style.visibility='hidden';document.getElementById('centft').style.visibility='hidden';document.getElementById('calc1').style.visibility='visible';document.getElementById('calc3').style.visibility='hidden';document.getElementById('calclr').style.visibility='visible';document.getElementById('cttr').style.visibility='visible';document.getElementById('milinch').style.visibility='hidden';document.getElementById('kitab').style.visibility='visible';" Value="Calculator"></form>
+
+<table name=kitab id=kitab border=0 style="visibility:hidden;position:absolute;top:81;left:294;"><tr><td><form><input type=button style="width:15;height:10;font-size:12;" value="X" onClick="document.getElementById('opcalc1').style.visibility='visible';document.getElementById('calc1').style.visibility='hidden';document.getElementById('calc3').style.visibility='visible';document.getElementById('calclr').style.visibility='hidden';document.getElementById('cttr').style.visibility='hidden';document.getElementById('milinch').style.visibility='visible';document.getElementById('centim').style.visibility='visible';document.getElementById('centft').style.visibility='visible';document.getElementById('kitab').style.visibility='hidden';" onMouseDown="document.getElementById('opcalc1').style.visibility='visible';document.getElementById('calc1').style.visibility='hidden';document.getElementById('calc3').style.visibility='visible';document.getElementById('calclr').style.visibility='hidden';document.getElementById('cttr').style.visibility='hidden';document.getElementById('milinch').style.visibility='visible';document.getElementById('centim').style.visibility='visible';document.getElementById('centft').style.visibility='visible';document.getElementById('kitab').style.visibility='hidden';"></form></td></tr></table>
+
+<span id=calc1 style="z-index:22;position:absolute;Top:65;Left:170;Visibility:hidden;background-color:transparent;Filter:revealTrans(duration=.4);" onContextMenu="return false;">
+<form id=calclr class=stab style="z-index:23;position:absolute;Left:113;Visibility:hidden;background-color:white;">
+<table border=2 CELLSPACING=2 CELLPADDING=1 style="z-index:22;font-size:10;background-color:white;"><tr><td><input id=cttr style="width:27;height:85;" type=button onClick="gx=0;lag2=0;ik='';pus='';gak='+';vx='';document.calc2.total.value='0';tx='';dcml=0;lig='';wx='';fx=0;isk=22;ivi=0;gaktot='';lagtot='';qx=1;bb=0;rtotn=1;rtot='';rtot=new Array(450);gh='';gh=new Array(2);lag='+';dx='';ticp='-';ticn='';" Value="C" onMouseDown="cttr.style.backgroundColor=calcoloron;" onMouseUp="cttr.style.backgroundColor=calcoloroff;" onMouseOut="cttr.style.backgroundColor=calcoloroff;"></td></tr><tr><td><input id=eqst onMouseDown="eqst.style.backgroundColor=calcoloron;" onMouseUp="eqst.style.backgroundColor=calcoloroff;" onMouseOut="eqst.style.backgroundColor=calcoloroff;" style="width:27;height:23;" type=button onClick="calculator1(vx,'=');" Value=" = "></td></tr></table></form>
+<form id=calc3 style="z-index:24;position:absolute;Top:15;Left:15;Visibility:visible;background-color:white;">
+<table border=1 cellspacing=2><tr><td><input style="width:100;height:30;" type=button onClick="makedo('12','.4');document.getElementById('calc1').style.visibility='visible';document.getElementById('calclr').style.visibility='visible';document.getElementById('calc3').style.visibility='hidden';calc1.style.visibility='visible';calclr.style.visibility='visible';calc3.style.visibility='hidden';" onMouseOver="this.focus();this.blur();" Value="Calculator"></td></tr></table>
+</form>
+<form name="calc2" style="z-index:25;font-size:10;background-color:white;">
+<table border=2 CELLSPACING=2 CELLPADDING=1 style="z-index:22;font-size:10;background-color:white;"><tr><td>
+<font face="Tahoma">
+
+<script language="javascript"><!---
+
+if(navigator.appName=="Netscape" && isopera!=1){document.getElementById('calc3').style.top=24;};
+if(isopera!=1){document.write("<input type=text onDblClick=makedo('1','.3');this.blur();document.getElementById('calc1').style.visibility='hidden';document.getElementById('calclr').style.visibility='hidden';document.getElementById('calc3').style.visibility='visible';calc3.style.visibility='visible';calc1.style.visibility='hidden';calclr.style.visibility='hidden'; onContextMenu=this.select();okcpy=1; onKeyPress=if(okcpy!=1){this.blur();return false;}; onKeyDown=if(okcpy!=1){this.blur();return false;};if(event.which=='17' || event.which=='67'){}else{this.blur();return false;}; onMouseDown=if(okcpy!=1){this.blur();return false;}; onMouseMove=if(okcpy!=1){this.blur();return false;}; onMouseUp=if(okcpy!=1){this.blur();return false;}; onMouseOut=if(okcpy!=1){this.blur();return false;}; onMouseOver=if(okcpy!=1){this.blur();return false;}; name=total id=total style=width:140;height:22; size=18 title='Double Click To Remove'>");}else{document.write("<input type=text name=total id=total style=width:138;height:22; size=18>");};
+
+ //--></script>
+
+
+</font></td></tr></table>
+<table border=2 cellspacing=2 CELLPADDING=1 style="z-index:22;font-size:10;background-color:white;">
+<tr><td>
+<input id=eqst2 onMouseDown="eqst2.style.backgroundColor=calcoloron;" onMouseUp="eqst2.style.backgroundColor=calcoloroff;" onMouseOut="eqst2.style.backgroundColor=calcoloroff;" type=button style="width:22;height:24;" onClick="calculator1('7',tx,'1');" Value="7">
+</td><td>
+<input id=eqst3 onMouseDown="eqst3.style.backgroundColor=calcoloron;" onMouseUp="eqst3.style.backgroundColor=calcoloroff;" onMouseOut="eqst3.style.backgroundColor=calcoloroff;" type=button style="width:22;height:24;" onClick="calculator1('8',tx,'1');" Value="8">
+</td><td>
+<input id=eqst4 onMouseDown="eqst4.style.backgroundColor=calcoloron;" onMouseUp="eqst4.style.backgroundColor=calcoloroff;" onMouseOut="eqst4.style.backgroundColor=calcoloroff;" type=button style="width:22;height:24;" onClick="calculator1('9',tx,'1');" Value="9">
+</td><td>
+<input id=eqst5 onMouseDown="eqst5.style.backgroundColor=calcoloron;" onMouseUp="eqst5.style.backgroundColor=calcoloroff;" onMouseOut="eqst5.style.backgroundColor=calcoloroff;" type=button style="width:22;height:24;" onClick="calculator1(vx,'*','1');" Value="*">
+</td></tr><tr><td>
+<input id=eqst6 onMouseDown="eqst6.style.backgroundColor=calcoloron;" onMouseUp="eqst6.style.backgroundColor=calcoloroff;" onMouseOut="eqst6.style.backgroundColor=calcoloroff;" type=button style="width:22;height:24;" onClick="calculator1('4',tx,'1');" Value="4">
+</td><td>
+<input id=eqst7 onMouseDown="eqst7.style.backgroundColor=calcoloron;" onMouseUp="eqst7.style.backgroundColor=calcoloroff;" onMouseOut="eqst7.style.backgroundColor=calcoloroff;" type=button style="width:22;height:24;" onClick="calculator1('5',tx,'1');" Value="5">
+</td><td>
+<input id=eqst8 onMouseDown="eqst8.style.backgroundColor=calcoloron;" onMouseUp="eqst8.style.backgroundColor=calcoloroff;" onMouseOut="eqst8.style.backgroundColor=calcoloroff;" type=button style="width:22;height:24;" onClick="calculator1('6',tx,'1');" Value="6">
+</td><td>
+<input id=eqst9 onMouseDown="eqst9.style.backgroundColor=calcoloron;" onMouseUp="eqst9.style.backgroundColor=calcoloroff;" onMouseOut="eqst9.style.backgroundColor=calcoloroff;" type=button style="width:22;height:24;" onClick="calculator1(vx,'/','1');" Value="/">
+</td></tr><tr><td>
+<input id=eqst10 onMouseDown="eqst10.style.backgroundColor=calcoloron;" onMouseUp="eqst10.style.backgroundColor=calcoloroff;" onMouseOut="eqst10.style.backgroundColor=calcoloroff;" type=button style="width:22;height:24;" onClick="calculator1('1',tx,'1');" Value="1">
+</td><td>
+<input id=eqst11 onMouseDown="eqst11.style.backgroundColor=calcoloron;" onMouseUp="eqst11.style.backgroundColor=calcoloroff;" onMouseOut="eqst11.style.backgroundColor=calcoloroff;" type=button style="width:22;height:24;" onClick="calculator1('2',tx,'1');" Value="2">
+</td><td>
+<input id=eqst12 onMouseDown="eqst12.style.backgroundColor=calcoloron;" onMouseUp="eqst12.style.backgroundColor=calcoloroff;" onMouseOut="eqst12.style.backgroundColor=calcoloroff;" type=button style="width:22;height:24;" onClick="calculator1('3',tx,'1');" Value="3">
+</td><td>
+<input id=eqst13 onMouseDown="eqst13.style.backgroundColor=calcoloron;" onMouseUp="eqst13.style.backgroundColor=calcoloroff;" onMouseOut="eqst13.style.backgroundColor=calcoloroff;" type=button style="width:22;height:24;" onClick="calculator1(vx,'+','1');" Value="+">
+</td></tr><tr><td>
+<input id=eqst14 onMouseDown="eqst14.style.backgroundColor=calcoloron;" onMouseUp="eqst14.style.backgroundColor=calcoloroff;" onMouseOut="eqst14.style.backgroundColor=calcoloroff;" type=button style="width:22;height:24;" onClick="calculator1('0',tx,'1');" Value="0">
+</td><td>
+<input id=eqst15 onMouseDown="eqst15.style.backgroundColor=calcoloron;" onMouseUp="eqst15.style.backgroundColor=calcoloroff;" onMouseOut="eqst15.style.backgroundColor=calcoloroff;" type=button style="width:22;height:24;" onClick="calculator1('.',tx,'1');" Value="."><input id=eqst225 type=hidden style="width:0;height:0;" onClick="calculator1(vx,'=');" Value="">
+</td><td>
+<input id=eqst16 onMouseDown="eqst16.style.backgroundColor=calcoloron;" onMouseUp="eqst16.style.backgroundColor=calcoloroff;" onMouseOut="eqst16.style.backgroundColor=calcoloroff;" type=button style="width:22;height:24;" onClick="calculator1(vx,tx,'+/-');" Value="+/-">
+</td><td>
+<input id=eqst17 onMouseDown="eqst17.style.backgroundColor=calcoloron;" onMouseUp="eqst17.style.backgroundColor=calcoloroff;" onMouseOut="eqst17.style.backgroundColor=calcoloroff;" type=button style="width:22;height:24;" onClick="calculator1(vx,'-','1');" Value="-">
+</td></tr></table>
+
+
+</form>
+
+</span>
+
+
+
+<form name="box" style="z-index:2;">
+<font size=2 face="Tahoma" style="z-index:2;">
+<table width=958 height=580 border=0 align="center" class="stifp" style="z-index:2;"><tr><td>
+<table width=955 border=0 valign=bottom style="z-index:2;"><tr valign=bottom><td valign=bottom><table border=0 height=90 width=128 valign=bottom align=left><tr valign=bottom>
+<td valign=bottom>
+<form style="z-index:2;"><table border=0 align=center valign=bottom style="z-index:2;"><tr valign=bottom><td valign=bottom><input  style="border:solid 1px;" class="dag" onMouseOut="this.blur();" name=w type=button onClick="RunningTime1()" Value="Speed"></td></tr></table>
+<table border=0 style="z-index:2;"><tr><td><input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime2()" Value="Miles">
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime3()" Value="Hours"></td></tr></table></td></tr></table>
+<table border=0 width=800 align=right style="z-index:2;"><tr><td height=45 valign=top><center>
+<table border=0 style="z-index:2;"><tr><td><input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime22()" Value="Kilometers - Meters">
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime23()" Value="Meters - Kilometers">
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime26()" Value="Meters - Centimeters">
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime27()" Value="Centimeters - Meters"></td></tr></table></td></tr><tr><td align=center height=40 valign=bottom><span id=targ style="position:relative;left:-20;"><font face="Tahoma"><input type="text" name="answer" value="Answer" size=50 style="word-spacing:3px;border-style:solid;border-color:lightblue;border-width:1px;background-color:transparent;width:350;color:blue;font-family:Tahoma;font-size:15;" onContextMenu="okcpy=1;" onMouseOut="if(okcpy!=1){this.blur();};"></font></span><input style="border:solid 1px;" type=button onClick="document.box.answer.value='Answer';'';r=0;ans=0;" onMouseUp="this.blur();" onMouseMove="this.blur();" Value="Clear" class="jab" style="color:blue;background-color:ltgrey;border:0;height:20;">
+</center></td></tr></table></td></tr></table>
+</form>
+
+<script language="javascript">
+if (navigator.appName=="Netscape" && isopera!=1) { document.write("<br><br>");};
+</script>
+
+<form style="z-index:4;">
+<table border=0 width=974 style="position:relative;top:-10;"><tr><td><table border=0><tr><td><input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime6()" Value="Inches - Millimeters">
+<input name=milinch id=milinch style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime7()" Value="Millimeters - Inches"></td></tr></table><table height=2 width=2 border=0></td></tr><tr><td></table><table border=0><tr><td>
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime8()" Value="Inches - Centimeters">
+<input name=centim id=centim style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime9()" Value="Centimeters - Inches"></td></tr></table>
+</td><td width=60% align=center><table width=20% height=80 border=0 align=left valign=center><tr><td align=center style="position:relative;top:5;">
+
+<table border=0><tr><td>
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime37()" Value="Fraction-Decimal"></td></tr></table>
+<table border=0><tr><td>
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime38()" Value="Decimal-Fraction"></td></tr></table>
+<table border=0><tr><td>
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime60();" Value="Reduce Fraction"></td></tr></table>
+
+
+</td></tr></table><table style="position:relative;top:15;" width=72% border=0><tr><td><table border=0 align=center><tr><td>
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime12()" Value="Miles - Kilometers">
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime13()" Value="Kilometers - Miles"></td></tr></table></td></tr><tr><td><center><table border=0><tr><td align=center>
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime24()" Value="Miles - Feet">
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime25()" Value="Feet - Miles"></td></tr></table></center></td></tr></table>
+</td></tr><tr style="position:relative;top:-10;"><td><table border=0"><tr><td>
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime14()" Value="Feet - Centimeters">
+<input name=centft id=centft style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime15()" Value="Centimeters - Feet"></td></tr></table><table border=0><tr><td align=center>
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime10()" Value="Feet - Meters">
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime11()" Value="Meters - Feet"></td></tr></table>
+</td><td width=60% align=center><table width=20% height=20 border=0 align=left><tr><td>
+<table border=0 style="position:relative;top:15;"><tr><td>
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime36()" Value="Prime Numbers"></td></tr></table>
+</td></tr></table><table width=72% border=0 align=center><tr><td><center><table border=0 align=center><tr><td>
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime16()" Value="Yards - Meters">
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime17()" Value="Meters - yards"></td></tr></table><table border=0><tr><td align=center>
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime18()" Value="Yards - Feet">
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime19()" Value="Feet - yards"></td></tr></table></td></tr></table>
+</td></tr></table><table border=0 width=97%  style="position:relative;top:-12;"><tr><td width=40%>
+<table border=0><tr><td><input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime20()" Value="Pounds - Kilograms">
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime21()" Value="Kilograms - Pounds"></td></tr></table></td><td width=22%>
+<table border=0 align=center style="position:relative;top:5;"><tr><td><input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime39()" Value="Ounces - Grams"></td></tr></table></td><td>
+<table border=0 align=center style="position:relative;left:10;"><tr><td><input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime28()" Value="Gallons - Liters">
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime29()" Value="Liters - Gallons"></td></tr></table></td></tr><tr style="position:relative;top:2;"><td width=40%>
+<table border=0><tr><td><input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime5()" Value="fahrenheit - celsius">
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime4()" Value="celsius - fahrenheit"></td></tr></table></td><td>
+<table border=0 align=center style="position:relative;top:5;"><tr><td><input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime40()" Value="Grams - Ounces"></td></tr></table>
+</td><td>
+<table border=0 align=center style="position:relative;left:10;"><tr><td><input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime30()" Value="Liters - Quarts">
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime31()" Value="Quarts - Liters"></td></tr></table>
+</td></tr><tr><td>
+
+<table border=0 align=left style="position:relative;top:2;"><tr><td><input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime49()" Value="Celsius - Kelvin">
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime50()" Value="Kelvin - Celsius"></td></tr></table>
+
+</td><td></td><td>
+<table border=0 align=center style="position:relative;left:10;top:2;"><tr><td><input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime46()" Value="Pints - Liters">
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime45()" Value="Liters - Pints"></td></tr></table>
+</td></tr></table>
+<table border=0 width=96% style="position:relative;top:-25;" ><tr><td width=300>
+<table border=0 align=left><tr><td><input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime43()" Value="US Gallons - Imperial Gallons"></td></tr><tr><td>
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime44()" Value="Imperial Gallons - US Gallons"></td></tr></table>
+</td><td>
+<table border=0 align=center style="position:relative;top:-14;"><tr><td><input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime32()" Value="Milliliters - Fl Oz.">
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime33()" Value="Fl Oz. - Milliliters"></td></tr></table>
+<table border=0 align=center style="position:relative;top:-14;"><tr><td><input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime34()" Value="Fl Oz. - Liters">
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime35()" Value="Liters - Fl Oz."></td></tr></table>
+<table border=0 align=center style="position:relative;top:-14;"><tr><td><input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime41()" Value="Milliliters - Liters">
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime42()" Value="Liters - Milliliters"></td></tr></table>
+</td><td>
+<table border=0  width=300><tr><td><center>
+<table border=0><tr><td><input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime47()" Value="Metric Tons - Short Tons"></td></tr><tr><td>
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime48()" Value="Short Tons - Metric Tons"></td></tr></table>
+</td></tr></table>
+</td></tr></table>
+<table border=0 width=895 style="position:relative;top:-40;"><tr><td width=160>
+
+<table border=0><tr><td><input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime51()" Value="Light Years - Miles"></td></tr><tr><td>
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime52()" Value="Miles - Light Years"></td></tr></table>
+
+</td><td width=60%><center>
+
+<table border=0 style="position:relative;left:45;"><tr><td><input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime55()" Value="Tablespoons - Pints"></td></tr><tr><td>
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime56()" Value="Pints - Tablespoons"></td></tr></table>
+
+</td><td width=160>
+
+<table border=0><tr><td><input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime53()" Value="Speed of Light - MPH"></td></tr><tr><td>
+<input style="border:solid 1px;" class="dag" onMouseOut="this.blur();" type=button onClick="RunningTime54()" Value="MPH - Speed of Light"></td></tr></table>
+
+</td></tr></table>
+
+</form>
+
+</form>
+
+
+
+
+
+
+<script language="javascript"><!--- 
+
+document.calc2.total.value = "0";gx=0;gak="+";vx="";dcml=0;tx="";fx=0;bb=0;lag="+";wx="";dx="";ik="";mod="";mod2="";pus="";lag2=0;gaktot="";lagtot="";ticp="-";ticn="";ivi=0;isk=22;lig="";gh="";rtotn=1;rtot="";rtot=new Array(450);qx=1;gh=new Array(2);
+
+
+  function makedo (q,s) { if (navigator.appName!="Netscape" && isopera!=1) { calc1.filters.revealTrans.duration=s;calc1.filters.revealTrans.transition=q;calc1.filters[0].Apply();calc1.filters[0].Play(); }; };
+
+
+  function  calculator1(vx,tx,wx) { 
+
+if(document.calc2.total.value.substring(0,1)=="0" && vx!="." && dcml!="1" && gx==0){document.calc2.total.value=document.calc2.total.value.substring(1,455);};
+
+
+
+if (tx!="") { lag=tx; lag+=""; };
+
+
+if (wx=="+/-" && gx!=2 && vx!=".") { mod=gak.substring(gak.lastIndexOf(lag,555),555); mod2=gak.substring(gak.lastIndexOf(lag,555),555).length; gak=gak.substring(0,gak.length-mod2); if (mod.substring(0,1)=="+") { mod="-"+mod.substring(1,555); lag="-"; if(lag2=="+") {document.calc2.total.value=mod.substring(1,555); lag2="-";} else {document.calc2.total.value=mod;}; } else {      
+  if (mod.substring(0,1)=="-") { mod="+"+mod.substring(1,555); lag="+"; if(lag2=="-") {document.calc2.total.value=lag2+""+mod.substring(1,555); lag2="+";} else {document.calc2.total.value=mod.substring(1,555);}; } else {
+  if (mod.substring(0,1)=="*" && mod.substring(1,2)=="-") { mod="*"+mod.substring(2,555); lag="*"; document.calc2.total.value=mod.substring(1,555); }    else {        
+  if (mod.substring(0,1)=="*" && mod.substring(1,2)!="-") { mod="*-"+mod.substring(1,555); lag="*"; document.calc2.total.value=mod.substring(1,555); }   else {
+  if (mod.substring(0,1)=="/" && mod.substring(1,2)=="-") { mod="/"+mod.substring(2,555); lag="/"; document.calc2.total.value=mod.substring(1,555); }  else {
+  if (mod.substring(0,1)=="/" && mod.substring(1,2)!="-") { mod="/-"+mod.substring(1,555); lag="/"; document.calc2.total.value=mod.substring(1,555); };
+   };   };   };   };     }; 
+
+
+gx=0; gak=gak+mod;  } else { 
+
+if (gx==2) { bb=0; dcml=0; };
+
+if (bb<=16) {
+
+if (vx=="." && dcml!="1") { if (gx==2) { document.calc2.total.value = ""; }; gx=0; gak=gak+vx; document.calc2.total.value = document.calc2.total.value+vx; dcml=1; };
+if (vx=="0") { if (gx==2) { document.calc2.total.value = ""; }; gx=0; gak=gak+vx; document.calc2.total.value = document.calc2.total.value+vx; };
+if (vx=="1") { if (gx==2) { document.calc2.total.value = ""; }; gx=0; gak=gak+vx; document.calc2.total.value = document.calc2.total.value+vx; };
+if (vx=="2") { if (gx==2) { document.calc2.total.value = ""; }; gx=0; gak=gak+vx; document.calc2.total.value = document.calc2.total.value+vx; };
+if (vx=="3") { if (gx==2) { document.calc2.total.value = ""; }; gx=0; gak=gak+vx; document.calc2.total.value = document.calc2.total.value+vx; };
+if (vx=="4") { if (gx==2) { document.calc2.total.value = ""; }; gx=0; gak=gak+vx; document.calc2.total.value = document.calc2.total.value+vx; };
+if (vx=="5") { if (gx==2) { document.calc2.total.value = ""; }; gx=0; gak=gak+vx; document.calc2.total.value = document.calc2.total.value+vx; };
+if (vx=="6") { if (gx==2) { document.calc2.total.value = ""; }; gx=0; gak=gak+vx; document.calc2.total.value = document.calc2.total.value+vx; };
+if (vx=="7") { if (gx==2) { document.calc2.total.value = ""; }; gx=0; gak=gak+vx; document.calc2.total.value = document.calc2.total.value+vx; };
+if (vx=="8") { if (gx==2) { document.calc2.total.value = ""; }; gx=0; gak=gak+vx; document.calc2.total.value = document.calc2.total.value+vx; };
+if (vx=="9") { if (gx==2) { document.calc2.total.value = ""; }; gx=0; gak=gak+vx; document.calc2.total.value = document.calc2.total.value+vx; };
+bb++;
+};
+
+pokaw=gak+2-2; if (pokaw==0) {gak=0;};
+
+if (tx=="+" && gx!=2 && gak!="") { lagtot=tx; lagtot+=""; gaktot+=""; rtot[rtotn]=lagtot+""+gaktot; rtotn++; fx=0; gh[qx]=tx; ivi=1; isk=22; if (ivi==1) { gx=2; gak=eval(gak); document.calc2.total.value = gak; lag2=0; gaktot+=""; rtot[rtotn-1]=lagtot+gaktot; gak=gak+tx; } else { lag=tx; gx=2; gak=gak+tx; }; qx++; ivi=0; };
+if (tx=="-" && gx!=2 && gak!="") { lag2="-"; lagtot=tx; lagtot+=""; gaktot+=""; rtot[rtotn]=lagtot+""+gaktot; rtotn++; fx=0; gh[qx]=tx; ivi=1; isk=22; if (ivi==1) { gx=2; gak=eval(gak); document.calc2.total.value = gak; gaktot+=""; rtot[rtotn-1]=lagtot+gaktot; gak=gak+tx; } else { lag=tx; gx=2; gak=gak+tx; }; qx++; ivi=0; };
+if (tx=="*" && gx!=2 && gak!="") { lagtot=tx; lagtot+=""; gaktot+=""; rtot[rtotn]=lagtot+""+gaktot; rtotn++; fx=0; gh[qx]=tx; while(isk>=0){if(gh[isk]=="-" || gh[isk]=="+" || gh[isk]=="/"){ivi=0;isk=-55;} else{ivi=1;};isk--;}; isk=22; if (ivi==1) { gx=2; gak=eval(gak); document.calc2.total.value = gak; lag2=0; gaktot+=""; rtot[rtotn-1]=lagtot+gaktot; gak=gak+tx; } else { lag=tx; gx=2; gak=gak+tx; }; qx++; ivi=0; };
+if (tx=="/" && gx!=2 && gak!="") { lagtot=tx; lagtot+=""; gaktot+=""; rtot[rtotn]=lagtot+""+gaktot; rtotn++; fx=0; gh[qx]=tx; while(isk>=0){if(gh[isk]=="-" || gh[isk]=="+"){ivi=0;isk=-55;} else{ivi=1;};isk--;}; isk=22; if (ivi==1) { gx=2; gak=eval(gak); document.calc2.total.value = gak; lag2=0; gaktot+=""; rtot[rtotn-1]=lagtot+gaktot; gak=gak+tx; } else { lag=tx; gx=2; gak=gak+tx; }; qx++; ivi=0; };
+if (tx=="=" && gx!=2 && gak!="") { gx=0;vx="";wx="";tx="";fx=0;bb=20;dx="";ik="";pus="";lag2=0;ticp="-";ticn="";ivi=0;isk=22;lig="";gh="";qx=1;gh=new Array(2); gak=eval(gak); gak+=""; if (gak.substring(1,2)=="-"){ lag="-"; } else { lag="+"; }; document.calc2.total.value = gak; if (gak.substring(0,1)!="-"){ gak="+"+gak; }; };
+
+};
+
+/*document.calc2.total.value = gak; tempdelete=2-2+5*4/3*2+3;*/
+if(gak==0){gx=0;lag2=0;ik='';pus='';gak='+';vx='';document.calc2.total.value='0';tx='';dcml=0;lig='';wx='';fx=0;isk=22;ivi=0;gaktot='';lagtot='';qx=1;bb=0;rtotn=1;rtot='';rtot=new Array(450);gh='';gh=new Array(2);lag='+';dx='';ticp='-';ticn='';};
+
+};
+
+
+
+
+
+
+r=0;
+ans=0;
+
+  function  RunningTime1() {
+
+  e=1;
+
+  if (e==1) {
+
+p=prompt("how many miles/kilometers","1"); if(p==null){p=0;q=0;return false;};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){p=1;q=1;RunningTime1();};};comcount2++;};};p+="";
+q=prompt("how many hours/minutes","1"); if(q==null){p=0;q=0;return false;};comcount2=0;if(q!=null){while(comcount2<=q.length) {if(q.charCodeAt(comcount2)>=58 || q.charCodeAt(comcount2)<=39){if(q.charCodeAt(comcount2)!=32){p=1;q=1;RunningTime1();};};comcount2++;};};q+="";
+
+  s=eval(p);
+  t=eval(q); 
+
+  r = (Math.round(((s/t)*10000)))/10000;
+
+  printIt="your speed...."+r+" MPH/KPH";r+="";
+
+  if(r.substring(0,1)!="I" && r.substring(0,1)!="N"){document.box.answer.value = printIt;}else{r=0};
+
+};};
+
+
+  function  RunningTime2() {
+
+  e=2;
+
+  if (e==2) {
+
+p=prompt("What speed","1"); if(p==null){p=0;q=0;return false;};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){p=1;q=1;RunningTime2();};};comcount2++;};};p+="";
+q=prompt("how many hours","1"); if(q==null){p=0;q=0;return false;};comcount2=0;if(q!=null){while(comcount2<=q.length) {if(q.charCodeAt(comcount2)>=58 || q.charCodeAt(comcount2)<=39){if(q.charCodeAt(comcount2)!=32){p=1;q=1;RunningTime2();};};comcount2++;};};q+="";
+
+  s=eval(p);
+  t=eval(q); 
+
+  r = (Math.round(((s*t)*10000)))/10000;
+ 
+  printIt="your distance...."+r+" Miles/Kilometers";r+="";
+
+  if(r.substring(0,1)!="I" && r.substring(0,1)!="N"){document.box.answer.value = printIt;}else{r=0};
+
+};};
+
+
+  function  RunningTime3() {
+
+  e=3;
+
+  if (e==3) {
+
+p=prompt("how many Miles/Kilometers","1"); if(p==null){p=0;q=0;return false;};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){p=1;q=1;RunningTime3();};};comcount2++;};};p+="";
+q=prompt("What speed","1"); if(q==null){p=0;q=0;return false;};comcount2=0;if(q!=null){while(comcount2<=q.length) {if(q.charCodeAt(comcount2)>=58 || q.charCodeAt(comcount2)<=39){if(q.charCodeAt(comcount2)!=32){p=1;q=1;RunningTime3();};};comcount2++;};};q+="";
+
+  s=eval(p);
+  t=eval(q); 
+
+  f = s/t;
+
+  d = Math.round((Math.abs((Math.floor(f))-f))*60);
+
+  a = Math.floor(f);
+
+  r = a+(f-a);
+ 
+  printIt="your hours...."+a+"   "+d+"mins.";a+="";d+="";
+
+  if(a.substring(0,1)!="I" && d.substring(0,1)!="I" && a.substring(0,1)!="N" && d.substring(0,1)!="N"){document.box.answer.value = printIt;}else{r=0;};
+
+};};
+
+
+  function  RunningTime4() {
+
+  e=4
+
+  if (e==4) {
+
+p=prompt("Celsius",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime4();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = (s*(9*.2))+32;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Fº";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+  function  RunningTime5() {
+
+  e=5
+
+  if (e==5) {
+
+p=prompt("Fahrenheit",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime5();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = (s-32)*(5/9);
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Cº";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+  function  RunningTime6() {
+
+  e=6
+
+  if (e==6) {
+
+p=prompt("Inches",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime6();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s*25.4;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Millimeters";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+  function  RunningTime7() {
+
+  e=7
+
+  if (e==7) {
+
+p=prompt("Millimeters",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime7();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s/25.4;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Inches";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+  function  RunningTime8() {
+
+  e=8
+
+  if (e==8) {
+
+p=prompt("Inches",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime8();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s/.3937;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Centimeters";
+
+  document.box.answer.value = printIt;
+
+};};
+
+  function  RunningTime9() {
+
+  e=9
+
+  if (e==9) {
+
+p=prompt("Centimeters",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime9();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s*.3937;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Inches";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+  function  RunningTime10() {
+
+  e=10
+
+  if (e==10) {
+
+p=prompt("Feet",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime10();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s/3.281;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Meters";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+
+  function  RunningTime11() {
+
+  e=11
+
+  if (e==11) {
+
+p=prompt("Meters",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime11();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s*3.281;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Feet";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+  function  RunningTime12() {
+
+  e=12
+
+  if (e==12) {
+
+p=prompt("Miles",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime12();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s*1.6093440;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Kilometers";
+
+  document.box.answer.value = printIt;
+
+};};
+
+  function  RunningTime13() {
+
+  e=13
+
+  if (e==13) {
+
+p=prompt("Kilometers",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime13();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s/1.6093440;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Miles";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+
+  function  RunningTime14() {
+
+  e=14
+
+  if (e==14) {
+
+p=prompt("Feet",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime14();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s*30.48;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Centimeters";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+  function  RunningTime15() {
+
+  e=15
+
+  if (e==15) {
+
+p=prompt("Centimeters",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime15();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s/30.48;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Feet";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+
+  function  RunningTime16() {
+
+  e=16
+
+  if (e==16) {
+
+p=prompt("Yards",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime16();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s*.914;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Meters";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+
+  function  RunningTime17() {
+
+  e=17
+
+  if (e==17) {
+
+p=prompt("Meters",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime17();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s/.914;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Yards";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+  function  RunningTime18() {
+
+  e=18
+
+  if (e==18) {
+
+p=prompt("Yards",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime18();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = (s*.914)*3.3;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Feet";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+  function  RunningTime19() {
+
+  e=19
+
+  if (e==19) {
+
+p=prompt("Feet",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime19();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = (s/3.3)/.914;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Yards";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+  function  RunningTime20() {
+
+  e=20
+
+  if (e==20) {
+
+p=prompt("Pounds",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime20();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = ((s/2.20462260)+(s*.45359237))/2;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Kilograms";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+  function  RunningTime21() {
+
+  e=21
+
+  if (e==21) {
+
+p=prompt("Kilograms",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime21();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = ((s*2.20462260)+(s/.45359237))/2;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Pounds";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+  function  RunningTime22() {
+
+  e=22
+
+  if (e==22) {
+
+p=prompt("Kilometers",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime22();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s*1000;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Meters";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+  function  RunningTime23() {
+
+  e=23
+
+  if (e==23) {
+
+p=prompt("Meters",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime23();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s/1000;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Kilometers";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+  function  RunningTime24() {
+
+  e=24
+
+  if (e==24) {
+
+p=prompt("Miles",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime24();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s*5280;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Feet";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+
+  function  RunningTime25() {
+
+  e=25
+
+  if (e==25) {
+
+p=prompt("Feet",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime25();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s/5280;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Miles";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+
+  function  RunningTime26() {
+
+  e=26
+
+  if (e==26) {
+
+p=prompt("Meters",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime26();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s/.01;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Centimeters";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+  function  RunningTime27() {
+
+  e=27
+
+  if (e==27) {
+
+p=prompt("Centimeters",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime27();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s*.01;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Meters";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+  function  RunningTime28() {
+
+  e=28
+
+  if (e==28) {
+
+p=prompt("Gallons",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime28();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s*3.78541200;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Liters";
+
+  document.box.answer.value = printIt;
+
+};};
+
+  function  RunningTime29() {
+
+  e=29
+
+  if (e==29) {
+
+p=prompt("Liters",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime29();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s/3.78541200;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Gallons";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+  function  RunningTime30() {
+
+  e=30
+
+  if (e==30) {
+
+p=prompt("Liters",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime30();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s*1.05668820;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Quarts";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+  function  RunningTime31() {
+
+  e=31
+
+  if (e==31) {
+
+p=prompt("Quarts",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime31();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s/1.05668820;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Liters";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+  function  RunningTime32() {
+
+  e=32
+
+  if (e==32) {
+
+p=prompt("Milliliters",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime32();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s/29.6;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Fl Oz.";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+  function  RunningTime33() {
+
+  e=33
+
+  if (e==33) {
+
+p=prompt("Fl Oz.",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime33();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s*29.6;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Milliliters";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+
+  function  RunningTime34() {
+
+  e=34
+
+  if (e==34) {
+
+p=prompt("Fl Oz.",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime34();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = (s/.034)/1000;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" liters";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+  function  RunningTime35() {
+
+  e=35
+
+  if (e==35) {
+
+p=prompt("liters",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime35();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = (s*.034)*1000;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Fl Oz.";
+
+  document.box.answer.value = printIt;
+
+};};
+
+function RunningTime36() {
+
+
+m=prompt("How high?","20");if(m==null){m=1};comcount2=0;if(m!=null){while(comcount2<=m.length) {if(m.charCodeAt(comcount2)>=58 || m.charCodeAt(comcount2)<=47){RunningTime36();};comcount2++;};}; if(m<=0){m=1};m=Math.abs(m);
+
+
+ls=true;if(navigator.appName=="Netscape" && isopera!=1){if (m>=200) { ls=confirm("Netscape Calculates Primes Slowly. Continue Operation?"); }; } else{if (m>=1500) { ls=confirm("Very Large Primes Calculate Slowly. Continue Operation?"); };};
+
+if (ls==false) { m=1; };
+
+
+printIt=1;
+x=1;
+s=1;
+r=1;
+q=1;
+
+
+while (x<=m) { 
+while (s<=m) { 
+a=x/s; b=Math.floor(a);   
+if(s==x){printIt=printIt+","+x};
+if(a==b){x++;s=1;};
+s++;};
+x++;
+s=1;};
+
+printIt=printIt.substring(4,printIt.length);if(printIt.length<=0){printIt=document.box.answer.value;};
+
+document.box.answer.value = printIt;
+
+};
+
+
+  function  RunningTime37() {
+
+  e=37;
+  z=1; ans+="";
+
+  if (e==37) {
+
+p=prompt("Fraction W N/D or N/D",ans);comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=44){if(p.charCodeAt(comcount2)!=32){RunningTime37();};};comcount2++;};}; 
+
+  if(p==null){p="1";skp=1;}else{skp=0;};p+="";if(p.substring(0,1)=="-"){p=p.substring(1,p.length); adnegtv="-";}else{adnegtv="";};p+="";
+
+  while(p.charAt(p.length-1)==" "){p+=""; p=p.substring(0,p.length-1);};
+
+  if (eval(parseFloat(p))==0) { RunningTime37(); };
+
+  if(p.charAt(0)==" ")  { RunningTime37(); };
+
+  u=p.indexOf(" ",1);
+
+  w=p.substring(0,u);
+
+  y=(p.indexOf("/",u))+1;
+
+  n=p.substring(u,y-1);
+
+  h=p.substring(y,150);
+
+  numm=Math.floor(Math.abs(eval(parseFloat(n))));
+
+  if (w<=0) { w=1; z=2; };
+
+  whole=Math.floor(Math.abs(eval(parseFloat(w))));
+
+  denom=Math.floor(Math.abs(eval(parseFloat(h))));if(numm<=0 || denom<=0){numm=1;denom=1;skp=1;};
+
+  ans=(denom*whole+numm)/denom;
+
+  if (z==2) { ans=ans-1; };
+
+  ans = (Math.round(ans*100000))/100000;
+
+  ans+="";
+
+  if(ans.substring(0,1)=="I" || ans.substring(0,1)=="N" || skp==1) {skp=0;} else {document.box.answer.value = adnegtv+ans;ans=adnegtv+ans;skp=0;};
+
+};};
+
+
+  function  RunningTime38() {
+
+  e=38;
+  z=1;
+
+  if (e==38) {
+
+p=prompt("Decimal",ans);if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime38();};};comcount2++;};};if(p==null){p="1";skp=1;}else{skp=0;};if(Math.abs(p)!=p){adnegtv="-";}else{adnegtv="";};p=Math.abs(p);p+="";
+
+  if (eval(p)!=Math.floor(eval(p))) { 
+
+  if (eval(p)==0) { RunningTime38(); };
+
+  s=eval(p);
+
+  s+="";
+  
+  u=s.indexOf(".",0);
+
+  n=s.substring(u+1,10000000);
+
+  whole=eval(s.substring(0,u));
+
+  if(s.substring(0,u)<1) {whole=0;};
+
+  ao=n;
+
+  ad=eval(ao);
+
+  a=ad;
+
+  a+="";
+
+  aqwr=a.length;
+
+  z=ad;
+
+  v=Math.pow(10,aqwr);
+
+ls=true;
+if (aqwr>=6) { ls=confirm("Very Large Decimals Calculate Slowly, and usually don't work. Continue Operation?"); };
+if (ls==false) { z=0; v=0; skp=1; };
+
+ee=1;
+mx=z;
+zx=v;
+sx=mx+1;
+while (sx>=1) {   
+fx = mx/sx;
+ax = Math.floor(fx);
+if (fx==ax) { 
+ss=sx;
+while (ss>=1) {   
+ff = zx/ss;
+aa = Math.floor(ff);
+if (ff==aa) { if (ss==sx) { ee=sx; ss=0; sx=0; }; };
+ss--;
+}; };
+sx--;
+};
+z=mx/ee;
+v=zx/ee;
+
+  if(z>=1){}else{z=0;};
+
+  if (whole!=0) { ans=whole+" "+z+"/"+v+""; } else { ans=z+"/"+v+""; };if(skp==1){ans=document.box.answer.value;skp=0;};
+
+  document.box.answer.value = adnegtv+ans;  } else { if(skp==1){ans=document.box.answer.value;skp=0;}else{document.box.answer.value=adnegtv+eval(p);}; };
+
+};};
+
+
+
+  function  RunningTime39() {
+
+  e=39
+
+  if (e==39) {
+
+p=prompt("ounces",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime39();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s*28.3495230;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Grams";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+
+  function  RunningTime40() {
+
+  e=40
+
+  if (e==40) {
+
+p=prompt("Grams",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime40();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s/28.3495230;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Ounces";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+
+  function  RunningTime41() {
+
+  e=41
+
+  if (e==41) {
+
+p=prompt("Milliliters",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime41();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s/1000;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Liters";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+  function  RunningTime42() {
+
+  e=42
+
+  if (e==42) {
+
+p=prompt("Liters",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime42();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s*1000;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Milliliters";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+  function  RunningTime43() {
+
+  e=43
+
+  if (e==43) {
+
+p=prompt("US Gallons",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime43();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s*1.201;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Imperial Gallons";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+
+  function  RunningTime44() {
+
+  e=44
+
+  if (e==44) {
+
+p=prompt("Imperial Gallons",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime44();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s/1.201;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" US Gallons";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+
+  function  RunningTime45() {
+
+  e=45
+
+  if (e==45) {
+
+p=prompt("Liters",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime45();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s*2.11;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Pints";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+
+  function  RunningTime46() {
+
+  e=46
+
+  if (e==46) {
+
+p=prompt("Pints",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime46();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s/2.11;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Liters";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+
+  function  RunningTime47() {
+
+  e=47
+
+  if (e==47) {
+
+p=prompt("Metric Tons",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime47();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s*1.10;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Short Tons";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+
+  function  RunningTime48() {
+
+  e=48
+
+  if (e==48) {
+
+p=prompt("Short Tons",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime48();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s/1.10;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Metric Tons";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+  function  RunningTime49() {
+
+  e=49
+
+  if (e==49) {
+
+p=prompt("Celsius",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime49();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s+273.16;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Kelvin";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+  function  RunningTime50() {
+
+  e=50
+
+  if (e==50) {
+
+p=prompt("Kelvin",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime50();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s-273.16;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Celsius";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+
+  function  RunningTime51() {
+
+  e=51
+
+  if (e==51) {
+
+p=prompt("Light Years",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime51();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s*5880000000000;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Miles";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+
+
+  function  RunningTime52() {
+
+  e=52
+
+  if (e==52) {
+
+p=prompt("Miles",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime52();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s/5880000000000;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Light Years";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+
+  function  RunningTime53() {
+
+  e=53
+
+  if (e==53) {
+
+if (r==0) { r=1; };
+
+p=prompt("Speed of Light        Units of (1,2,3,4,etc...)",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime53();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s*(185971.8*60);
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Miles per Hour";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+
+  function  RunningTime54() {
+
+  e=54
+
+  if (e==54) {
+
+p=prompt("Miles per Hour",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime54();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s/(185971.8*60);
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Times the Speed of Light";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+
+  function  RunningTime55() {
+
+  e=55
+
+  if (e==55) {
+
+p=prompt("Tablespoons",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime55();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s*.031250;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Pints";
+
+  document.box.answer.value = printIt;
+
+};};
+
+
+
+  function  RunningTime56() {
+
+  e=56
+
+  if (e==56) {
+
+p=prompt("Pints",r); if(p==null){p=0};comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=39){if(p.charCodeAt(comcount2)!=32){RunningTime56();};};comcount2++;};};p+="";
+
+  s=eval(p);
+
+  f = s/.031250;
+
+  r = (Math.round(f*1000000000))/1000000000;
+ 
+  printIt=""+r+" Tablespoons";
+
+  document.box.answer.value = printIt;
+
+
+};};
+
+
+
+
+  function  RunningTime60() {
+
+  e=60;if(ans==0){ans=1;};
+
+  if (e==60) {
+
+p=prompt("Fraction W N/D or N/D",ans);comcount2=0;if(p!=null){while(comcount2<=p.length) {if(p.charCodeAt(comcount2)>=58 || p.charCodeAt(comcount2)<=44){if(p.charCodeAt(comcount2)!=32){RunningTime60();};};comcount2++;};};
+
+  if(p==null){p="1";skp=1;}else{skp=0;};
+
+  p+="";if(p.substring(0,1)=="-"){p=p.substring(1,p.length); adnegtv="-";}else{adnegtv="";};p+="";while(p.charAt(p.length-1)==" "){p+=""; p=p.substring(0,p.length-1);};
+
+  if (eval(parseFloat(p))==0) { RunningTime60(); };
+
+  if (p.charAt(0)==" ")  { RunningTime60(); };
+
+  u=p.indexOf(" ",1);
+
+  w=p.substring(0,u);
+
+  if (w<=0) { w=0; };
+
+  y=(p.indexOf("/",u))+1;
+
+  n=p.substring(u,y-1);
+
+  h=p.substring(y,p.length);
+
+  numm=Math.floor(Math.abs(eval(parseFloat(n))));
+
+  whole=Math.floor(Math.abs(eval(parseFloat(w))));
+
+  denom=Math.floor(Math.abs(eval(parseFloat(h))));if(numm<=0 || denom<=0){numm=1;denom=1;skp=1;};
+
+ls=true;if(navigator.appName=="Netscape" && isopera!=1){if (numm>=20000 || denom>=20000) { ls=confirm("Very Large Fractions Reduce Slowly. Continue Operation?"); }; } else{if (numm>=60000 || denom>=60000) { ls=confirm("Very Large Fractions Reduce Slowly. Continue Operation?"); };};
+
+if (ls==false) { numm=1;denom=1;skp=1; };
+
+ee=1;
+mx=numm;
+zx=denom;
+sx=mx+1;
+while (sx>=1) {   
+fx = mx/sx;
+ax = Math.floor(fx);
+if (fx==ax) { 
+ss=sx;
+while (ss>=1) {   
+ff = zx/ss;
+aa = Math.floor(ff);
+if (ff==aa) { if (ss==sx) { ee=sx; ss=0; sx=0; }; };
+ss--;
+}; };
+sx--;
+};
+z=mx/ee;
+v=zx/ee;
+
+z=z+(whole*v);
+
+if (z>=v) { if (z==v) {ans=1;} else { az=Math.floor(z/v); zk=z-(az*v); if(zk==0){ans=az}else {ans=az+" "+zk+"/"+v};  }; } else {ans=z+"/"+v+" ";};
+
+  ans+="";
+
+  if(ans.substring(0,1)!="I" && ans.substring(0,1)!="N" && skp!=1){document.box.answer.value = adnegtv+ans;ans=adnegtv+ans;}else{ans=1;};
+
+  if(skp==1){skp=0;};
+
+};};
+
+function testMouse(oObject) { if(!oObject.contains(event.fromElement)) { 
+if(calc1.style.visibility=="visible"){document.calc2.eqst10.focus();document.calc2.eqst10.blur();
+if(event.keyCode==49){document.calc2.eqst10.click();};
+if(event.keyCode==50){document.calc2.eqst11.click();};
+if(event.keyCode==51){document.calc2.eqst12.click();};
+if(event.keyCode==52){document.calc2.eqst6.click();};
+if(event.keyCode==53){document.calc2.eqst7.click();};
+if(event.keyCode==54){document.calc2.eqst8.click();};
+if(event.keyCode==55){document.calc2.eqst2.click();};
+if(event.keyCode==56){document.calc2.eqst3.click();};
+if(event.keyCode==57){document.calc2.eqst4.click();};
+if(event.keyCode==48){document.calc2.eqst14.click();};
+if(event.keyCode==46){document.calc2.eqst15.click();};
+if(event.keyCode==42){document.calc2.eqst5.click();};
+if(event.keyCode==13){document.calc2.eqst225.click();};
+if(event.keyCode==47){document.calc2.eqst9.click();};
+if(event.keyCode==43){document.calc2.eqst13.click();};
+if(event.keyCode==45){document.calc2.eqst17.click();};
+};};};
+
+if (navigator.appName=="Netscape" && isopera!=1) { document.getElementById('calclr').style.top="34px"; };
+
+ //--></script>
+
+</td></tr></table>
+
+
+</html>
+
+
+<LAYER NAME=layer23 VISIBILITY=hide>
+<span style="visibility:hidden;position:absolute;top:500px;overflow:hidden;"><TEXTAREA NAME="thoughts" style="visibility:hidden;font-size:1;color:blue;" ROWS=5 COLS=8 WRAP=soft><!--
+<xmp>
+</textarea></form>
+<p>
+
+</td>
+        </tr>
+      </table>
+<!-- END MIDDLE COLUMN //-->
+</TD>
+</tr>
+</table>
+
+<table width="680" cellpacing="5" ALIGN="CENTER">
+<tr>
+<td align="center">
+<A HREF="http://webdeveloper.earthweb.com/RealMedia/ads/click_lx.cgi/ew/ewwebdev/webdeveloper.earthweb.com/webjs/jsmath/item/14210/468x60-2/AIIM_2003_1e/750x100.gif/64356530353334363365386539313130" target="_top"><IMG SRC="http://webdeveloper.earthweb.com/RealMedia/ads/Creatives/AIIM_2003_1e/750x100.gif"  ALT=""  BORDER="0"></A><img src="http://webdeveloper.earthweb.com/RealMedia/ads/adstream_lx.cgi/ew/ewwebdev/webdeveloper.earthweb.com/webjs/jsmath/item/14210/468x60-2/AIIM_2003_1e/750x100.gif/64356530353334363365386539313130?_RM_EMPTY_" Width="1" Height="1" Border="0"></td>
+</tr>
+</table>
+<table align="center" width="96%">
+        <tr>
+        <td align="center">
+<FONT SIZE="-1" FACE="Arial, Helvetica">
+*JavaScript is a registered trademark of Sun Microsystems, Inc.<p>
+<CENTER>
+<FONT SIZE="-1">
+<SPAN CLASS="nav">Copyright 2003  Jupitermedia Corporation All Rights Reserved.</SPAN><BR>
+<A HREF="http://www.internet.com/corporate/legal.html" CLASS="nav">Legal Notices</A>, <A HREF="http://www.internet.com/corporate/reprints.html#Licensing" CLASS="nav">Licensing</A>, <A HREF="http://www.internet.com/corporate/reprints.html#Reprints" CLASS="nav">Reprints</A>, & <A HREF="http://www.internet.com/corporate/reprints.html#Permissions" CLASS="nav">Permissions</A>, <A HREF="http://www.internet.com/corporate/privacy/privacypolicy.html" CLASS="nav">Privacy Policy</A>.
+<BR>
+<A HREF="http://www.itmarketer.com/">Advertise on EarthWeb</A>
+<BR>
+<A HREF="http://www.earthweb.com/"><IMG SRC="/img/URL-ew.gif" ALT="http://www.earthweb.com/" WIDTH="200" HEIGHT="18" BORDER="0"></A></FONT>
+</CENTER>
+
+        </td>
+        </tr>
+</table>
+<p>
+
+</body>
+</html>

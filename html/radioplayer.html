@@ -1,0 +1,88 @@
+<HTML>
+ <HEAD>
+<TITLE>Praticles © Radio Tuner</TITLE>
+<link rel="stylesheet" href="../css/praticles.css">
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="radio tuner,Patriek Zoetaert">
+<meta name="keywords" content="JavaScript programmeur, progress, analist-programmeur, cobol, webdsign, praticles, zpower">
+<meta name="author" content="Patriek Zoetaert">
+<meta name="company" content="ZPOWER">
+<meta name="copyright" content="Copyright © 2004 Patriek Zoetaert. All rights reserved">
+<meta name="robots" content="index,follow">
+
+<script type="text/javascript" src="js/string.js"></script>
+<script type="text/javascript" src="js/navsec.js"></script>
+<SCRIPT TYPE="text/javascript">
+
+
+
+function play()
+{
+var file = document.mform.filename.value;
+
+
+ if(file==""){
+    alert("Please select station first.");
+      }
+ else{
+
+
+    document.all.musicdiv.innerHTML="<center><EMBED onBeforeLoad='document.write(Loading)' TITLE='Praticles/Real Player Plugin' SRC='"+file+"' AUTOSTART='true'  height='100' width='500' info='Praticles'></EMBED></center>"; /*height='480' width='570'*/
+
+  }
+}
+
+function stop()
+{
+var file ="";
+document.all.musicdiv.innerHTML="";
+}
+
+
+</SCRIPT>
+</head>
+
+
+<body>
+<center>
+<h1>Praticles© Radio Tuner</h1>
+<form name="mform">
+
+<img src="../images/jumping-radio.gif" alt="Praticles© Radio Player" ></img>
+
+
+
+<br><br>
+<SELECT class=inputbox  name="filename" style="text:ffffff;background:FFCC33">
+		  <OPTION value="" selected>Select Radio Station...
+		  <OPTION value=http://users.pandora.be/patriek.zoetaert/files/radio/radio1.wpl>vrt radio1 
+		  <OPTION value=http://users.pandora.be/patriek.zoetaert/files/radio/radio2.wpl>vrt radio2
+		  <OPTION value=http://users.pandora.be/patriek.zoetaert/files/radio/klara.wpl>vrt klara
+		  <OPTION value=http://users.pandora.be/patriek.zoetaert/files/radio/donna.wpl>vrt donna 
+		  <OPTION value=http://users.pandora.be/patriek.zoetaert/files/radio/stubru.wpl>vrt stubru
+		  
+		
+		  <OPTION value=http://www.bbc.co.uk/radio1/realaudio/media/r1livev7.ram>BBC Radio 1
+		  <OPTION value=http://www.bbc.co.uk/radio2/realmedia/fmg2.ram>BBC Radio 2
+		  <OPTION value=http://www.bbc.co.uk/radio3/ram/r3g2.ram>BBC Radio 3
+		  
+		  
+		  
+		  </OPTION>
+	  </SELECT>
+
+
+
+<!--
+<input type="hidden" name="filename"  value="http://users.pandora.be/patriek.zoetaert/files/radio/donna.wpl" style="width:800;text:ffffff;background:FFCC33">
+-->
+
+<input type="button" value="Play!" class="browserbutton" onClick="play()">
+<input type="button" value="Stop!" class="browserbutton" onClick="stop()">
+</form>
+<div id="musicdiv"> </div>
+</center>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<script>
+
+
+// Edit speaking interval (seconds)
+ var speakinginterval=10
+
+// Do not edit the code below this line
+var thistime= new Date()
+var hours=thistime.getHours()
+var minutes=thistime.getMinutes()
+var ampm
+var pad = 'soundfiles/'
+speakinginterval=1000*speakinginterval
+
+if (hours<12) {
+	ampm="am"
+}
+else if (hours>=12) {
+	ampm="pm"
+	if (hours!=12) {
+		hours=hours-12
+	}
+}
+
+function speakthetimeis() {
+	document.all.typesound.src= pad +"the_time_is.wav"
+	var timer=setTimeout("speakhours()",1200)
+}
+
+function speakhours() {
+	document.all.typesound.src=pad+hours+".wav"
+	if (minutes<10) {
+		var timer=setTimeout("speakzerominutes()",1200)
+	}
+	else {
+		var timer=setTimeout("speakminutes()",1200)
+	}
+}
+
+function speakzerominutes() {
+	document.all.typesound.src=pad+"0.wav"
+	var timer=setTimeout("speakminutes()",600)
+}
+
+function speakminutes() {
+	document.all.typesound.src=pad+minutes+".wav"
+	var timer=setTimeout("speakampm()",1200)	
+}
+
+function speakampm() {
+	document.all.typesound.src=pad+ampm+".wav"
+	thistime= new Date()
+	hours=thistime.getHours()
+	minutes=thistime.getMinutes()	
+	if (hours<12) {
+		ampm="am"
+	}
+	else if (hours>=12) {
+		ampm="pm"
+		if (hours!=12) {
+			hours=hours-12
+		}
+	}
+	var content="<embed src=\""+pad+hours+".wav\" autostart=\"false\" hidden=\"true\">"
+	content+="<embed src=\""+pad+minutes+".wav\" autostart=\"false\" hidden=\"true\">"	
+	soundcontainer.innerHTML=content
+	var timer=setTimeout("speakthetimeis()",speakinginterval)	
+}
+
+if (document.all) {
+	document.write("<span id=\"soundcontainer\" style=\"position:relative;\">")
+	document.write("<embed src=\""+pad+hours+".wav\" autostart=\"false\" hidden=\"true\">")
+	document.write("<embed src=\""+pad+minutes+".wav\" autostart=\"false\" hidden=\"true\">")
+	document.write("<embed src=\""+pad+ampm+".wav\" autostart=\"false\" hidden=\"true\">")
+	document.write("</span>")
+	document.write("<embed src=\""+pad+"0.wav\" autostart=\"false\" hidden=\"true\">")
+	document.write("</span>")
+	window.onload=speakthetimeis
+}
+
+</script>
+<embed src=pad+"the_time_is.wav" autostart="true" hidden="" width="0" height="0">
+<bgsound id="typesound">
+
+

@@ -1,0 +1,161 @@
+<html>
+<head>
+<title>Patriek Zoetaert</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="Patriek Zoetaert">
+<meta name="keywords" content="JavaScript programmeur, progress, analist-programmeur, cobol, webdsign">
+<meta name="robots" content="index,follow">
+
+
+
+<style>
+div.menuBar,
+div.menuBar a.menuButton {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 8pt;
+  color: #000000;
+}
+
+div.menuBar {
+  background-color: #F0EEE2;
+  padding: 6px 2px 6px 2px;
+  text-align: center;
+  margin-left:20px;
+}
+
+div.menuBar a.menuButton {
+  background-color: transparent;
+  border: 1px solid;
+  border-color: #f0f0f0 #909090 #909090 #f0f0f0;
+  color: #000000;
+  cursor: pointer;
+  left: 0px;
+  margin: 1px;
+  padding: 2px 6px 2px 6px;
+  position: relative;
+  text-decoration: none;
+  top: 0px;
+  z-index: 100;
+}
+
+div.menuBar a.menuButton:hover {
+  background-color: transparent;
+  border-color: #909090 #f0f0f0 #f0f0f0 #909090;
+  color: #000000;
+}
+
+</style>
+
+	
+</head>
+
+
+
+<BODY STYLE="overflow:hidden" bgcolor="black" TEXT="#999999" LINK="yellow" VLINK="yellow" ALINK="red">
+
+<center>
+
+<table>
+<tr>
+<td rowspan = "2">
+  <img src="images/praticles.jpg" alt="Praticles" border ="20" width="85" height="84"></img>
+</td>
+<td>
+  <center>
+    <FONT FACE="Arial" SIZE="6" color='blue'>
+      Welcome to the website of Patriek Zoetaert !
+    </font>
+  </center>
+</td>
+<td rowspan = "2">
+  <img src="images/praticles.jpg" alt="Praticles" border ="20" width="85" height="84"></img>
+</td>
+
+</tr>
+<tr>
+<td>
+
+
+	<center>
+
+	<script>
+	<!--Write the background's sound URL between the "" like in the example below-->
+	var sound1="sound/iwia.mp3"
+	var sound2="sound/hofman.mp3"
+	var sound3="sound/pm.mp3"
+	var x=Math.random()*10
+	if (x<=3) x=sound1
+	else if (x<=6) x=sound2
+	else 
+	x=sound3
+	
+//	x=sound2;
+	
+	musi=x
+	<!--Don't edit from here on-->
+	function mus1()
+	{
+	if (t.options.selectedIndex==0){
+	mus.innerHTML="<embed src="+musi+" loop=-1>"
+	}
+	if (t.options.selectedIndex==1){
+	mus.innerHTML=""
+	}
+	}
+	document.write("<span id='mus' style='position:absolute;top:-90000'><embed src="+musi+" width=0 height=0 loop=true></span>")
+	</script>
+
+
+
+
+
+
+
+
+	<img src="images/cd.gif" alt="Pict" border=5 width="32" height="32" ></img>
+	
+	
+		<select name="t" onchange=mus1()>
+			<option>Enable background music 
+			<option>Disable background music 
+		</select>
+	
+	<img src="images/cd.gif" alt="Pict" border=5 width="32" height="32" ></img>
+
+	
+	<!-- Script Size:  1.29 KB -->
+	
+		<a href="http://sm9.sitemeter.com/stats.asp?site=sm9praticles" target="_blank">
+		<img src="http://sm9.sitemeter.com/meter.asp?site=sm9praticles" alt="Site Meter" border=0></a>
+	
+	<img src="images/fakkel.gif" alt="Pict" border=5 width="22" height="61" ></img>
+	
+	<A HREF="menu.html"><FONT FACE="Arial" SIZE="4" color='yellow'>GOTO MAIN SITE</font></A>
+
+	<img src="images/fakkel.gif" alt="Pict" border=5 width="22" height="61" ></img>
+	</center>
+</td>
+
+</tr>
+
+
+</table>
+
+</center>
+
+<br>
+
+<div class="menuBar">
+Fast index -->
+<a class="menuButton" href="index-body.html#main" target="index-body">Main</a>
+<a class="menuButton" href="index-body.html#info" target="index-body">Info</a>
+<a class="menuButton" href="index-body.html#sports" target="index-body">Sports</a>
+<a class="menuButton" href="index-body.html#services" target="index-body">Services</a>
+</div>
+
+
+</body>
+
+
+</html>
+

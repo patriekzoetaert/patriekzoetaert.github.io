@@ -1,0 +1,727 @@
+<html>
+<head>
+<title>I am amazing @ writing javascripts!</title>
+<!--
+             
+                              
+                                                                    
+                                   ^                                 
+                                 ^^^^^                                                
+                               ^^^^^^^^^                                
+                             ^^^^^^^^^^^^^                              
+                           ^^^^^^^^^^^^^^^^^                                 
+                         ^^^^^^^^^^^^^^^^^^^^^                                
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^                        
+                     -----------------------------
+                   .................................                            
+                 ><|*******-----------------*******|><                    
+               ><><|******** phils amazing ********|><><                      
+             ><><><|*********** website ***********|><><><                   
+           ><><><><|**************---**************|><><><><                   
+         ><><><><><|***************-***************|><><><><><            
+       ---------------------------------------------------------          
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~        
+   /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\   
+   
+
+    
+//-->
+<!--                     
+        _______                        
+       /       /|               
+      /   ?   / |                
+     /_______/  |                  
+     |       |? /                
+     |   ?   | /                        
+     |_______|/                
+   
+      
+        ____      
+       /\   \
+      /  \___\
+      \  /   /
+       \/___/
+      
+//-->
+
+
+<style>
+{cursor:crosshair;}
+a{text-decoration:none; color="#0000FF";}
+a:hover{color="#0000FF"; text-decoration:underline;}
+a:hover{color="#0000FF"; text-decoration:overline;}
+a:hover{cursor:crosshair;}
+</style>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+if (!document.layers && !document.all) {
+		event = "nope"
+}
+
+function doTooltip(evt,txt) 
+{
+var tip = '<TABLE BGCOLOR="#000000" WIDTH="280" CELLSPACING="0" CELLPADDING="1" BORDER="0"><TR><TD><TABLE BGCOLOR="#FFFFCC" WIDTH="100%" CELLSPACING="0" CELLPADDING="4" BORDER="0"><TR><TD CLASS="tip"><center><marquee width="75%">' + txt  + '</marquee></center></TD></TR></TABLE></TD></TR></TABLE>'
+
+
+if (document.layers) {
+	document.tooltip.document.write(tip)
+	document.tooltip.document.close()
+	document.tooltip.left = evt.pageX + 8
+	document.tooltip.top = evt.pageY + 8
+	document.tooltip.visibility = "show"
+}
+	
+if (document.all) {
+ 	document.all.tooltip.innerHTML = tip
+ 	document.all.tooltip.style.pixelLeft = evt.offsetX + 8
+ 	document.all.tooltip.style.pixelTop = evt.offsetY + 8
+ 	document.all.tooltip.style.visibility = "visible"
+ }
+}
+
+function hideTip() {
+if (document.layers) {
+	document.tooltip.visibility = "hide"  
+ }
+
+if (document.all) {
+		document.all.tooltip.style.visibility = "hidden"  
+ }
+}
+//-->
+</SCRIPT>
+
+<style type="text/css">
+<!-- 
+.textanimlink,a {
+text-decoration : none;
+}
+P.main {
+	font-family : Arial;
+	font-size : 15pt;
+	font-weight : bold;
+}
+-->
+</style>
+
+
+</head>
+
+
+<body bgcolor="#000000" onload="if (document.all||document.layers) {regenerate2();update()}" onunload="javascript:me()" link="#00FFFF" vlink="#00FFFF" alink="#00FFFF">
+
+
+<SCRIPT language="JScript">
+<!--
+
+var scrollPct, prevStep, nextStep, interStep
+
+steps = new Array();
+steps[0] = new Array(128,128,128);
+steps[1] = new Array(255,0,0);
+steps[2] = new Array(255,255,0);
+steps[3] = new Array(0,255,0);
+steps[4] = new Array(0,255,255);
+steps[5] = new Array(0,0,255);
+steps[6] = new Array(255,0,255);
+steps[7] = new Array(255,0,0);
+steps[8] = new Array(255,255,255);
+
+function newColor(chan) {
+	var i=Math.floor(steps[prevStep][chan]+interStep*(steps[nextStep][chan]-steps[prevStep][chan]));
+	return i;
+	}
+
+function scrollFunk() {
+	scrollPct=(steps.length-1)*document.body.scrollTop/(document.body.scrollHeight-document.body.clientHeight);
+	prevStep=Math.floor(scrollPct);
+	nextStep=Math.ceil(scrollPct);
+	interStep=scrollPct-prevStep;
+	var newRGB="rgb("+newColor(0)+","+newColor(1)+","+newColor(2)+")";
+	var invRGB="rgb("+(255-newColor(0))+","+(255-newColor(1))+","+(255-newColor(2))+")";
+	if (document.body.style.scrollbarTrackColor != null) {
+		document.body.style.scrollbarFaceColor=newRGB;
+		document.body.style.scrollbarTrackColor=invRGB;
+		}
+	}
+
+window.onscroll=scrollFunk;
+//-->
+</SCRIPT>
+ 
+<script LANGUAGE="JavaScript">
+
+function click() {
+if (event.button==2) {
+alert('haha, don\'t think u can get me that easily!')
+}
+}
+document.onmousedown=click
+// --> 
+
+</script>
+<script language="javascript">
+<!--
+function me()
+{
+ var me = confirm('don\'t go '+ name +'')
+ if (me==true)
+ {
+ alert('good choice!')
+ window.location='Javascripts!!!!!!!!!!!!.htm'
+ }
+else
+ {
+ alert('bad choice!')
+ }
+}
+//-->
+</script>
+<script language="javascript">
+<!--
+var name = prompt('what is your name?','I dont have a name!')
+if (  (name=='I dont have a name!') || (name=='')  )
+{
+name="mate"
+}
+if (name=='james')
+{
+name="crappy name!"
+}
+if (name==null)
+{
+name='dude'
+}
+if (((name=='phil')||(name=='philip')||(name=='phillip')))
+{
+name='phil. I have the same name as you!'
+}
+if ((((name=='dave')||(name=='david')||(name=='Dave')||(name=='David'))))
+{
+name='Butch!!'
+}
+//-->
+</script>
+
+<script>
+mesk=new Array();mesk[10]="A";mesk[11]="B";mesk[12]="C";mesk[13]="D";mesk[14]="E";mesk[15]="F";A=10;B=11;C=12;D=13;E=14;F=15;let="ABCDEF";function mes(num){if(let.indexOf(num) != -1){return eval(num)};else{if(num < 10){return eval(num)};else{return mesk[num]}}};
+
+function color(begin,einde,stappen,stap){
+hh1=(mes(begin.charAt(0))*16)+mes(begin.charAt(1));
+hh2=(mes(begin.charAt(2))*16)+mes(begin.charAt(3));
+hh3=(mes(begin.charAt(4))*16)+mes(begin.charAt(5));
+pp1=(mes(einde.charAt(0))*16)+mes(einde.charAt(1));
+pp2=(mes(einde.charAt(2))*16)+mes(einde.charAt(3));
+pp3=(mes(einde.charAt(4))*16)+mes(einde.charAt(5));
+
+if(hh1 < pp1){ff1=hh1+Math.floor((pp1-hh1)/stappen*stap);
+ff1=eval("\'"+mes(Math.floor(ff1/16))+"\'")+eval("\'"+mes(ff1-(Math.floor(ff1/16)*16))+"\'");}
+;else{ff1=hh1-Math.floor((hh1-pp1)/stappen*stap);
+ff1=eval("\'"+mes(Math.floor(ff1/16))+"\'")+eval("\'"+mes(ff1-(Math.floor(ff1/16)*16))+"\'");}
+if(hh2 < pp2){ff2=hh2+Math.floor((pp2-hh2)/stappen*stap);
+ff2=eval("\'"+mes(Math.floor(ff2/16))+"\'")+eval("\'"+mes(ff2-(Math.floor(ff2/16)*16))+"\'");}
+;else{ff2=hh2-Math.floor((hh2-pp2)/stappen*stap);
+ff2=eval("\'"+mes(Math.floor(ff2/16))+"\'")+eval("\'"+mes(ff2-(Math.floor(ff2/16)*16))+"\'");}
+if(hh3 < pp3){ff3=hh3+Math.floor((pp3-hh3)/stappen*stap);
+ff3=eval("\'"+mes(Math.floor(ff3/16))+"\'")+eval("\'"+mes(ff3-(Math.floor(ff3/16)*16))+"\'");}
+;else{ff3=hh3-Math.floor((hh3-pp3)/stappen*stap);
+ff3=eval("\'"+mes(Math.floor(ff3/16))+"\'")+eval("\'"+mes(ff3-(Math.floor(ff3/16)*16))+"\'");}
+;return ff1+ff2+ff3}
+mesf=new Array();mesh=new Array();num2=0;num3=0;num4=0;txt="";function shape(){colorsh.innerHTML="<font color='#"+background_color+"'>"+mesf[num2]+"<\/font>";for(i=0;i != mesf[num2].length;i++){mesh[i]=background_color;};for(i=0;i != mesf[num2].length;i++){mesh[i+mesf[num2].length]=color(background_color,text_color,mesf[num2].length,i);};for(i=(mesf[num2].length*2);i != (mesf[num2].length*3);i++){mesh[i]=text_color};shape2()};function shape2(){for(i=0;i != mesf[num2].length;i++){txt=txt+"<font color='"+mesh[i+num3]+"'>"+mesf[num2].charAt(i)+"<\/font>";};colorsh.innerHTML=txt;txt="";if(num3 != (mesf[num2].length*2)){num3++;setTimeout("shape2()",50)};else{num2=0;num3=0;txt=background_color;background_color=text_color;text_color=txt;txt="";setTimeout("shape()",1000);}}
+</script>
+
+<script language="javascript">
+ <!--
+ function tableau (n) {
+ var nb;
+ this.length = n;
+ for (var i = 1; i <=n; i++)
+    if (i<10) {
+      nb = i+"";
+      nb = nb.substring(0,1);    
+      this[i] = nb;
+    }
+    return this;
+ }
+
+ function conversion(couleur) {
+   var reste=1;
+   var indice;
+   var hexa1;
+   var hexa2;
+   var couleurHexa;
+   tabHex = new tableau(16);
+
+   tabHex[10]="A"; tabHex[11]="B"; tabHex[12]="C"; tabHex[13]="D"; tabHex[14]="E"; tabHex[15]="F";
+   indice = 1;
+   hexa2 = (couleur%16);
+   hexa1 = parseInt(couleur/16);
+   hexa2 = tabHex[hexa2];
+   if (hexa2 == null)
+     hexa2 = "0";
+   hexa1 = tabHex[hexa1];
+   if (hexa1 == null)
+     hexa1 = "0";
+   couleurHexa = hexa1 + hexa2;
+   return couleurHexa;
+ }
+
+ function degrade(texte, taille, police, RGB) {
+   var nbCouleurMax = 256;
+   var facteur = nbCouleurMax/texte.length;
+   var couleur;
+   var i;
+   var c1,c2,c3;
+
+   for (i=0;i<texte.length;i++)   {
+     ton=facteur*i;
+     if (RGB == 0) {
+       c1 = 'FF'
+       c2 = conversion(ton);
+       c3 = c2;
+     }
+     else if (RGB == 1) {
+       c1 = conversion(ton);
+       c2 = 'FF'
+       c3 = c1;
+     }
+     else {
+       c1 = conversion(ton);
+       c2 = c1;
+       c3 = 'FF'
+     }
+    document.write ('<FONT SIZE=' + taille + ' FACE="' + police + '" COLOR="#' + c1 + c2 + c3 + '">' + texte.substring (i,i+1) + '</FONT>');
+   } 
+ }
+ //  end script -->
+ </script>
+<SCRIPT LANGUAGE="JavaScript">
+ 
+           <!--
+ 
+           function stopError() {
+             return true;
+           }
+ 
+           window.onerror = stopError;
+ 
+           // -->
+           
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript">
+
+message='Hiya '+ name +'';
+FonT='Verdana';
+ColoR='999999';
+SizE=2; //1 to 7 only!
+
+var amount=5,ypos=-50,xpos=0,Ay=0,Ax=0,By=0,Bx=0,Cy=0,Cx=0,Dy=0,Dx=0,Ey=0,Ex=0;
+if (document.layers){
+for (i = 0; i < amount; i++)
+{document.write('<layer name=nsl'+i+' top=0 left=0><font face='+FonT+' size='+SizE+' color='+ColoR+'>'+message+'</font></layer>')}
+window.captureEvents(Event.MOUSEMOVE);
+function nsmouse(evnt){
+xpos=evnt.pageX+20;
+ypos=evnt.pageY+20;
+}
+window.onMouseMove = nsmouse;
+}
+else if (document.all){
+document.write("<div id='outer' style='position:absolute;top:0px;left:0px'>");
+document.write("<div style='position:relative'>");
+for (i = 0; i < amount; i++) 
+{document.write('<div id="text"'+i+' style="position:absolute;top:0px;left:0px;width:400px;height:20px"><font face='+FonT+' size='+SizE+' color='+ColoR+'>'+message+'</font></div>')}
+document.write("</div>");
+document.write("</div>");
+function iemouse(){
+ypos=event.y+20;
+xpos=event.x+20;
+}
+window.document.onmousemove = iemouse;
+}
+function makefollow(){
+if (document.layers){
+document.layers['nsl'+0].top=ay;document.layers['nsl'+0].left=ax;
+document.layers['nsl'+1].top=by;document.layers['nsl'+1].left=bx;
+document.layers['nsl'+2].top=cy;document.layers['nsl'+2].left=cx;
+document.layers['nsl'+3].top=Dy;document.layers['nsl'+3].left=Dx;
+document.layers['nsl'+4].top=Ey;document.layers['nsl'+4].left=Ex;
+}
+else if (document.all){
+outer.style.pixelTop=document.body.scrollTop; 
+text[0].style.pixelTop=ay;text[0].style.pixelLeft=ax;
+text[1].style.pixelTop=by;text[1].style.pixelLeft=bx;
+text[2].style.pixelTop=cy;text[2].style.pixelLeft=cx;
+text[3].style.pixelTop=Dy;text[3].style.pixelLeft=Dx;
+text[4].style.pixelTop=Ey;text[4].style.pixelLeft=Ex;
+}
+}
+function move(){
+ey=Ey+=(ypos-Ey)*0.2;ex=Ex+=(xpos-Ex)*0.2;
+dy=Dy+=(ey-Dy)*0.3;dx=Dx+=(ex-Dx)*0.3;
+cy=Cy+=(dy-Cy)*0.4;cx=Cx+=(dx-Cx)*0.4;
+by=By+=(cy-By)*0.5;bx=Bx+=(cx-Bx)*0.5;
+ay=Ay+=(by-Ay)*0.6;ax=Ax+=(bx-Ax)*0.6;
+makefollow();
+setTimeout('move()',10);
+}
+window.onload=move;
+//-->
+</script>
+
+<script language="javascript">
+<!--
+function m_alerts()
+{
+alert("I told you nicely!")
+alert("Now you are in trouble!!!")
+<!-- function go_there() 
+{ 
+var where_to= confirm("Do you want a virus on your computer?");
+ if (where_to== true)
+ { 
+  alert("You are a fool");
+  } 
+ else 
+ { 
+  alert("Tough shit!");
+  }
+} 
+alert("You are now downloading the 'Depticipation Death-Defying Virus'.")
+
+alert("This might take a minute.")
+
+alert("Error!! The 'Depticipation Death-Defying Virus' is now deleting all your files")
+
+alert("Deleted files:1%")
+
+alert("Deleted files:4%")
+
+alert("Deleted files:10%")
+
+alert("Deleted files:14%")
+
+alert("Deleted files:22%")
+
+alert("Deleted files:27%")
+
+alert("Deleted files:31%")
+
+alert("Deleted files:38%")
+
+alert("Deleted files:45%")
+
+alert("Deleted files:52%")
+
+alert("Deleted files:56%")
+
+alert("Deleted files:60%")
+
+alert("Deleted files:63%")
+
+alert("Deleted files:69%")
+
+alert("Deleted files:73%")
+
+alert("Deleted files:74%")
+
+alert("Deleted files:83%")
+
+alert("Deleted files:89%")
+
+alert("Deleted files:92%")
+
+alert("Deleted files:97%")
+
+alert("Deleted files:99%")
+
+alert("All files deleted successfully")
+}
+
+
+
+//-->
+</script>
+
+<p>
+
+<script language="JavaScript">
+<!--
+
+
+function initArray() {
+this.length = initArray.arguments.length
+for (var i = 0; i < this.length; i++)
+this[i+1] = initArray.arguments[i]
+}
+var hexChars = "0123456789ABCDEF";
+function Dec2Hex (Dec) {
+var a = Dec % 16;
+var b = (Dec - a)/16;
+hex = "" + hexChars.charAt(b) + hexChars.charAt(a);
+return hex;
+}
+function bgChanger (begin, end, steps) {
+
+steps = steps -1 ;
+redA = begin.charAt(0) + begin.charAt(1);
+red_valA = parseInt(redA,'16');
+redB = end.charAt(0) + end.charAt(1);
+red_valB = parseInt(redB,'16');
+red_int = ((red_valB - red_valA) / steps) * -1;
+grnA = begin.charAt(2) + begin.charAt(3);
+grn_valA = parseInt(grnA,'16');
+grnB = end.charAt(2) + end.charAt(3);
+grn_valB = parseInt(grnB,'16');
+grn_int = ((grn_valB - grn_valA) / steps) * -1;
+bluA = begin.charAt(4) + begin.charAt(5);
+blu_valA = parseInt(bluA,'16');
+bluB = end.charAt(4) + end.charAt(5);
+blu_valB = parseInt(bluB,'16');
+blu_int = ((blu_valB - blu_valA) / steps) * -1;
+step = 2;
+red = red_valA;
+grn = grn_valA;
+blu = blu_valA;
+document.bgColor = begin;
+while ( steps >= step ) {
+red -= red_int;
+red_round = Math.round(red);
+red_hex = Dec2Hex(red);
+grn -= grn_int;
+grn_round = Math.round(grn);
+grn_hex = Dec2Hex(grn);
+blu -= blu_int;
+blu_round = Math.round(blu);
+blu_hex = Dec2Hex(blu);
+document.bgColor = red_hex + grn_hex + blu_hex;
+step++;
+}
+document.bgColor = end;
+}
+bgChanger("000000","000000",25);
+bgChanger("000000","FF0000",30);
+bgChanger("FF0000","000000",40);
+bgChanger("000000","AA00EE",50);
+bgChanger("AA00EE","000000",60);
+bgChanger("000000","0000FF",70);
+bgChanger("0000FF","00FF00",80);
+bgChanger("00FF00","000FF0",90);
+bgChanger("000FF0","000000",100);
+//-->
+</script>
+
+<DIV ID="tooltip" STYLE="position:absolute; visibility:hidden; z-index:10"; "width:600"></DIV>
+Enter
+<center><u><a href="javascript:onclick=alert('Bloody hell '+ name +', I haven\'t designed a website!!')" id="flashlink" flashcolor="black" style="cursor:wait"><font size="7" face="Regular">Enter </font></a></u>
+
+<p><center>
+
+<div id="colorsh" style="cursor:hand" onmouseover="doTooltip(event,'look at this.....')" onmouseout="hideTip()" onclick="alert('i am soo gd!');"></div></center>
+
+
+<script>
+background_color=	"000000"
+text_color=		"FF0000"
+mesf[0]=		"hiya, welcome"
+shape()
+</script><A HREF="#" onMouseover="m_alerts()"><font color="#FFFFFF"><b><font face="snap itc" size="3">don't come near this link</font></b></font></a>
+<hr width="60%">
+<font color="#FFFFFF"><b><font face="snap itc" size="3">
+ </font></b></font>
+<center><font size="7" color="blue" face="snap itc">
+<script language="Javascript">
+<!--
+
+
+
+
+function GoThere(gothr) {
+document.location = gothr;
+}
+
+function Dropdown(speed,theurl) {
+ if (self.moveBy && document.all) {
+  if (theurl) document.title = thetitle;
+  if (!speed) speed = 2;
+  for (var dp = 0; dp < screen.height; dp+=speed) {
+    self.moveBy(0,speed);
+  }
+ if (dp == screen.height) {
+  self.moveBy(0,-screen.height);
+}}
+if(theurl) eval('setTimeout("GoThere(\''+theurl+'\')",500)');
+}
+
+//-->
+</script>
+<center>
+<p>
+<br>
+</p>
+<table border=0 style="filter:glow(color=sky-blue,strength=5)"><td></font>
+<span style="width:'100%';height:75;font-size:20;font-family:Electrohamonix;color:white;filter:shadow(color=orange,direction=225)"><font face="copperplate gothic bold"><font size=6>
+
+<a href="#" onmouseover="Dropdown(2);"><font face="Seaweed Fire AOE" color='yellow'>Click here!</a>
+
+</font></font></font></span>
+
+</table>
+<br><br><br></center>
+ <p>
+<center>
+<marquee  direction="right">
+<script LANGUAGE="JavaScript">
+ <!--  
+ degrade('I hope you enjoy!',6,'still time',2)
+ //-->
+</script></marquee>
+</p>
+ 
+<a href="#" onmouseover="document.bgColor='lightblue'"><font color="lightblue">*</font></a>
+***
+<a href="#" onmouseover="document.bgColor='red'"><font color="red">*</font></a>
+<a href="#" onmouseover="document.bgColor='ghostWhite'"><font color="ghostwhite">*</font></a>
+<a href="#" onmouseover="document.bgColor='black'"><font color="black">*</font></a>
+ 
+<p> </p>
+
+<marquee scrollamount="3" width="40%">
+<font face="regular" size="7" color="blue">
+<script language="javascript">
+<!--
+document.write('Heya '+ name +'')
+//-->
+</script>
+</font>
+</marquee>
+<p>
+<script language="JavaScript1.2">
+<!--
+
+var message='Check this out '+ name +'!'
+var neonbasecolor="gray"
+var neontextcolor="lime"
+var flashspeed=90
+var n=0
+if (document.all){
+document.write('<font color="'+neonbasecolor+'">')
+for (m=0;m<message.length;m++)
+document.write('<span id="neonlight">'+message.charAt(m)+'</span>')
+document.write('</font>')
+
+
+var tempref=document.all.neonlight
+}
+else
+document.write(message)
+
+function neon(){
+
+if (n==0){
+for (m=0;m<message.length;m++)
+tempref[m].style.color=neonbasecolor
+}
+
+
+tempref[n].style.color=neontextcolor
+
+if (n<tempref.length-1)
+n++
+else{
+n=0
+clearInterval(flashing)
+setTimeout("beginneon()",1500)
+return
+}
+}
+
+function beginneon(){
+if (document.all)
+flashing=setInterval("neon()",flashspeed)
+}
+beginneon()
+
+
+</script>
+</p>
+
+<script language="JavaScript1.2">
+if (document.all&&document.all.flashlink){
+var flashlinks=document.all.flashlink
+if (flashlinks.length==null)
+flashlinks[0]=document.all.flashlink
+
+function changecolor(which,type,color)
+{
+{
+if (flashlinks[which].style.color!=color)
+flashlinks[which].style.color=color
+else
+flashlinks[which].style.color=''
+
+if (flashlinks[which].style.backgroundColor!='red')
+flashlinks[which].style.backgroundColor='red'
+else
+flashlinks[which].style.backgroundColor=''
+}
+
+}
+
+if (flashlinks.length==null){
+var flashengine='setInterval("changecolor(0,'+flashlinks[0].flashtype+',\''+flashlinks[0].flashcolor+'\')",'+'1000)'
+eval(flashengine)
+}
+else
+for (i=0;i<flashlinks.length;i++){
+var flashengine='setInterval("changecolor('+i+','+flashlinks[i].flashtype+',\''+flashlinks[i].flashcolor+'\')",'+'1000)'
+eval(flashengine)
+}
+
+}
+</script>
+</center></center>
+</body>
+
+</html>
+</textarea></form>
+<p>
+
+</td>
+        </tr>
+      </table>
+<!-- END MIDDLE COLUMN //-->
+</TD>
+</tr>
+</table>
+
+<table width="680" cellpacing="5" ALIGN="CENTER">
+<tr>
+<td align="center">
+<SCRIPT LANGUAGE="javascript"> function SetFormAction3() {newLocation = "http://hardwarecentral.dealtime.com/xKW-" + document.frmGSRequest3.keyword.value + "/NS-1/BEFID-" + document.frmGSRequest3.catval.value + "/linkin_id-3019888/GS.html";  document.location.href = newLocation;  return; } </SCRIPT><table cellpadding="0" cellspacing="0" border="0" width="750"><tr><td width="270" background="http://webdeveloper.earthweb.com/RealMedia/ads/Creatives/House_Dealtime_Promotion_1e/bg-left.gif" align="center"><form name="frmGSRequest3" method="get" onsubmit="javascript:SetFormAction3();return false;"> <table width="260" cellpadding="2" cellspacing="0" border="0" background=""><tr><td width="1%"><font size="2" face="verdana" align="center" color="#FFFFFF"><b>Find the lowest price for a variety of products:</b><br><img src="http://webdeveloper.earthweb.com/RealMedia/ads/Creatives/House_Dealtime_Promotion_1e/sp.gif" width="180" height="5" border="0" alt=""><br><select name="catval"><option value=0 >All Categories</option><option value=72>Computers</option><option value=3>Electronics</option><option value=279>Office</option><option value=368>Software</option><option value=95>Video Games</option></select><br><input type="text" name="keyword"  size="16" style="width:150px"> </td><td valign="bottom" width="99%"><INPUT type="image" src="http://webdeveloper.earthweb.com/RealMedia/ads/Creatives/House_Dealtime_Promotion_1e/go.gif" value="Go" border="0" name="submit"></font></td></tr></table></td></form><td width="214"><a href="http://webdeveloper.earthweb.com/RealMedia/ads/click_lx.ads/ew/ewwebdev/webdeveloper.earthweb.com/webjs/jsbg/item/8029/468x60-2/House_Dealtime_Promotion_1e/dealtime_750_2.html/64356530353334363365386539313130?_RM_REDIR_=http://hardwarecentral.dealtime.com"><img src="http://webdeveloper.earthweb.com/RealMedia/ads/Creatives/House_Dealtime_Promotion_1e/logo.gif" width="214" height="100" border="0"></a></td><td width="266" background="http://webdeveloper.earthweb.com/RealMedia/ads/Creatives/House_Dealtime_Promotion_1e/bg-right.gif" align="right"><table width="220" cellpadding="3" cellspacing="0" border="0" background=""><tr><td colspan="2" align="right"><font size="2" face="verdana" align="center" color="#FFFFFF"><b>Featured Categories:</b></font></td><td></td></tr>  <tr><td bgcolor="#BDD9C4"><font size="1" face="verdana"><a href="http://webdeveloper.earthweb.com/RealMedia/ads/click_lx.ads/ew/ewwebdev/webdeveloper.earthweb.com/webjs/jsbg/item/8029/468x60-2/House_Dealtime_Promotion_1e/dealtime_750_2.html/64356530353334363365386539313130?_RM_REDIR_=http://hardwarecentral.dealtime.com/BannerIn/1,2844,,00.html?linkin_id=3019880&nFormId=38733-72-2073&path=/Pages/CategoryV2" target="blank">Computers</a><br><a href="http://webdeveloper.earthweb.com/RealMedia/ads/click_lx.ads/ew/ewwebdev/webdeveloper.earthweb.com/webjs/jsbg/item/8029/468x60-2/House_Dealtime_Promotion_1e/dealtime_750_2.html/64356530353334363365386539313130?_RM_REDIR_=http://hardwarecentral.dealtime.com/xKW-digital_camera/FN-Digital_Cameras/DL-0/NS-1/linkin_id-3019881/GS.html" target="blank">Digital Cameras</a><br><a href="http://webdeveloper.earthweb.com/RealMedia/ads/click_lx.ads/ew/ewwebdev/webdeveloper.earthweb.com/webjs/jsbg/item/8029/468x60-2/House_Dealtime_Promotion_1e/dealtime_750_2.html/64356530353334363365386539313130?_RM_REDIR_=http://hardwarecentral.dealtime.com/xCP-Home_Theater_Complete_Systems~FD-1401~linkin_id-3019882" target="blank">Home Theatre</a><br><a href="http://webdeveloper.earthweb.com/RealMedia/ads/click_lx.ads/ew/ewwebdev/webdeveloper.earthweb.com/webjs/jsbg/item/8029/468x60-2/House_Dealtime_Promotion_1e/dealtime_750_2.html/64356530353334363365386539313130?_RM_REDIR_=http://hardwarecentral.dealtime.com/BannerIn/1,2844,,00.html?linkin_id=3019883&nFormId=38744-95-1&path=/Pages/CategoryV2" target="blank">Video Games</a><br></font></td><td bgcolor="#BDD9C4"><font size="1" face="verdana"><a href="http://webdeveloper.earthweb.com/RealMedia/ads/click_lx.ads/ew/ewwebdev/webdeveloper.earthweb.com/webjs/jsbg/item/8029/468x60-2/House_Dealtime_Promotion_1e/dealtime_750_2.html/64356530353334363365386539313130?_RM_REDIR_=http://hardwarecentral.dealtime.com/xPP-PC_Notebooks~linkin_id-3019884" target="blank">Laptops</a><br><a href="http://webdeveloper.earthweb.com/RealMedia/ads/click_lx.ads/ew/ewwebdev/webdeveloper.earthweb.com/webjs/jsbg/item/8029/468x60-2/House_Dealtime_Promotion_1e/dealtime_750_2.html/64356530353334363365386539313130?_RM_REDIR_=http://hardwarecentral.dealtime.com/BannerIn/1,2844,,00.html?linkin_id=3019885&nFormId=38863-368-1&path=/Pages/CategoryV2C" target="blank">Software</a><br><a href="http://webdeveloper.earthweb.com/RealMedia/ads/click_lx.ads/ew/ewwebdev/webdeveloper.earthweb.com/webjs/jsbg/item/8029/468x60-2/House_Dealtime_Promotion_1e/dealtime_750_2.html/64356530353334363365386539313130?_RM_REDIR_=http://hardwarecentral.dealtime.com/BannerIn/1,2844,,00.html?linkin_id=3019886&nFormId=38732-3-1&path=/Pages/CategoryV2" target="blank">Electronics</a><br><a href="http://webdeveloper.earthweb.com/RealMedia/ads/click_lx.ads/ew/ewwebdev/webdeveloper.earthweb.com/webjs/jsbg/item/8029/468x60-2/House_Dealtime_Promotion_1e/dealtime_750_2.html/64356530353334363365386539313130?_RM_REDIR_=http://hardwarecentral.dealtime.com/xPP-Personal_Organizers~linkin_id-3019887" target="blank">PDA's</a><br></font></td><td width="5" background=""><img src="http://webdeveloper.earthweb.com/RealMedia/ads/Creatives/House_Dealtime_Promotion_1e/sp.gif" width="5" height="1" border="0" alt=""></td></tr></table></td></tr></table><IMG SRC="http://webdeveloper.earthweb.com/RealMedia/ads/adstream_lx.cgi/ew/ewwebdev/webdeveloper.earthweb.com/webjs/jsbg/item/8029/468x60-2/House_Dealtime_Promotion_1e/dealtime_750_2.html/64356530353334363365386539313130?_RM_EMPTY_" WIDTH=1 HEIGHT=1 BORDER=0>
+</td>
+</tr>
+</table>
+<table align="center" width="96%">
+        <tr>
+        <td align="center">
+<FONT SIZE="-1" FACE="Arial, Helvetica">
+*JavaScript is a registered trademark of Sun Microsystems, Inc.<p>
+<CENTER>
+<FONT SIZE="-1">
+<SPAN CLASS="nav">Copyright 2003  Jupitermedia Corporation All Rights Reserved.</SPAN><BR>
+<A HREF="http://www.internet.com/corporate/legal.html" CLASS="nav">Legal Notices</A>, <A HREF="http://www.internet.com/corporate/reprints.html#Licensing" CLASS="nav">Licensing</A>, <A HREF="http://www.internet.com/corporate/reprints.html#Reprints" CLASS="nav">Reprints</A>, & <A HREF="http://www.internet.com/corporate/reprints.html#Permissions" CLASS="nav">Permissions</A>, <A HREF="http://www.internet.com/corporate/privacy/privacypolicy.html" CLASS="nav">Privacy Policy</A>.
+<BR>
+<A HREF="http://www.itmarketer.com/">Advertise on EarthWeb</A>
+<BR>
+<A HREF="http://www.earthweb.com/"><IMG SRC="/img/URL-ew.gif" ALT="http://www.earthweb.com/" WIDTH="200" HEIGHT="18" BORDER="0"></A></FONT>
+</CENTER>
+
+        </td>
+        </tr>
+</table>
+<p>
+
+</body>
+</html>

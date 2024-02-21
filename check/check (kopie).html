@@ -1,0 +1,78 @@
+<html>
+<head>
+
+
+	<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+	<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+	<title>ACV LOKEREN</title>
+	<meta name="description" content="ACV LOKEREN">
+	<meta name="keywords" content="acv,lokeren">
+	<meta name="robots" content="index,follow">
+
+
+<link rel="shortcut icon" href="favicon.ICO" /><link>
+
+<script>
+
+
+
+  //'http://www.acv-lokeren.be');
+
+</script>
+
+</head>
+<body>
+
+
+<script>
+
+
+
+
+
+
+
+
+function checkServerStatus( url ,url2)
+{
+    var script = document.body.appendChild(document.createElement("script"));
+    script.onload = function()
+    {
+       // alert( url + " is online");
+        document.open();
+        document.write('<html><head><title>ACV LOKEREN</title><meta name="description" content="ACV LOKEREN"><link rel="shortcut icon" href="favicon.ICO" /><link></head><body>');
+        document.write("<iframe title='ACV LOKEREN'  width=100% height=100% frameborder=0 framespacing=0 border=0  src="+url+"></iframe>");
+        document.write("</body></html>");
+        document.close();
+
+    };
+    script.onerror = function()
+    {
+       document.open();
+       document.write('<html><head><title>ACV LOKEREN</title><meta name="description" content="ACV LOKEREN"><link rel="shortcut icon" href="favicon.ICO" /><link></head><body>');
+	   document.write("<iframe title='ACV LOKEREN' width=100% height=100% frameborder=0 framespacing=0 border=0  src="+url2+"></iframe>");
+       document.write("</body></html>");
+       document.close();
+       url = url2;
+    };
+
+	script.src = url;
+}
+
+
+checkServerStatus("http://acvlokeren.cmshost.nl/", "https://acv-lokeren.000webhostapp.com/"  );
+
+
+</script>
+
+<!--
+"http://www.acv-lokeren.esy.es/"
+http://www.acv-lokeren.esy.es/
+http://acv-lokeren.byethost15.com/
+
+http://acvlokeren.cmshost.nl/ -->
+
+
+</body>

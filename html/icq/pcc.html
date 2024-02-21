@@ -1,0 +1,810 @@
+<html>
+<head>
+
+
+<!--***************************************************************************-->
+<!--  		******* Fill in your ICQ number in the script below: *******	 //-->
+	<script src="http://web.icq.com/pcc/js?Uin=217594785"></script>
+<!-- 			******* Fill in your ICQ number*******	  //-->
+<!--***************************************************************************-->
+
+
+<script type="text/javascript" src="../js/navsec.js"></script>
+
+<script language="JavaScript">
+	
+	function check_if_exist(){
+		if(gl_pcc_info[12]=="" || gl_pcc_info[0] == null || gl_pcc_info[12].length < 5 || gl_pcc_info[12].length > 9){
+			alert("You have entered an invalid ICQ number.\n Please go to this page's HTML code\n and fill in your ICQ number.");
+		}
+	}
+	
+</script>
+<script language="JavaScript">
+	document.write ("<title>"+ unescape(gl_pcc_info[0]) +"'s Unified Messaging Center</title>");
+</script>
+	
+	
+	<meta http-equiv="Description" name="Description" content="Unified Messaging Center.">
+	<meta http-equiv="Keywords" name="Keywords" content="icq, world wide pager, personal icq page, personal page, communication, center">
+	<meta name="author" content="ICQ Inc.">
+	<style type="text/css">
+	<!--
+		A:link {text-decoration: none;} 
+		A:visited {text-decoration: none}
+		A:active {text-decoration: none}
+	//-->
+	</style>	
+<script language="JavaScript">
+	
+	<!--
+			n = (document.layers) ? 1 : 0;
+			ie = (document.all) ? 1 : 0;
+			ver4 = (n || ie) ? 1 : 0;
+			
+			var n6 = ((document.getElementById)&&(!ie)) ? 1 : 0;   
+			var maxLen = 450;
+			var enable;
+			var session = true;
+			var now_date = new Date();
+			var cookie_date = new Date();
+			
+		function remove_minus(str)
+			{
+			  var i;
+				var back = "";
+		
+			  for (i = 0; i < str.length; ++i) {
+					if (str.substring(i,i+1) != "-") {
+						back += str.substring(i,i+1);
+					}
+				}
+		
+				return back;
+			}
+			
+		function irc(popName) {
+			var winName = "";
+			
+			winName = remove_minus(popName);
+	
+			if (document.frmLogin.nick.value != "") {
+			  if (document.frmLogin.icq.value != "") document.frmLogin.nick.value += "-"+document.frmLogin.icq.value;
+			} else {
+			  if (document.frmLogin.icq.value != "") document.frmLogin.nick.value = "Guest-"+document.frmLogin.icq.value;
+				else document.frmLogin.nick.value = "Guest";
+			}
+	
+			if (document.frmLogin.info.value == "" && document.frmLogin.icq.value != "") document.frmLogin.info.value = document.frmLogin.icq.value+"@pager.icq.com";
+	
+			var url = "http://cgi.icq.com/cgi-bin/ircqnet/ircqnet.pl5?x=635&y=440&channel=" +popName+ "&nick=" +document.frmLogin.nick.value+ "&info=" +document.frmLogin.info.value;
+			window.open(url, winName, 'toolbar=false,directories=false,status=false,menubar=0,scrollbars=0,resizable=0,width=640,height=480, replace=yes');
+		}
+				
+		function iRandom(iMax) 
+			{
+				var now=new Date();
+				var time=now.getTime();
+				return ((time/10) % iMax);
+			}
+				
+		function getpage()
+			{
+				pagenum = (iRandom(25) * iRandom(25) * iRandom(25) * iRandom(25) * iRandom(25));
+				if (pagenum < 100000) {
+					pagenum += 100000;
+				}
+				while (pagenum > 7500000) {
+					pagenum -= 1000000;
+				}
+				pageloc="/wwp/"+pagenum;
+				document.frmRandom.btnRandom.value=pagenum;
+				window.location=pageloc;
+			}
+		
+		function getpage2()
+			{
+				var wwp = parseInt( (Math.random()*58900000)+100000,10 );
+				pageloc="/wwp/"+wwp;
+				window.location=pageloc;
+			}
+		
+//interest select option
+		function Go() {
+			if(document.go.page.options[document.go.page.selectedIndex].value== 0){
+				window.location="http://www.icq.com/whitepages/interest/"
+			}else{
+				window.location="http://www.icq.com/whitepages/interest/"+document.go.page.options[document.go.page.selectedIndex].value+".html";
+				}
+			}
+					
+		function Checkit()
+		{
+			if (document.frmSearch.first.value=='First Name'){
+				document.frmSearch.first.value="";
+			}
+			
+			if (document.frmSearch.last.value=="Last Name"){
+				document.frmSearch.last.value="";
+			}
+			return 0;
+		}
+		
+		function clearSearch() {
+		
+		if(document.frmSearch.first.value == "First Name"){
+			document.frmSearch.first.value = "";
+			}
+		if(document.frmSearch.last.value == "Last Name"){
+			document.frmSearch.last.value = "";
+			}
+		}
+			
+		function chPager () {
+		
+		    var name = document.pagerform.from.value;
+			var msg = document.pagerform.body.value;
+			var mail = document.pagerform.fromemail.value;
+			
+			if(name==""){
+				alert("Please enter your name.");
+				document.pagerform.from.focus();
+				return false;
+				}
+			if(mail != ""){
+			if(mail.indexOf('@',0) == -1 || mail.indexOf('.',0) == -1){
+				alert("You have entered an invalid email address.\nPlease check again and re-enter your email address.");
+				document.pagerform.fromemail.value="";
+				document.pagerform.fromemail.focus();
+				return false;
+				}
+			}
+			if(msg==""){
+				alert("Please enter your message.");{
+				document.pagerform.body.focus();
+				return false;
+				}
+				
+				return true;
+			}
+		}
+		
+		function init(){
+			if(n)document.captureEvents(Event.KEYDOWN)
+			document.onkeydown=counter;
+			document.myform.charcount.value = 450 - document.pagerform.body.value.length;
+		}
+			
+		function Enablecounter() {
+			enable = setInterval("counter()",500);
+		}
+			
+		function counter(){
+			var msLen, clLen,niLen, totLen, tmp;
+			var done = 0;
+			msLen = document.pagerform.body.value.length;
+			totLen = msLen;
+			
+			tmp = maxLen - totLen;
+			//alert(tmp);
+			if (document.myform.charcount.value != tmp) {
+				if (tmp > 0) {
+				// update counter
+				document.myform.charcount.value = tmp;
+				} else {
+					if (tmp == 0) {
+						// alert once and update counter to be 0
+						alert("Your message is too long");
+						document.myform.charcount.value = 0;
+						clearTimeout(enable);
+						document.pagerform.body.value = document.pagerform.body.value.substring(0,maxLen);
+					} else {
+						document.myform.charcount.value = 0;
+						document.pagerform.body.value = document.pagerform.body.value.substring(0,maxLen)
+					}
+				}
+			}
+		}
+		
+			function Enablecounter() {
+				enable = setInterval("counter()",500);
+			}
+			
+			function ClearForm () {
+				document.pagerform.from.value ="";
+				document.pagerform.fromemail.value ="";
+				document.pagerform.body.value ="";
+			}
+				
+		   function newWin(win_name,pic_width,pic_height,Wname) {
+			window.open(win_name,Wname,"width="+ pic_width +",height="+ pic_height +",top=40,directories=no,location=no,menubar=no,scrollbars=no,status=no,titlebar=no,toolbar=no,resizable=no");
+		   }
+		
+	//-->
+</script>
+
+</head>
+
+<body topmargin="0" bgcolor="#FFFFFF" leftmargin="0" marginwidth="0" marginheight="0" onload="init();check_if_exist();">
+<!--Main Table-->
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+			<td bgcolor="#245892" colspan="4" width="5%">
+				<a href="http://web.icq.com"><img src="pcc_images/logo.gif" width="37" height="29" border="0" alt="ICQ Homepage"></a>
+			</td>
+			<td bgcolor="#245892" align="center" width="95%" colspan="2">
+				<font face="Verdana" size="2" color="#F3FEFF"><b>
+				<a href="http://www.icq.com"><font face="Verdana" size="2" color="#F3FEFF"><b>ICQ.Com</b></font></a>&nbsp;|  
+				<a href="http://www.icq.com/download/"><font face="Verdana" size="2" color="#F3FEFF"><b>Download ICQ</b></font></a>&nbsp;| 
+				 <a href="http://www.icq.com/people/"><font face="Verdana" size="2" color="#F3FEFF"><b>Find Friends</b></font></a>&nbsp;|
+				 <a href="http://www.icq.com/community"><font face="Verdana" size="2" color="#F3FEFF"><b>Community</b></font></a>&nbsp;|
+				 <a href="http://www.icq.com/communication/"><font face="Verdana" size="2" color="#F3FEFF"><b>ICQ Anywhere</b></font></a>&nbsp;|
+				 <a href="http://web.icq.com/wwp/1,,,00.html?Uin=random"><font face="Verdana" size="2" color="#F3FEFF"><b>Find a Random Friend</b></font></a>&nbsp;
+				</b></font>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" bgcolor="#93BEE2" rowspan="2"><img src="pcc_images/left_corn.gif" width="71" height="44" border="0" alt=""></td>
+			<td bgcolor="#020005" colspan="2" height="1"><img src="pcc_images/empty.gif" width="1" height="1"></td>
+		</tr>
+		<tr>
+			<td align="center" valign="middle" bgcolor="#93BEE2" height="43"><font face="MS Sans Serif" size="-2" color="#00284E">This<a href="http://wwp.icq.com/"> <font color="#00284E"><u>Unified Messaging Center</u></font></a> is provided to every ICQ user<br> upon registration.The page address is http://wwp.icq.com/YOUR_ICQ#</font></td>
+			<td bgcolor="#93BEE2">&nbsp;</td>
+		</tr>
+		<tr>
+			<td bgcolor="#245892" rowspan="10" width="18"><img src="pcc_images/empty.gif" width="18" height="1" border="0"></td>
+			<td bgcolor="#000000" rowspan="10" width="1"><img src="pcc_images/empty.gif" width="1" height="1"></td>
+			<td bgcolor="#93BEE2" rowspan="2"><img src="pcc_images/empty.gif" width="19" height="1" border="0"></td>
+			<td valign="top" rowspan="2" height="64"><img src="pcc_images/left2.gif" width="33" height="64" border="0" alt=""></td>
+			<td align="center" background="pcc_images/top-shade-pixel.gif" height="5"><img src="pcc_images/empty.gif" width="1" height="1" border="0"></td>
+			<td align="right" valign="top" rowspan="2"><img src="pcc_images/right_corn.gif" width="90" height="64" border="0" alt=""></td>
+		</tr>
+		<tr>
+			<td align="center" valign="top" height="56"><b><font color="#245892" size="3" face="Arial, Helvetica, sans-serif">
+				<font size="4"><b>W</b></font>elcome to the Unified Messaging Center of<br><img src="pcc_images/title_line_pixel.gif" width="435" height="5" border="0" align="top"><br><font size="5"><script language="JavaScript">document.write(gl_pcc_info[0])</script><br></font></font><img src="pcc_images/title_line_pixel.gif" width="185" height="5" border="0" align="top" alt=""><br></b>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="6">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td valign="top">
+			<!-- personal -->
+				<center><font face="MS Sans Serif" size="-2"><a href="#more"><u><font color="#245B91">Learn more about the ICQ Unified Messaging Center.</font></u></a></font></center>
+				<table border="0" width="600" cellpadding="0" cellspacing="0" align="center">
+					<tr>
+						<td align="center" width="120">&nbsp;&nbsp;</td>						
+						<td width="1"><img src="pcc_images/empty.gif" width="1" height="1" border="0"></td>
+						<td colspan="3">&nbsp;</td>
+					</tr>
+					<tr>
+						<td rowspan="3" align="center" valign="middle">
+							 <SCRIPT language="javascript">document.write("<a href='http://web.icq.com/whitepages/about_me?Uin="+ gl_user_uin +"'><img src='http://web.icq.com"+gl_pcc_info[14]+"' width='105' height='130' border='0' hspace='2'></a><br>")</SCRIPT>
+						</td>
+						<td bgcolor="#255792" width="1"><img src="pcc_images/empty.gif" width="1" height="1" border="0"></td>
+						<td bgcolor="#255792" nowrap height="21">
+							<font size="3" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">
+								<b>&nbsp;Hello my name is <font color="#FFCC33"><script language="JavaScript">document.write(gl_pcc_info[0])</script></font>.</b>
+							</font>
+						</td>
+						<td bgcolor="#255792" align="right" height="21">
+						<script language="JavaScript">
+							document.write("<a href='http://web.icq.com/whitepages/message_me?uin="+gl_pcc_info[12]+"&action=message'><img src='http://web.icq.com"+gl_pcc_info[13]+"' width='79' height='21' border='0' vspace='1' hspace='1'></a>")
+						</script>
+						 </td>
+						<td bgcolor="#255792" width="1"><img src="pcc_images/empty.gif" width="1" height="1" border="0"></td>
+					</tr>
+					<tr>
+						<td bgcolor="#255792" width="1"><img src="pcc_images/empty.gif" width="1" height="1" border="0"></td>
+						<td bgcolor="#F0F7FF" colspan="2" valign="top" width="478">
+						<table cellpadding="1" cellspacing="1" width="100%" border="0">
+								<tr>
+									<td>
+									<font face="Verdana" size="2"> 
+										<script language="JavaScript">document.write(gl_pcc_info[3])</script><br><br>
+									</font>
+								</td>
+							</tr>
+						</table>
+						</td>
+						<td bgcolor="#255792" width="1"><img src="pcc_images/empty.gif" width="1" height="1" border="0"></td>
+					</tr>
+					<tr>
+						<td bgcolor="#255792" width="1"><img src="pcc_images/empty.gif" width="1" height="1" border="0"></td>
+						<td bgcolor="#F0F7FF" colspan="2" align="right" valign="bottom" height="24">
+							<script language="JavaScript">document.write("<a href='http://web.icq.com/whitepages/add_me?uin="+ gl_user_uin +"&action=add'>");</script><font face="MS Sans Serif" size="-2" color="#255792"><img src="pcc_images/add_blue.gif" width="99" height="22" border="0" alt="Add Me to ICQ" align="left" hspace="3"></font></a><script language="JavaScript">document.write("<a href='http://web.icq.com/whitepages/message_me?uin="+gl_pcc_info[12]+"&action=message'>")</script><img src="pcc_images/message_blue.gif" width="99" height="22" border="0" alt="Message Me" align="left" hspace="3"></a><script language="JavaScript">document.write("<a href=http://web.icq.com/whitepages/about_me?Uin="+gl_pcc_info[12]+">")</script><img src="pcc_images/more_about_button.gif" width="120" height="22" border="0" alt="More About Me" hspace="3"></a>
+						</td>
+						<td bgcolor="#255792" width="1"><img src="pcc_images/empty.gif" width="1" height="1" border="0"></td>
+					</tr>
+					<tr>
+						<td height="1"><img src="pcc_images/empty.gif" width="1" height="1" border="0"></td>
+						<td colspan="4" bgcolor="#255792" height="1"><img src="pcc_images/empty.gif" width="1" height="1" border="0"></td>
+					</tr>
+					<tr>
+						<td height="10" valign="top" align="center">
+							&nbsp;
+						</td>
+						<td colspan="4">
+							<table border="0" cellpadding="2" cellspacing="2" width="100%" align="center">
+								<tr>
+									<td align="right">
+										<script language="JavaScript">
+										document.write("<a href=http://web.icq.com/whitepages/message_me?uin="+gl_pcc_info[12]+"&action=message>")
+										document.write("<img src=http://web.icq.com"+gl_pcc_info[16]+" width='18' height='18' border='0' alt='ICQ#'></a>");
+										</script>
+									</td>
+									<td>
+										<font face="MS Sans Serif" size="-2">
+											<script language="JavaScript">document.write("<a href=http://web.icq.com/whitepages/message_me?uin="+gl_pcc_info[12]+"&action=message>")</script>
+												<font color="#255792">
+													<script language="JavaScript">document.write(gl_pcc_info[12])</script>
+												</font>
+											</a>
+										</font>
+									</td>
+									<td align="right">
+										<script language="JavaScript">
+											if(gl_pcc_info[7]== 0){
+												document.write("<a href=mailto:"+gl_pcc_info[12]+"@pager.icq.com>");
+												document.write("<img src='pcc_images/my_mail.gif' width='21' height='15' border='0' alt='Email'></a>");
+											}else{
+												document.write("<a href=mailto:"+gl_pcc_info[7]+">");
+												document.write("<img src='pcc_images/my_mail.gif' width='21' height='15' border='0' alt='Email'></a>");
+											}
+										</script>
+									 </td>
+									<td>
+										<font face="MS Sans Serif" size="-2" color="#255792">
+										<script language="JavaScript">
+											if(gl_pcc_info[7]== 0){
+												document.write("<a href=mailto:"+gl_pcc_info[12]+"@pager.icq.com>")
+												document.write("<font color='#255792'>"+ gl_pcc_info[12]+"@pager.icq.com</font></a>");
+											}else{
+												document.write("<a href=mailto:"+gl_pcc_info[7]+">")
+												document.write("<font color='#255792'>"+ gl_pcc_info[7]+"</font></a>");
+											}
+										</script>
+										</font>
+									</td>
+									<td align="right">
+										<script language="JavaScript">document.write("<a href='http://web.icq.com/whitepages/login?Uin="+ gl_user_uin +"'>");</script>
+											<img src="pcc_images/icq_phone.gif" width="18" height="15" border="0" alt="Phone Number">
+										</a>
+									</td>
+									<td>
+									<script language="JavaScript">
+										   document.write("<font face='MS Sans Serif' size='-2'><a href='http://web.icq.com/whitepages/login?Uin="+ escape(gl_pcc_info[12]) +"'><font color='#255792'>");
+											if(gl_pcc_info[15]!= ""){
+												document.write(gl_pcc_info[15]);
+											}else{
+												document.write("<font color='#304B66'>(click to add phone number)</font>");
+											}
+											document.write("</font></a></font>");
+									</script>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+				<!-- / personal -->
+			</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td align="center" height="20">
+				<br><img src="pcc_images/title_line_pixel.gif" width="290" height="5" border="0" alt=""><br><font face="verdana" size="4" color="#336699"><b>Talk To Me</b></font>
+				<br><img src="pcc_images/title_line_pixel.gif" width="170" height="5" border="0" alt=""></td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td align="center">
+			<!-- Talk to me --> 
+      <table border="0" cellpadding="2" cellspacing="2" width="100%">
+
+        <tr> 
+          <td bgcolor="#F0F7FF" width="47%"><font face="Verdana" size="2" color="#23588E">&nbsp;&#149;&nbsp;<b>Invite Me for a Chat</b></font></td>
+		  <td rowspan="11" align="center" valign="top"><img src="pcc_images/vertical-line.gif" width="3" height="680" border="0" alt=""></td>
+          <td bgcolor="#F0F7FF" width="47%"><font face="Verdana" size="2" color="#23588E">&nbsp;&#149;&nbsp;<b>Send a message to my ICQ</b></font></td>
+        </tr>
+        <tr> 
+	        <td  width="47%"><font face="Verdana" size="2" color="#245492">&nbsp;&nbsp;&nbsp;Click here to open our chat room<br>&nbsp;&nbsp;&nbsp;and to let me know you're waiting<br>&nbsp;&nbsp;&nbsp;for me!</font></td><br>
+	        <td valign="top" width="47%"> 
+	  	<font face="Verdana" size="2" color="#245492">&nbsp;&nbsp; 
+			 Don't have ICQ? Send me a ICQ Pager<br>&nbsp;&nbsp;  from this page directly to my ICQ. 
+          	 </font>
+        		</td>
+        </tr>
+        <tr> 
+          <td valign="top" align="center" width="47%" height="71">
+		  <form name="frmLogin">
+			<input type="hidden" name="nick" value="Guest">
+			<script language="JavaScript">document.write("<input type='hidden' name='icq' value="+escape(gl_pcc_info[12])+">");</script>
+			<input type="hidden" name="info" value="">
+			<input type="hidden" name="but" value="Chat">
+			<script language="JavaScript">
+				if(gl_status == 0){
+					document.write("<img src='pcc_images/chat_an.gif' width='131' height='31' border='0' alt='The user is currently offline'></a><br>");
+					document.write("<font face='MS Sans Serif' size='-2' color='#304B66'>The user is currently offline</font><br>");
+				}else{
+					document.write("<a href=javascript:newWin('http://web.icq.com/wwp/msg?Uin="+escape(gl_pcc_info[12])+"&Name="+escape(gl_pcc_info[0])+"&Send=yes','635','440','msg')>");
+					document.write("<img src='pcc_images/chat.gif' width='131' height='31' border='0' alt='Chat with Me'></a><br>");
+				}
+			</script>
+			
+            </form>
+		<br>
+          </td>
+          <td rowspan="4" valign="top" width="47%" height="230">
+		  <form name="myform">
+			<input type="HIDDEN" name="charcount" value="450">
+		</form>
+            <form name="pagerform" action="http://web.icq.com/whitepages/page_me/" method="Post" onSubmit="return chPager()"> 
+			<script language="JavaScript">document.write("<input type='HIDDEN' name='to' value="+ gl_pcc_info[12] +">");</script>
+              <table width="85%" border="0" align="center">
+                <tr> 
+                  	<td><font face="Arial" size="2" color="#245492"><b>Your Name:</b></font></td>
+                  	<td><font face="Arial" size="2" color="#245492"><b>Your Email:</b></font></td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <input type="text" name="from" size="13">
+                  </td>
+                  <td> 
+                    <input type="text" name="fromemail" size="13">
+                  </td>
+                </tr>
+                <tr> 
+                  <td colspan="2"> 
+				  	<font face="Arial" size="2" color="#245492"><b>Message:</b></font><br>
+                    <textarea name="body" cols="32" rows="9" wrap="hard" onblur="Enablecounter()" onChange="Enablecounter()"></textarea>
+                  </td>
+                </tr>
+				<tr>
+					<td colspan="2">
+						&nbsp;
+					</td>
+				</tr>
+                <tr> 
+                  <td colspan="2" align="right" valign="top"> 
+                    <input type="image" src="pcc_images/send.gif" width="48" height="23" border="0" alt="Send">&nbsp; 
+                    <a href="javascript:ClearForm();"><img src="pcc_images/clear.gif" width="48" height="23" border="0" alt="Clear"></a>
+                  </td>
+                </tr>
+				<tr>
+					<td colspan="2" align="center">
+						<font face="ms sans serif" size="-2">Please read the <a href="#legal"><font color="#245695"><b><u>Terms of Service</u></b></font></a>.</font>
+					</td>
+				</tr>
+              </table>
+				</form>
+          </td>
+        </tr>
+        <tr> 
+	         <td bgcolor="#F0F7FF" height="20">
+			  	<font face="Verdana" size="2" color="#245492">&nbsp;&#149;&nbsp;<b>Send me an Email to my ICQ</b></font>
+			</td>
+        </tr>
+        <tr> 
+          <td bgcolor="#FFFFFF" valign="top" height="71"> 
+		  	<font face="Verdana" size="2" color="#245492">&nbsp;&nbsp;&nbsp; 
+  			Send a short EmailExpress message<br>&nbsp;&nbsp;&nbsp;&nbsp;(up to 450 characters) from any<br>&nbsp;&nbsp;&nbsp;&nbsp;Email Client directly to my ICQ.</font>
+		</td>
+        </tr>
+        <tr> 
+          <td bgcolor="#FFFFFF" valign="top">
+		   <div align="center"><font face="Arial" size="2" color="#245492"><br><script language="JavaScript">document.write("<a href=mailto:"+gl_pcc_info[12]+"@pager.icq.com>")</script><img src="pcc_images/email_exp.gif" width="175" height="31" border="0" alt="EmailExpress Me"></a><br>
+              <script language="JavaScript">document.write("<a href=mailto:"+gl_pcc_info[12]+"@pager.icq.com>")</script><font face="MS Sans Serif" size="-2" color="#245195"><u><script language="JavaScript">document.write(+gl_pcc_info[12]+"@pager.icq.com")</script></u></font></a><br>
+			  <br><center><font face="ms sans serif" size="-2">Please read the <a href="#legal"><font color="#245695"><b><u>Terms of Service</u></b></font></a>.</font></center>
+              </font></div>
+			  <br><div align="right"><font face="Verdana" size="2" color="#245492"><a href="http://www.icq.com/email/email-express.html"><u><font color="#2F62A1">More Info</font></u></a></font>&nbsp;<img src="pcc_images/more_info.gif" width="13" height="13" border="0" alt="More Info" vspace="0" hspace="0"></div>
+				
+          </td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+          <td bgcolor="#245695">
+		  	<font face="Verdana" size="2" color="#FFFFFF">&nbsp;<b>Got ICQ?</b></font>
+		  </td>
+        </tr>
+        <tr> 
+          <td bgcolor="#F0F7FF"><font face="Verdana" size="2" color="#23588E">&nbsp;&#149;&nbsp;<b>Send Me an Email</b></font></td>
+          <td bgcolor="#F0F7FF" valign="top"><font face="Verdana" size="2" color="#23588E">&nbsp;&#149;&nbsp;<b>Send me a message</b></font> </td>
+        </tr>
+        <tr> 
+          <td>
+		  
+			<font face="Verdana" size="2" color="#245492">&nbsp;&nbsp;&nbsp;&nbsp;Send me an Email message by<br>&nbsp;&nbsp;&nbsp;&nbsp;clicking on this button.</font><br>
+	           	<br><div align="center">
+					<script language="JavaScript">
+						if(gl_pcc_info[7]==0){
+							document.write("<img src='pcc_images/email_me_off.gif' width='131' height='31' border='0' alt='My Email is unavailable'><br>")
+							document.write("<font face='MS Sans Serif' size='-2' color='#304B66'>My Email is unavailable</font></div><br><br>")
+						}else{
+							document.write("<a href=mailto:"+gl_pcc_info[7]+"><img src='pcc_images/email_me.gif' width='131' height='31' border='0' alt='Email Me'></a><br><a href=mailto:"+gl_pcc_info[7]+"><a href=mailto:"+ gl_pcc_info[7] +"><font face='MS Sans Serif' size='-2' color='#245195'><u>"+ gl_pcc_info[7] +"</u></font></a>")
+						}
+					</script>
+					</div><br><br>
+		 </td>
+          <td valign="top">
+		  	<font face="Verdana" size="2" color="#245492">
+		  	&nbsp;&nbsp;&nbsp;&nbsp;Send me an ICQ Message, lets start<br>&nbsp;&nbsp;&nbsp;&nbsp;talking by ICQ!
+		  </font>
+		  <br><br><center><script language="JavaScript">document.write("<a href='http://web.icq.com/whitepages/message_me?uin="+gl_pcc_info[12]+"&action=message'>")</script><img src="pcc_images/msg.gif" width="131" height="31" border="0" alt="Message Me"></a></center>
+          </td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+          <td bgcolor="#F0F7FF"><font face="Verdana" size="2" color="#23588E">&nbsp;&#149;&nbsp;<b>SMS Me Now!</b></font>
+		  </td>
+        </tr>
+        <tr> 
+          <td valign="top">
+		    &nbsp;
+		</td>
+          <td valign="top">
+		  
+			  <font face="Verdana" size="2" color="#245492">&nbsp;&nbsp;&nbsp;&nbsp;Send an SMS message from the Web<br>&nbsp;&nbsp;&nbsp;&nbsp;directly to my cell phone Now!<br></font>
+			  <br><br>&nbsp;<div align="center">
+			  <script language="JavaScript">
+			  	if(gl_pcc_info[8]==0){
+			  		document.write("<img src='pcc_images/sms_me_off.gif' width='129' height='31' border='0' alt='My cell phone is unavailable'>")
+			  		document.write("<br><font face='MS Sans Serif' size='-2' color='#304B66'>My cell phone is unavailable</font></div>")
+				}else{
+					document.write("<a href=http://web.icq.com/sms/send?smsnumber="+escape(gl_pcc_info[8])+"><img src='pcc_images/sms_me_on.gif' width='129' height='31' border='0' alt='SMS My Now'></a>")
+				}
+				</script>
+				</div>
+			  <div align="right">&nbsp;&nbsp;&nbsp;<br><font face="Verdana" size="2" color="#245492"><a href="http://web.icq.com/sms/"><u><font color="#2F62A1">More Info</font></u></a>&nbsp;</font><img src="pcc_images/more_info.gif" width="13" height="13" border="0" alt="More Info" vspace="0" hspace="0"></div><br>
+			 </td>
+        </tr>
+      </table>
+      <!-- Talk to me -->
+			</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td align="center">
+				<br><img src="pcc_images/title_line_pixel.gif" width="290" height="5" border="0" alt=""><br><font face="Arial" size="4" color="#336699"><b>My Web Pages</b></font><br><img src="pcc_images/title_line_pixel.gif" width="175" height="5" border="0" align="top" alt="">
+			</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td align="center"><br>
+				<table border="0" width="95%" cellpadding="0" cellspacing="0">
+					<tr>
+						<td bgcolor="#245891" width="50%" height="20" valign="middle"><font face="Verdana" size="2" color="#FFFFFF"><b>&nbsp;My Web Front</b></font></td>
+						<td rowspan="4"><img src="pcc_images/empty.gif" width="30" height="1" border="0"></td>
+						<td bgcolor="#245891" valign="middle"><font face="Verdana" size="2" color="#FFFFFF"><b>&nbsp;My Homepage</b></font></td>
+					</tr>
+					<tr>
+						<td valign="top">
+							
+								<font face="Verdana" size="2" color="#245492">
+									&nbsp;Visit my ICQ Web Front. It's hosted<br>&nbsp;on my computer, so you can contact <br>&nbsp;me, see my personal details, even share<br>&nbsp;files with me (only the ones I allow you<br>&nbsp;to view!).
+								</font>
+							 </td>
+						<td width="50%" valign="top">
+							
+								<font face="Verdana" size="2" color="#245492">
+								&nbsp;Visit my My free homepage on the ICQ<br>&nbsp;Web site. 
+								</font>
+							 </td>
+					</tr>
+					<tr>
+						<script language="JavaScript">
+							if(gl_pcc_info[11] == 0 || gl_pcc_info[11] == null){
+								document.write("<td><div align='center'><br><img src='pcc_images/web_front_off.gif' width='166' height='31' border='0' alt='My Web Front is unavailable'><br>");
+								document.write("<font face='MS Sans Serif' size='-2' color='#304B66'>My Web Front is unavailable</font></div></td>");
+							}else{
+								document.write("<td><div align='center'><br><a href='http://webfront.icq.com/"+ gl_pcc_info[12] +"'><img src='pcc_images/web_front_on.gif' width='166' height='31' border='0' alt='My Web Front is unavailable'></a><br>");
+								document.write("<a href='http://webfront.icq.com/"+ gl_pcc_info[12] +"'><font face='MS Sans Serif' size='-2' color='#245195'><u>http://webfront.icq.com/"+ escape(gl_pcc_info[12]) +"</u></font></a></div></td>");
+							}
+						</script>
+							<td align="center"><br>
+								<script language="JavaScript">
+									if(gl_pcc_info[10] =="http://" || gl_pcc_info[10] == ""){
+										document.write("<img src='pcc_images/home_page_off.gif' width='166' height='31' border='0' alt='My Homepage is unavailable'>");
+										document.write("<br><font face='MS Sans Serif' size='-2' color='#304B66'>My Homepage is unavailable</font></td>");
+									}else{
+										document.write("<a href='"+gl_pcc_info[10]+"'><img src='pcc_images/home_page_on.gif' width='166' height='31' border='0' alt='My Homepage is unavailable'></a>");
+										document.write("<br><a href='"+gl_pcc_info[10]+"'><font face='MS Sans Serif' size='-2' color='#245195'><u>"+gl_pcc_info[10]+"</u></font></a></td>");
+									}
+								</script>					
+						 </tr>
+					<tr>
+						<td align="right"><font face="Verdana" size="2" color="#245492"><br><a href="http://www.icq.com/hpf/"><u><font color="#2F62A1">More Info</font></u></a></font>&nbsp;<img src="pcc_images/more_info.gif" width="13" height="13" border="0" alt="More Info" vspace="0" hspace="0"></td><td align="right"><font face="Verdana" size="2" color="#245492"><br><a href="http://www.icq.com/hp/start.html"><u><font color="#2F62A1">More Info</font></u></a></font>&nbsp;<img src="pcc_images/more_info.gif" width="13" height="13" border="0" alt="More Info" vspace="0" hspace="0"></td>
+					</tr>
+				</table>		
+			</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>
+			<br><br>
+				<table border="0" align="center" cellpadding="0" cellspacing="0"> 
+					<tr>
+						<td rowspan="4" height="48" width="24"><img src="pcc_images/search_left.gif" width="24" height="48" border="0" alt="" vspace="0" hspace="0" align="left"></td>
+						<td colspan="3" valign="top" height="4"><img src="pcc_images/search_line.gif" width="550" height="4" border="0" alt=""></td>
+						<td rowspan="4" height="48" width="24"><img src="pcc_images/search_right.gif" width="24" height="48" border="0" alt=""></td>
+					</tr>
+					<tr>
+						<td valign="middle" height="35" nowrap>
+							<font face="Verdana" size="2" color="#245891"><a href="http://www.icq.com/people/topic.html"><b><font color="#225992">People Search</font></b></a>&nbsp;&nbsp;</font>
+						</td>
+						<form name="go">
+						<td valign="bottom">
+							<select name="page">
+								<option  value="0" selected>Select an Interest
+								<option  value="100">Art
+								<option  value="101">Cars
+								<option  value="102">Celebrity Fans
+								<option  value="103">Collections
+								<option  value="104">Computers
+								<option  value="105">Culture
+								<option  value="106">Fitness
+								<option  value="107">Games
+								<option  value="108">Hobbies
+								<option  value="109">ICQ - Help
+								<option  value="110">Internet
+								<option  value="111">Lifestyle
+								<option  value="112">Movies and TV
+								<option  value="113">Music
+								<option  value="114">Outdoors
+								<option  value="115">Parenting
+								<option  value="116">Pets and Animals
+								<option  value="117">Religion
+								<option  value="118">Science
+								<option  value="119">Skills
+								<option  value="120">Sports
+								<option  value="121">Web Design
+								<option  value="122">Ecology
+								<option  value="123">News and Media
+								<option  value="124">Government
+								<option  value="125">Business
+								<option  value="126">Mystics
+								<option  value="127">Travel
+								<option  value="128">Astronomy
+								<option  value="129">Space
+								<option  value="130">Clothing
+								<option  value="131">Parties
+								<option  value="132">Women
+								<option  value="133">Social science
+								<option  value="134">60's
+								<option  value="135">70's
+								<option  value="136">80's
+								<option  value="137">50's
+								<option  value="138">Finance and Corporate
+								<option  value="139">Entertainment
+								<option  value="140">Consumer Electronics
+								<option  value="141">Retail Stores
+								<option  value="142">Health and Beauty
+								<option  value="143">Media
+								<option  value="144">Household Products
+								<option  value="145">Mail Order Catalog
+								<option  value="146">Business Services
+								<option  value="147">Audio and Visual
+								<option  value="148">Sporting and Athletic
+								<option  value="149">Publishing
+								<option  value="150">Home Automation
+ </select>&nbsp;<a href="javascript:Go()"><img src="pcc_images/go.gif" width="35" height="23" vspace="0"  hspace="0" border="0" alt="Go!" align="top"></a>
+						</td>
+							</form>
+							<form name="frmSearch" action="http://web.icq.com/whitepages/search_results/" method="POST"  onSubmit="Checkit()">
+						<td valign="bottom">
+							<input type="TEXT" name="first" value="First Name" size=10 maxlength=40 onfocus="clearSearch()">&nbsp;<input type="TEXT" name="last" value="Last Name" size=10 maxlength=40 onfocus="clearSearch()">&nbsp;<input type="hidden" name="email" value="" size=9 maxlength=40><input type="hidden" name="handle" value="" size=9 maxlength=40><input type="Image" name="Search" src="pcc_images/go.gif" width="35" height="23" vspace="0" border="0" alt="Go!" align="top">
+						</td></form>	
+					</tr>
+					<tr>
+						<td colspan="3"><img src="pcc_images/empty.gif" width="1" height="5" border="0"></td>
+					</tr>
+					<tr>
+						<td colspan="3" valign="top" height="4"><img src="pcc_images/search_line_top.gif" width="550" height="4" border="0" alt=""></td>
+					</tr>
+				</table><br><br><a name="more"></a>
+				<table border="0" cellpadding="0" cellspacing="0" align="center" width="530">
+					<tr>
+						<td height="1" colspan="4" bgcolor="#215994" width="1"><img src="/images/empty.gif" width="1" height="1" border="0"></td>
+					</tr>
+					<tr>
+						<td height="1" bgcolor="#215994" width="1"><img src="/images/empty.gif" width="1" height="1" border="0"></td>
+						<td bgcolor="#245891" colspan="2" align="center" height="20"><font face="Verdana" size="2" color="#FFFFFF"><b>More about the ICQ Unified Messaging Center.</b></td>
+						<td height="1" bgcolor="#215994" width="1"><img src="/images/empty.gif" width="1" height="1" border="0"></td>
+					</tr>
+					<tr>
+						<td height="1" bgcolor="#215994" width="1"><img src="/images/empty.gif" width="1" height="1" border="0"></td>
+						<td height="1" width="1"><img src="/images/empty.gif" width="3" height="1" border="0"></td>
+						<td height="20">
+							<font face="Verdana" size="-1">
+								Anyone who registers to ICQ automatically gets their very own ICQ Unified Messaging Center. 
+								As an ICQ user, this page features your personal details &amp; 
+								lots of fun contact options to help old and new friends find you and stay in touch.
+								<br><br>
+								 Dont have ICQ? <a href="http://www.icq.com/download/"><b><u>Download ICQ for free!</u></b></a><br><br>
+								 Want your ICQ Unified Messaging Center on your site? Get it <a href="http://www.icq.com/panels/"><b><u>here</u></b></a>!<br><br>
+								 <center>
+									<form name="pagelink"  action="http://wwp.icq.com/" method="Get">
+										Enter a user's ICQ Number and Click <b>Go</b>:<br><br>
+										<input type="text" name="Uin" size="20">
+										<input type="image" src="pcc_images/go.gif" width="35" height="23" vspace="0"  hspace="0" border="0" alt="Go!" align="top">
+									</form>
+							</center>
+							</font>
+						</td>
+						<td height="1" bgcolor="#215994" width="1"><img src="/images/empty.gif" width="1" height="1" border="0"></td>
+					</tr>
+					<tr>
+						<td height="1" colspan="4" bgcolor="#215594" width="1"><img src="/images/empty.gif" width="1" height="1" border="0"></td>
+					</tr>
+				</table><br><br>
+				<a name="legal"></a>
+				<table border="1" width="65%" align="center" cellpadding="2" cellspacing="0"> 
+					<tr>
+						<td>
+							<font face="ms sans serif" size="-2">
+							<b>Terms of Service:</b>
+							The EmailExpress and the World-Wide Pager are for personal use only. Mass paging, mailing and spamming are strictly prohibited and infringing the <a href="http://www.icq.com/legal/"><font color="#2F62A1"><u>Terms of Service</u></font></a>.
+							<br><br>
+							<b>Please Note</b>: Your message is stamped with your IP address and the time of sending.<br></font>
+						</td>
+					</tr>
+				</table>
+				<br><br>
+			</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td align="center" valign="bottom">
+				<font face="'MS Sans Serif', Geneva, sans-serif" size="-2">
+					<b>[<a href="http://www.icq.com/legal/"><font color="#02019D"><u>Important Notice</u></font></a><font color="#00827C"> of Terms of Service</font>]</b>
+			</font>
+			</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td align="center" valign="middle" colspan="6" height="17">
+				 <font face="'MS Sans Serif', Geneva, sans-serif" size="-2">
+					<a href="http://www.icq.com/index.html"><font color="#000000"><u>ICQ.com</u></font></a>&nbsp;<b>|</b>&nbsp;
+					<a href="http://www.icq.com/products/whatisicq.html"><font color="#000000"><u>What is ICQ</u></font></a>&nbsp;<b>|</b>&nbsp;
+					<a href="http://www.icq.com/download/"><font color="#000000"><u>Download ICQ</u></font></a>&nbsp;<b>|</b>&nbsp;
+					<a href="http://www.icq.com/icqtour/"><font color="#000000"><u>ICQ Tutorials</u></font></a>&nbsp;<b>|</b>&nbsp;
+					<a href="http://www.icq.com/support/"><font color="#000000"><u>Tech Support</u></font></a>&nbsp;<b>|</b>&nbsp;	
+					<a href="http://www.icq.com/products/webguide.html"><font color="#000000"><u>Site Guide</u></font></a>&nbsp;<b>|</b>&nbsp;
+					<a href="http://www.icq.com/search/"><font color="#000000"><u>Search</u></font></a>&nbsp;<b>|</b>&nbsp;
+					<a href="http://www.icq.com/products/news.html"><font color="#000000"><u>Site News</u></font></a>&nbsp;<b>|</b>&nbsp;
+					<a href="http://www.icq.com/icqmail/signup.html"><font color="#000000"><u>ICQmail</u></font></a>&nbsp;<b>|</b>&nbsp;
+					<a href="http://web.icq.com/today"><font color="#000000"><u>ICQ Meeting Place</u></font></a>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td bgcolor="#215294" align="center" valign="middle" colspan="6" height="17">
+		 		<font face="'MS Sans Serif', Geneva, sans-serif" size="-2" color="#FFFFFF">
+					&nbsp;<a href="http://web.icq.com/community/message_boards/browse_folder?folder_id=4824"><font color="#FFFFFF"><u>User Feedback &amp; Comments</u></font></a>&nbsp;<b>|</b>&nbsp;
+					<a href="http://www.icq.com/community/"><font color="#FFFFFF"><u>ICQ Community</u></font></a>&nbsp;<b>|</b>&nbsp;
+					<a href="http://www.icq.com/people/"><font color="#FFFFFF"><u>Find Friends</u></font></a>&nbsp;<b>|</b>&nbsp;
+					<a href="http://www.icq.com/people/topic.html"><font color="#FFFFFF"><u>People Navigator</u></font></a>&nbsp;<b>|</b>&nbsp;
+					<a href="http://www.icq.com/networks/"><font color="#FFFFFF"><u>Networks</u></font></a>&nbsp;<b>|</b>&nbsp;
+					<a href="http://www.icq.com/sitecreator/"><font color="#FFFFFF"><u>ICQ Sitecreators</u></font></a>&nbsp;<b>|</b>&nbsp;
+					<a href="http://www.icq.com/sitecreator/userzone.html"><font color="#FFFFFF"><u>Power User Zone</u></font></a>&nbsp;<b>|</b>&nbsp;
+					<a href="http://web.icq.com/sms/"><font color="#FFFFFF"><u>SMS Center</u></font></a>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4">&nbsp;</td>
+			<td align="center">
+				<font face="'MS Sans Serif', Geneva, sans-serif" size="-2"><span class="small_Text"> Copyright &#169;1998-2001 ICQ Inc. All Rights Reserved<br><br></span></font>
+			</td>
+			<td>&nbsp;</td>
+		</tr>
+</table>
+<!-- /Main table-->
+</body>
+</html>

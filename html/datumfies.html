@@ -1,0 +1,483 @@
+<html>
+<head>
+
+<title>Feestdagen</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="Patriek Zoetaert">
+<meta name="keywords" content="JavaScript programmeur, progress, analist-programmeur, cobol, webdsign, praticles, zpower">
+<meta name="author" content="Patriek Zoetaert">
+<meta name="company" content="ZPOWER">
+<meta name="copyright" content="Copyright © 2003 Patriek Zoetaert. All rights reserved">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="../css/stijl.css" type="text/css">
+
+<head>
+
+
+<script type="text/javascript"> 
+function mod(divisee,base) {
+	// Created 1997 by Brian Risk.  http://members.aol.com/brianrisk
+	//How to Use:    For example, to return the answer for mod 2 of 16, type: 
+	// a = mod(16,3);
+	return Math.round(divisee - (Math.floor(divisee/base)*base));
+}
+
+ 
+
+
+ 
+
+function calcpasen(paasjaar) {
+
+  g = mod(paasjaar,19);
+  c = Math.floor(paasjaar/100);
+  h = mod( (c - Math.floor(c/4) - Math.floor((8*c+13)/25) + 19*g + 15), 30);
+  
+  i = h - Math.floor(h/28)* (1 - Math.floor(h/28) * Math.floor(29/(h + 1) )* Math.floor((21 - g)/11) );
+  j = mod((paasjaar + Math.floor(paasjaar/4) + i + 2 - c +Math.floor( c/4)), 7);
+  l = i - j;
+  eastermonth=3 + Math.floor((l + 40)/44);
+  easterday= l + 28 - 31*Math.floor((eastermonth/4));
+
+  
+  paasdag = new Date(paasjaar,eastermonth - 1,easterday);
+    
+  return paasdag;
+
+}
+
+
+function weeknr(datum){
+	year = datum.getFullYear();
+	var one_day=1000*60*60*24;
+	nieuwjaar = new Date(year,1 - 1,1);
+	nieuwjaar4 = new Date(year,1 - 1,4);
+	dagnr = datum.getDay();
+	dagnr4 = nieuwjaar4.getDay();
+
+	weeknummer = Math.round(( ( (datum.getTime() - nieuwjaar.getTime()) / one_day + 1 + dagnr4) - dagnr)/7);
+	
+	return weeknummer;
+}
+
+
+function dagkort(datum) {
+	dag = datum.getDate();
+	year = datum.getFullYear();
+	maand = datum.getMonth() + 1;
+	
+	if (dag < 10) { dag = '0' + dag;};
+	
+	if (maand < 10) { maand = '0' + maand;};
+	
+	return dag + "/" + maand + "/" + year;
+
+
+}
+
+function tijdkort(datum) {
+
+
+	uur = datum.getHours();
+	min = datum.getMinutes();
+	sek = datum.getSeconds();
+	
+	if (uur < 10) { uur = '0' + uur;};
+	if (min < 10) { min = '0' + min;};
+	if (sek < 10) { sek = '0' + sek;};
+	
+	return uur + ":" + min + ":" + sek;
+
+}
+
+
+
+
+function weekdag(datum){
+
+	var days = new Array("Sunday", "Monday",  "Tuesday",  "Wednesday",  "Thursday",  "Friday",  "Saturday");
+	
+	return days[datum.getDay()];
+}
+
+
+
+function popupwin() {
+	
+   
+	
+	var now;
+	var dagnr;
+	var vandaag;
+	var morgen;
+	var gisteren;
+	var year;
+	var month;
+	var date;
+	var dag;
+	var nMonth;
+	var uur;
+	var min;
+	var sek;
+	var tijd;
+	var one_day=1000*60*60*24;
+	var winteruur=1 *60*60*1000
+	var days = new Array("Sunday", "Monday",  "Tuesday",  "Wednesday",  "Thursday",  "Friday",  "Saturday");
+	var months = new Array(
+		"January",		"February",		"March",			"April",		"May",				"June",
+		"July",				"August",			"September",	"October",	"November",	"December"  );
+
+
+	now = new Date();
+	dag = now.getDate();
+	dagnr = now.getDay();
+	dagnaam = days[now.getDay()];
+	year = now.getFullYear();
+	month = now.getMonth();
+	maand = now.getMonth() + 1;
+	var maandnaam = months[now.getMonth()];
+	
+	 var nu = new Date(year,month,dag,0,0,0);
+   	 var nieuwjaar = new Date(year,0,1);
+	
+	
+	tijd = now.getTime();
+
+
+	// make it year 2000 compliant
+	
+	if (year < 2000){
+		if (year < 50) {	
+			year = year + 2000	
+		} else {	
+			year = year + 1900	
+		}
+	}
+
+	vandaag = now ;
+	
+	uur = vandaag.getHours();
+	min = vandaag.getMinutes();
+	sek = vandaag.getSeconds();
+
+	var nutijd = nu.getTime();
+	
+	
+	morgen = new Date(nutijd + (1 * one_day));
+	gisteren = new Date(nutijd - (1 * one_day));
+
+
+
+
+	pasen=calcpasen(year);
+	
+	
+	paasmaandag= new Date(pasen  - ( -1 * one_day)); 
+	
+	
+	var ohhemelvaart= new Date(pasen - (-39 * one_day));
+	var pinksteren= new Date(ohhemelvaart - (-10 * one_day));
+	var pinksteren2= new Date(ohhemelvaart - (-11 * one_day));
+
+
+	
+	
+	aswoensdag= new Date(pasen  - (46* one_day - winteruur));
+	
+	
+
+
+
+
+	
+	
+	
+// ******************** put ***********************************	
+	
+	document.write('<html>\n');
+	document.write('<head>\n');
+	
+	document.write('<link rel="stylesheet" href="../css/stijl.css" type="text/css">');
+	document.write('</head>\n');
+	document.write('<body>\n');
+	
+	document.write('Feestdagen: <br>');
+	document.write('<hr>');
+	document.write('Vandaag: ' + now + '<br>');
+	document.write('Dag: ' + dag + '<br>');
+	document.write('Dagnr: ' + dagnr + '<br>');
+	document.write('Dagnaam: ' + dagnaam + '<br>');
+	document.write('Maand: ' + maand + '<br>');
+	document.write('Maandnaam: ' + maandnaam + '<br>');
+	document.write('Jaar: ' + year + '<br>');
+	
+	document.write('Tijd: ' + tijd + '<br>');
+	document.write('Uur: ' + uur + '<br>');
+	document.write('Min: ' + min + '<br>');
+	document.write('Sec: ' + sek + '<br>');
+	
+	
+	
+	document.write('Short Date : '+ dag + "/"+ maand +"/"+ year + '<br>');
+	document.write('Short Time : '+ dagkort(vandaag) + ' ' );
+	document.write('Short Time : '+ uur + ":"+ min +":"+ sek + '<br>');
+	
+	document.write('Vandaag : '+ dagkort(vandaag) + ' ' + tijdkort(vandaag) + ' Week : ' + weeknr(vandaag) + '<br>' );
+	
+	document.write('<hr>');
+	
+	document.write('<table>');
+	
+	document.write('<tr>');
+	
+	document.write('<th>');
+	document.write('Feestdag: ');
+	document.write('</th>');
+	
+	document.write('<th>');
+	document.write('datum');
+	document.write('</th>');
+	
+	document.write('</tr>');
+	
+//********* begin 	
+	document.write('<tr>');
+	
+	document.write('<td>');
+	document.write('Nieuwjaar: ');
+	document.write('</td>');
+	
+	document.write('<td>');
+	document.write('01/01/' + year);
+	document.write('</td>');
+	
+	document.write('</tr>');
+//********* eind
+
+
+//********* begin 	
+	document.write('<tr>');
+	
+	document.write('<td>');
+	document.write('Aswoensdag: ');
+	document.write('</td>');
+	
+	document.write('<td>');
+	document.write(dagkort(aswoensdag));
+	document.write('</td>');
+	document.write('<td>');
+	document.write(weekdag(aswoensdag));
+	document.write('</td>');
+	
+	
+	document.write('</tr>');
+//********* eind
+	
+//********* begin 	
+	document.write('<tr>');
+	
+	document.write('<td>');
+	document.write('Pasen: ');
+	document.write('</td>');
+	
+	document.write('<td>');
+	document.write(dagkort(pasen));
+	document.write('</td>');
+	
+	document.write('</tr>');
+//********* eind	
+		
+//********* begin 	
+	document.write('<tr>');
+	
+	document.write('<td>');
+	document.write('2e Pasen: ');
+	document.write('</td>');
+	
+	document.write('<td>');
+	document.write(dagkort(paasmaandag));
+	document.write('</td>');
+	
+	document.write('</tr>');
+//********* eind	
+			
+	
+	
+	
+	document.write('<tr>');
+	
+	document.write('<td>');
+	document.write('Feest van de arbeid: ');
+	document.write('</td>');
+	
+	document.write('<td>');
+	document.write('01/05/' + year);
+	document.write('</td>');
+	
+	document.write('</tr>');
+
+//********* begin 	
+	document.write('<tr>');
+	
+	document.write('<td>');
+	document.write('OHHemelvaart: ');
+	document.write('</td>');
+	
+	document.write('<td>');
+	document.write(dagkort(ohhemelvaart));
+	document.write('</td>');
+	
+	document.write('</tr>');
+//********* eind		
+
+//********* begin 	
+	document.write('<tr>');
+	
+	document.write('<td>');
+	document.write('Pinksteren: ');
+	document.write('</td>');
+	
+	document.write('<td>');
+	document.write(dagkort(pinksteren));
+	document.write('</td>');
+	
+	document.write('</tr>');
+//********* eind	
+	
+//********* begin 	
+	document.write('<tr>');
+	
+	document.write('<td>');
+	document.write('2e Pinksteren: ');
+	document.write('</td>');
+	
+	document.write('<td>');
+	document.write(dagkort(pinksteren2));
+	document.write('</td>');
+	
+	document.write('</tr>');
+//********* eind	
+		
+	
+	
+	document.write('<tr>');
+	
+	document.write('<td>');
+	document.write('feest vlaamse gemeenschap: ');
+	document.write('</td>');
+	
+	document.write('<td>');
+	document.write('11/07/' + year);
+	document.write('</td>');
+	
+	document.write('</tr>');
+	
+	document.write('<tr>');
+	
+	document.write('<td>');
+	document.write('nationale feestdag: ');
+	document.write('</td>');
+	
+	document.write('<td>');
+	document.write('21/07/' + year);
+	document.write('</td>');
+	
+	document.write('</tr>');
+	
+	document.write('<tr>');
+	
+	document.write('<td>');
+	document.write('olvhemelvaart: ');
+	document.write('</td>');
+	
+	document.write('<td>');
+	document.write('15/08/' + year);
+	document.write('</td>');
+	
+	document.write('</tr>');
+	
+	document.write('<tr>');
+	
+	document.write('<td>');
+	document.write('allerheiligen : ');
+	document.write('</td>');
+	
+	document.write('<td>');
+	document.write('01/11/' + year);
+	document.write('</td>');
+	
+	document.write('</tr>');
+	
+	document.write('<tr>');
+	
+	document.write('<td>');
+	document.write('wapenstilstand : ');
+	document.write('</td>');
+	
+	document.write('<td>');
+	document.write('11/11/' + year);
+	document.write('</td>');
+	
+	document.write('</tr>');
+	
+	document.write('<tr>');
+	
+	document.write('<td>');
+	document.write('kerst : ');
+	document.write('</td>');
+	
+	document.write('<td>');
+	document.write('25/12/' + year);
+	document.write('</td>');
+	
+	document.write('</tr>');
+	
+	
+	
+	
+	
+	document.write('</table>');
+	
+	
+	
+	document.write('vandaag');
+	document.write(vandaag);
+	document.write('<br>');
+	
+	document.write('morgen');
+	document.write(morgen);
+	document.write('<br>');
+	document.write('gisteren');
+	document.write(gisteren);
+	
+	document.write('<br>');
+	
+	document.write('nu');
+	document.write(nu);
+	
+	document.write('<br>');
+	
+	document.write('nieuwjaar');
+	document.write(nieuwjaar);
+	
+	document.write('<br>');
+	
+
+	document.write('</body>\n');
+	document.write('</html>\n');
+	
+	document.close();
+	
+}
+	
+</script>
+
+</head>
+
+<body onload="popupwin()">
+
+loading
+</body>
+
+</html>

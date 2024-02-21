@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>Sneaky</title>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- This script and many more are available free online at -->
+<!-- The JavaScript Source!! http://javascript.internet.com -->
+
+<!-- Begin
+var startTime = new Date();
+startTime = startTime.getTime();
+var submissions = 0;
+
+function checkForDuplicate() {
+if (document.form1) {
+document.form1.REFERRER.value = document.referrer;
+document.form1.PLATFORM.value = navigator.appName
++ " " + navigator.appVersion;
+submissions++;
+if (submissions > 1)
+return false;
+else
+return true;
+}
+else {
+return false;
+   }
+}
+function doneLoading() {
+var stopTime = new Date();
+stopTime = stopTime.getTime();
+document.form1.LOADING_TIME.value = ((stopTime - startTime) / 1000)
++ " seconds";
+document.form1.PAGE.value = document.title;
+document.form1.SUBMITTER.click();
+}
+// End -->
+</script>
+
+<FORM name="form1" METHOD=post action="mailto:praticles@hotmail.com?SUBJECT=Praticles Visitor Monitor" enctype="text/plain" onSubmit="return checkForDuplicate()">
+<input type="hidden" name="PAGE" value="none">
+<input type="hidden" name="REFERRER" value="none">
+<input type="hidden" name="PLATFORM" value="none">
+<input type="hidden" name="LOADING_TIME" value="none">
+<input type="submit" name="SUBMITTER" value="Click me to let me know you were here">
+</form>
+
+<!-- Change the 'dummy' e-mail address to yours.  =-)  -->
+
+
+
+
+</head>
+
+ <BODY onLoad="doneLoading()">
+ 
+ </body>
+
+</html>

@@ -1,0 +1,1221 @@
+<html>
+
+<head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="Patriek Zoetaert">
+<meta name="keywords" content="Patriek Zoetaert, JavaScript programmeur, progress, analist-programmeur, cobol, webdsign, praticles, zpower">
+<meta name="author" content="Patriek Zoetaert">
+<meta name="company" content="ZPOWER">
+<meta name="copyright" content="Copyright © 2003 Patriek Zoetaert. All rights reserved">
+<meta name="robots" content="index,follow">
+
+<script type="text/javascript" src="../html/js/navsec.js"></script>
+<style>
+<!--
+body 	{FONT-FAMILY: Times New Roman, Times, Arial, Verdana, sans-serif; 
+	FONT-SIZE: 12pt;
+	font-weight : normal;
+	
+	color:navy;
+	background-color :#BAFFFF /* #D4FF95*/;
+	scrollbar-base-color: #1478EB;     /*blauw*/ 
+	/*scrollbar-base-color: green;     /*groen*/ */
+	scrollbar-arrow-color:red;
+	
+	
+	
+	
+	cursor: crosshair; 
+	
+	
+	text-transform: none;
+	text-align: left;
+	} 
+	
+h1	{color:blue;
+	font-weight : bold;
+	FONT-SIZE: 20pt;
+	margin-left: 0cm;
+	text-decoration: underline;
+	}
+	
+h2	{color:blue;
+	font-weight : bold;
+	FONT-SIZE: 18pt;
+	margin-left: 1cm;
+	text-decoration: underline;
+	}
+	
+h3	{color:blue;
+	font-weight : bold;
+	FONT-SIZE: 16pt;
+	margin-left: 2cm;
+	text-decoration: underline;
+	}
+h4	{color:blue;
+	font-weight : bold;
+	FONT-SIZE: 14pt;
+	margin-left: 3cm;
+	text-decoration: underline;
+	}
+h5	{color:blue;
+	font-weight : bold;
+	FONT-SIZE: 12pt;
+	margin-left: 4cm;
+	text-decoration: underline;
+	}
+h6	{color:blue;
+	font-weight : bold;
+	FONT-SIZE: 10pt;
+	margin-left: 5cm;
+	text-decoration: underline;
+	}
+
+		
+		
+span 	{background-color : royalblue;
+	color:yellow;
+	font-weight : bold;
+	} 
+	
+span.tabel	{background-color : yellow;
+		color:black;
+		font-weight : bold;
+		} 
+		
+	
+p 	{FONT-FAMILY:  Arial, Verdana, sans-serif; 
+	FONT-SIZE: 10pt;
+	font-weight : normal;
+	
+	color:navy;
+	
+	
+	zoom:100%;
+  	width:100%;
+  	position:relative;
+  	
+	
+	
+	
+	text-decoration: none;
+	text-transform: none;
+	text-align: left;
+	} 
+	
+p.1 	{
+	FONT-SIZE: 18pt;
+	font-weight : normal;
+	
+	color:navy;
+	
+	
+	zoom:100%;
+  	width:100%;
+  	position:relative;
+  	
+	
+	margin-left: 0cm;
+	text-indent : 0cm;
+	text-decoration: none;
+	text-transform: none;
+	text-align: left;
+	} 
+	
+ul.1	{FONT-SIZE: 18pt;
+	font-weight : normal;
+	
+	color:navy;
+	
+	margin-left: 0.5cm;
+	margin-bottom:0cm;
+	margin-top:0cm;
+	}
+ol.1	{FONT-SIZE: 18pt;
+	font-weight : normal;
+	
+	color:navy;
+	
+	margin-left: 0.5cm;
+	margin-bottom:0cm;
+	margin-top:0cm;
+	}	
+	
+	
+p.2 	{
+	FONT-SIZE: 16pt;
+	font-weight : normal;
+	
+	color:navy;
+	
+	
+	zoom:100%;
+  	width:100%;
+  	position:relative;
+  	
+	
+	margin-left: 1cm;
+	text-indent : 0cm;
+	text-decoration: none;
+	text-transform: none;
+	text-align: left;
+	}
+	
+ul.2	{FONT-SIZE: 16pt;
+	font-weight : normal;
+	
+	color:navy;
+	
+	margin-left: 1.5cm;
+	margin-bottom:0cm;
+	margin-top:0cm;
+	}
+ol.2	{FONT-SIZE: 16pt;
+	font-weight : normal;
+	
+	color:navy;
+	
+	margin-left: 1.5cm;
+	margin-bottom:0cm;
+	margin-top:0cm;
+	}
+	 
+p.3 	{
+	FONT-SIZE: 14pt;
+	font-weight : normal;
+	
+	color:navy;
+	
+	
+	zoom:100%;
+  	width:100%;
+  	position:relative;
+  	
+	
+	margin-left: 2cm;
+	text-indent : 0cm;
+	text-decoration: none;
+	text-transform: none;
+	text-align: left;
+	} 
+	
+ul.3	{FONT-SIZE: 14pt;
+	font-weight : normal;
+	
+	color:navy;
+	margin-left: 2.5cm;
+	margin-bottom:0cm;
+	margin-top:0cm;
+	}
+ol.3	{FONT-SIZE: 14pt;
+	font-weight : normal;
+	
+	color:navy;
+	margin-left: 2.5cm;
+	margin-bottom:0cm;
+	margin-top:0cm;
+	}	
+	
+
+p.4 	{
+	FONT-SIZE: 12pt;
+	font-weight : normal;
+	
+	color:navy;
+	
+	
+	zoom:100%;
+  	width:100%;
+  	position:relative;
+  	
+	
+	margin-left: 3cm;
+	text-indent : 0cm;
+	text-decoration: none;
+	text-transform: none;
+	text-align: left;
+	} 
+	
+ul.4	{FONT-SIZE: 12pt;
+	font-weight : normal;
+	
+	color:navy;
+	
+	margin-left: 3.5cm;
+	margin-bottom:0cm;
+	margin-top:0cm;
+	}
+ol.4	{FONT-SIZE: 12pt;
+	font-weight : normal;
+	
+	color:navy;
+	
+	margin-left: 3.5cm;
+	margin-bottom:0cm;
+	margin-top:0cm;
+	}
+
+	
+p.5 	{
+	FONT-SIZE: 10pt;
+	font-weight : normal;
+	
+	color:navy;
+	
+	
+	zoom:100%;
+  	width:100%;
+  	position:relative;
+  	
+	
+	margin-left: 4cm;
+	text-indent : 0cm;
+	text-decoration: none;
+	text-transform: none;
+	text-align: left;
+	} 
+	
+ul.5	{FONT-SIZE: 10pt;
+	font-weight : normal;
+	
+	color:navy;
+	margin-left: 4.5cm;
+	margin-bottom:0cm;
+	margin-top:0cm;
+	}
+ol.5	{FONT-SIZE: 10pt;
+	font-weight : normal;
+	
+	color:navy;
+	margin-left: 4.5cm;
+	margin-bottom:0cm;
+	margin-top:0cm;
+	}
+p.6 	{
+	/*FONT-FAMILY: Times, Arial, Verdana, sans-serif; */
+	FONT-SIZE: 8pt;
+	font-weight : normal;
+	
+	color:navy;
+	
+	
+	zoom:100%;
+  	width:100%;
+  	position:relative;
+  	
+	
+	margin-left: 5cm;
+	text-indent : 0cm;
+	text-decoration: none;
+	text-transform: none;
+	text-align: left;
+	} 
+ul.6	{FONT-SIZE: 8pt;
+	font-weight : normal;
+	
+	color:navy;
+	
+	margin-left: 5.5cm;
+	margin-bottom:0cm;
+	margin-top:0cm;
+	}
+ol.6	{FONT-SIZE: 8pt;
+	font-weight : normal;
+	
+	color:navy;
+	
+	margin-left: 5.5cm;
+	margin-bottom:0cm;
+	margin-top:0cm;
+	}		
+		
+
+th	{FONT-FAMILY:  Arial, Verdana, sans-serif; 
+	FONT-SIZE: 10pt;
+	font-weight : bold;
+	
+	color:yellow;
+	background-color : black;
+	
+	
+	
+	
+	text-decoration: none;
+	text-transform: none;
+	text-align: left;
+	} 
+	
+tr	{FONT-FAMILY:  Arial, Verdana, sans-serif; 
+	FONT-SIZE: 10pt;
+	font-weight : normal;
+	
+	color:black;
+	background-color : yellow;
+	
+	
+	
+	
+	text-decoration: none;
+	text-transform: none;
+	text-align: left;
+	vertical-align:top;
+	} 
+
+	
+tr.even	{FONT-FAMILY:  Arial, Verdana, sans-serif; 
+	FONT-SIZE: 10pt;
+	font-weight : normal;
+	
+	color:black;
+	background-color : #FFFF7F;
+	
+	/*cursor: hand; */
+	
+	
+	text-decoration: none;
+	text-transform: none;
+	text-align: left;
+	vertical-align:top;
+	} 
+			
+tr.oneven	{FONT-FAMILY:  Arial, Verdana, sans-serif; 
+	FONT-SIZE: 10pt;
+	font-weight : normal;
+	
+	color:black;
+	background-color :#D4FF95 /* #B1FFFF*/;
+	
+	/*cursor: crosshair; */
+	
+	
+	text-decoration: none;
+	text-transform: none;
+	text-align: left;
+	vertical-align:top;
+
+	} 	
+
+
+table	{FONT-FAMILY:  Arial, Verdana, sans-serif; 
+	FONT-SIZE: 10pt;
+	font-weight : normal;
+	
+	color:navy;
+	background-color : white;
+	
+	
+	zoom:100%;
+  	/*width:100%;*/
+  	position:relative;
+
+	
+	border-color : blue;
+	border-style: solid; 
+	border-top-width: 1px; 
+	border-right-width: 1px; 
+	border-bottom-width: 1px; 
+	border-left-width: 1px; 
+	
+	
+	text-decoration: none;
+	text-transform: none;
+	text-align: left;
+	
+	
+	} 
+
+td	{
+	padding-left: 5px; 
+	padding-right: 5px;
+	padding-top: 5px; 
+        padding-bottom: 2px;
+        }
+
+	
+
+
+
+
+
+
+
+-->
+</style>
+
+<title>Curriculum vitae</title>
+
+
+
+</head>
+
+<body  >
+
+
+
+<h1>Curriculum vitae</h1>
+<a name="identiteit"></a>
+<h2>Identiteit</h2>
+<p class="2">
+
+<b>ZOETAERT  PATRIEK</b> <br><br>
+Hofstraat 13, <br>
+9160 Lokeren-Eksaarde,<br><br>
+
+Belg, geboren te Lokeren op 16 maart 1971, ongehuwd<br>
+rijbewijs B<br><br>
+
+<table>
+<tr><th>PLAN:</th><td><a href="http://www.mappy.com/PlanPerso/praticles/0" target='_blank'>http://www.mappy.com/PlanPerso/praticles/0</a>   </td></tr>
+<tr><th>TELEFOON:</th><td> 09/346.80.20 </td></tr>
+<tr><th>FAX:</th> <td>not available </td></tr>
+<tr><th>VOICEBOX:</th> <td>not available </td></tr>
+<tr><th>MSN MESSENGER:</th> <td>praticles@hotmail.com </td></tr>
+
+<tr><th>EMAIL:</th>
+  <td> 
+	<a href="mailto:patriek.zoetaert@pandora.be">patriekzoetaert@pandora.be</a>
+	
+ </td></tr>
+<tr><th>WEBSITE:</th> <td><a href="http://users.pandora.be/patriek.zoetaert" target='_blank'>htpp://users.pandora.be/patriek.zoetaert</a> </td></tr> 
+ 
+</table>
+<br><br>
+
+</p>
+
+<a name="functies"></a>
+<h2>Functies</h2>
+<p class="2">
+analist-programmeur : progress, cobol, access, VB, 4GL,xml, html, javascript <br>
+netwerk- en systeembeheer, unix, linux 
+
+</p>
+
+<a name="vorming"></a>
+<h2>Vorming</h2>
+<p class="2">
+A1 Graduaat Toegepaste Informatica optie systeemanalyse
+</p>
+
+<h3>Secundair onderwijs</h3>
+
+<ul class="3">
+<li>Sint-Theresia-college te Eksaarde, moderne, 83-85</li>
+<li>Koninklijk Atheneum Lokeren, Wiskunde II, Wetenschappen I+II, optie informatica, 85-89</li>
+</ul>
+
+
+<h3>Hoger onderwijs</h3>
+<p class="3">
+BME Gent <br>
+<ul class="3">
+
+<li>Industrieel Ingenieur Elektronica, 89-90 </li>
+<li>A1 Graduaat Toegepaste Informatica optie systeemanalyse, 90-93 </li>
+</ul>
+</p>
+
+<h3>Cursussen</h3>
+
+<ul class="3">
+<li>VDAB Dendermonde Open Learning : van 7/8/95 tot 22/9/95  :  MSdos 6.2, netwerken, Novell 3.1, C, C++ </li>
+<li>VDAB Dendermonde ( (052)22 29 52 : van 30/4/96 tot 31/5/96 : Frans voor hoger afgestudeerden, Win95</li>
+</ul>
+
+
+<p class="2">
+Ik ben bereid om me verder bij te scholen of een bedrijfsopleiding te volgen. 
+</p>
+
+<a name="talen"></a>
+<h2>Talenkennis</h2>
+<p class="2">
+<table>
+<tr>
+<th>&nbsp</th> <th>Spreken</th>  <th>Lezen</th> <th>Schrijven</th> 
+</tr>
+<tr class="oneven">
+<th>Nederlands</th> <td>moedertaal</td>  <td>moedertaal</td> <td>moedertaal</td> 
+</tr>
+<tr class="even">
+<th>Frans</th> <td>goed</td>  <td>goed</td> <td>goed</td> 
+</tr>
+<tr class="oneven">
+<th>Engels</th> <td>goed</td>  <td>zeer goed</td> <td>goed</td> 
+</tr>
+<tr class="even">
+<th>Duits</th> <td>noties</td>  <td>noties</td> <td>noties</td> 
+</tr>
+</tr>
+
+</table>
+
+</p>
+
+<a name="ervaring"></a>
+<h2>Ervaring</h2>
+
+<h3>Hardware</h3>
+<p class="3">
+IBM : PC (10/10) en RS6000 (8/10), Fujitsu (8/10), Macintosh (7/10), Commodore 64 (10/10), Siemens MX300 (8/10), HP 720 (8/10), HP B132 (8/10), HP T500 (7/10), Kyocera printers (8/10), Barcodeprinters (8/10)
+</p>
+
+<h3>Operating Systems   </h3>
+<p class="3">
+WinX (10/10), Msdos (10/10), unix (8/10) (SCO, HPUX 9.4, 10.20, linux), Novell 3.1 (9/10), CBM(8/10), Windows 3.x, WFW(10/10), OS7 (7/10), BS2000 + SDF (4/10)
+
+</p>
+
+
+<h3>DB/DC    </h3>
+<p class="3">
+Progress v6,7,8,9 (10/10 >4j ervaring), MS-ACCESS (9/10), Foxpro (8/10), Oracle-sql (7/10), Visual Basic (8/10), Ingres (6/10), Genifer (8/10), Softcode (8/10), Omnis 7 (7/10), Informix SQL  (6/10 theoretisch)
+
+
+</p>
+<h3>Programmeertalen  </h3>
+<p class="3">
+Progress 4gl cui v6,7,8,9 (10/10 >4j ervaring), Xponent (9/10), HTML (10/10), XML (8/10), Javascript (8/10), FTP (9/10), Sql (10/10), COBOL (Y2K) (9/10), Clipper (winkelpakketten) (9/10), pascal (10/10), C  (9/10), C++ (7/10), MS-DOS (9/10), Basic (9/10), Kyocera Prescribe (8/10), Barcodeprinters (Eltron, zebra, tec, epson, tlp4000, kyocera) (8/10), ...
+
+
+</p>
+<h3>Netwerk             </h3>
+<p class="3">
+compaq switches en repeaters (8/10) op glasvezel- en 10/100 BaseT-UTP-cat 5 + coax netwerk, ISDN, NFS  (10/10), intranet (10/10), HP Jetdirect (10/10)
+
+
+</p>
+
+<h3>Tools                  </h3>
+<p class="3">
+dactylo, MS OFFICE-pro (9/10); Outlook, Works, MsPublisher; Kermit 95 (9/10); Fusion95 (10/10); WP(8/10), Lotus(7/10), Dbase(9/10), Pick(4/10 theoretisch), Trio (10/10), KODAK komstar + optistar voor microfiches, algemene + analytische exploitatie boekhouding : cubic, lisa, sisa, tijd- en toegangscontrole : unitime, unipass van  Idtech
+
+
+</p>
+<h3>Methoden         </h3>
+<p class="3">
+SDM (10/10), JSP (10/10), FPA (10/10), IE (5/10), OO (8/10), SDW (10/10),
+
+
+</p>
+<h3>Technieken      </h3>
+<p class="3">
+beslissingsondersteunende technieken, MIS (8/10), A.I. (8/10), B.O.C.C. (10/10)
+</p>
+
+
+<a name="beroepservaring"></a>
+<h2>Beroepservaring</h2>
+
+<h3>Overzicht</h3>
+<h3>
+
+<table>
+
+<tr>
+<th>Van - Tot</th>
+<th>Firma</th>
+<th>Functie</th>
+</tr>
+<tr class="oneven">
+  <td> <a href='cv.html#firma9'  > 04/01/1999 - 14/02/2003</a></td>
+  <td>Xpower <br> Beervelde dorp 3, 9080 Beervelde</td>
+  <td>programmeur-analist</td>
+</tr>
+
+<tr class="even">
+  <td><a href='cv.html#firma8' >01/07/1998 - 26/07/1998</a></td>
+  <td>politie Aalst</td>
+  <td>automatiseringsconsulent</td>
+</tr>
+
+
+<tr class="oneven">
+  <td><a href='cv.html#firma7'  >30/03/1998 - 22/05/1998</a></td>
+  <td>via Interlabor te Eurotronics,<br> Scherpeputstraat 4, 9160 Lokeren</td>
+  <td>support engineer</td>
+</tr>
+<tr class="even">
+  <td><a href='cv.html#firma6'  >04/09/1996 - 09/03/1998</a> </td>
+  <td>OCMW Sint Niklaas,<br> Lodewijk De Meesterstraat 3, 9100 Sint Niklaas </td>
+  <td>netwerkbeheerder</td>
+</tr>
+<tr class="oneven">
+  <td><a href='cv.html#firma5'  >17/06/1996 - 28/06/1996</a> </td>
+  <td>IPO-UFSIA,<br> Kipdorp 19, 2000 Antwerpen, met T-INTERIM </td>
+  <td>helpdesk</td>
+</tr>
+<tr class="even">
+  <td><a href='cv.html#firma4'  >30/10/1995 - 08/01/1996<br>15/01/1996 - 16/01/1996 </a> </td>
+  <td>SUPERCLUB RETAIL N.V.,<br> Van Kerckhovenstraat 110, 2880 Bornem, <br>met INTERLABOR</td>
+  <td>edp-operator</td>
+</tr>
+<tr class="oneven">
+  <td><a href='cv.html#firma3'  >02/05/1995 - 11/06/1995</a></td>
+  <td>CM GENT,<br> Hoogstraat 38, 9000 Gent</td>
+  <td>analyst-programmeur, contract bepaalde duur</td>
+</tr>
+<tr class="even">
+  <td><a href='cv.html#firma2' >01/08/1994 - 30/11/1994</a></td>
+  <td>CPG <br>te Ministerie van Financiën BTW,<br> Registratie en Domeinen, CIV,<br> Financietoren, Kruidtuinlaan 50, bus 45, 1010 Brussel</td>
+  <td>adjunct-verificateur met contract bepaalde duur</td>
+</tr>
+<tr class="oneven">
+  <td><a href='cv.html#firma1'>01/02/1993 - 10/06/1993 </a> </td>
+  <td>MPI Landegem - Schoolstage</td>
+  <td>analist-programmeur</td>
+</tr>
+
+</table>
+
+
+
+</h3>
+
+
+<h3>Detail</h3>
+
+
+
+
+
+<a name="firma9"></a> 
+<h3>
+<table>
+<tr>
+  <td>04/01/1999 - 14/02/2003</td>
+  <td>Xpower <br> Beervelde dorp 3, 9080 Beervelde</td>
+  <td>programmeur-analist</td>
+</tr>
+
+</table>
+
+</h3>
+
+<h4>Omgeving:</h4>
+<p class="4">
+
+<table>
+
+<tr class="oneven">
+<th>Hardware:</th>
+<td>PC, Kyocera printers, barcodeprinters</td>
+</tr>
+
+<tr class="even">
+<th>OS:</th>
+<td>Winx, HP UX, SCO, linux, dos</td>
+</tr>
+
+<tr class="oneven">
+<th>Programmeertalen:</th>
+<td>Progress v6,7,8,9, Xponent, MS ACCESS, unix, linux, html, xml, sql, dos, kyocera, ftp</td>
+</tr>
+
+<tr class="even">
+<th>Databank: </th>
+<td>Progress v6,7,8,9</td>
+</tr>
+
+<tr class="oneven">
+<th>Tools:</th>
+<td>MS OFFICE-pro, kermit95, ultraedit, fusion95, multiview</td>
+</tr>
+
+<tr class="even">
+<th>Netwerk:</th>
+<td>100BaseT-UTP-cat 5 netwerk </td>
+</tr>
+</table>
+
+</p>
+
+<h4>Taakomschrijving:</h4>
+<p class="4">
+
+ 
+Als analist-programmeur in progress + xponent ontwerpen, implementeren en supporteren van 
+toepassingen voor automatisatie van derden-, verhuur-, voertuigen-, machine-, magazijn-, order-,
+ facturatie- en werkplaatsbeheer met een Dealer Management Systeem op server en ASP.
+</p>
+ 
+<h4>Specialiteiten:</h4>
+
+<ul class="4">
+<li>boekhoudlinken (Lisa : Claerhout, Iris : C&C, Expertm, HCS, CCS, Cubic, Sap, Venice)</li>
+<li>barcodeprinters (eltron, zebra, epson, tlp4000, kyocera)</li>
+<li>automatisch bestelsysteem RAMSES  van iveco</li>
+<li>converteertools (vertaling, euro, Y2K, import conversie tekstbestanden)</li> 
+</ul>
+
+<a name="firma8"></a> 
+<h3>
+<table>
+<tr>
+  <td>01/07/1998 - 26/07/1998</td>
+  <td>politie Aalst</td>
+  <td>automatiseringsconsulent</td>
+</tr>
+
+</table>
+
+</h3>
+
+<h4>Omgeving:</h4>
+<p class="4">
+
+<table>
+
+<tr class="oneven">
+<th>Hardware:</th>
+<td>PC, HP T500, ADR 1000 </td>
+</tr>
+
+<tr class="even">
+<th>OS:</th>
+<td>Win3.1, HP UX 9.4</td>
+</tr>
+
+<tr class="oneven">
+<th>Programmeertalen:</th>
+<td>MS ACCESS, unix, sql, c</td>
+</tr>
+
+<tr class="even">
+<th>Databank: </th>
+<td>informix</td>
+</tr>
+
+<tr class="oneven">
+<th>Tools:</th>
+<td>MS OFFICE-pro, visa, saveguard, crypton</td>
+</tr>
+
+<tr class="even">
+<th>Netwerk:</th>
+<td>10BaseT-UTP-cat 5 netwerk </td>
+</tr>
+</table>
+
+</p>
+
+<h4>Taakomschrijving:</h4>
+<p class="4">
+
+ 
+Als tijdelijk contractueel automatiseringsconsulent het PIP-systeem, op unix en pc, met een informix databank, onderhouden, en aanmaken van queries met informix-sql en c;
+verkeerstellers ADR 1000 configureren en instellen, en daarna met pc inlezen met visa.<br><br>
+</p>
+ 
+<a name="firma7"></a> 
+<h3>
+<table>
+<tr>
+  <td>30/03/1998 - 22/05/1998</td>
+  <td>via Interlabor te Eurotronics,<br> Scherpeputstraat 4, 9160 Lokeren</td>
+  <td>support engineer</td>
+</tr>
+
+</table>
+
+</h3>
+
+<h4>Omgeving:</h4>
+<p class="4">
+
+<table>
+
+<tr class="oneven">
+<th>Hardware:</th>
+<td>PC, HP 720, HP B132, HP plotters  </td>
+</tr>
+
+<tr class="even">
+<th>OS:</th>
+<td>Win95(a+b), HP UX 10.20 </td>
+</tr>
+
+<tr class="oneven">
+<th>Programmeertalen:</th>
+<td>MS ACCESS, unix </td>
+</tr>
+
+<tr class="even">
+<th>Databank: </th>
+<td>ingres </td>
+</tr>
+
+<tr class="oneven">
+<th>Tools:</th>
+<td>MS OFFICE-pro </td>
+</tr>
+
+<tr class="even">
+<th>Netwerk:</th>
+<td>10BaseT-UTP-cat 5 netwerk + coax 10 Mbit   </td>
+</tr>
+</table>
+
+</p>
+
+<h4>Taakomschrijving:</h4>
+<p class="4">
+Als support engineer het GIS-systeem, unix en ingres databank onderhouden bij HAVI-TV 
+en de 18 aangesloten gemeenten, <br> unix 10.20 installeren, integratie van HP’s in netwerk .<br><br>
+</p>
+ 
+ 
+<a name="firma6"></a> 
+<h3>
+<table>
+<tr>
+  <td>04/09/1996 - 09/03/1998 </td>
+  <td>OCMW Sint Niklaas,<br> Lodewijk De Meesterstraat 3, <br>9100 Sint Niklaas </td>
+  <td>netwerkbeheerder</td>
+</tr>
+
+</table>
+
+</h3>
+
+<h4>Omgeving:</h4>
+<p class="4">
+
+<table>
+
+<tr class="oneven">
+<th>Hardware:</th>
+<td>PC, Siemens MX300, Fujitsu, rs/6000   </td>
+</tr>
+
+<tr class="even">
+<th>OS:</th>
+<td>Win95(a+b), WFW, unix </td>
+</tr>
+
+<tr class="oneven">
+<th>Programmeertalen:</th>
+<td>MS ACCESS, unix </td>
+</tr>
+
+<tr class="even">
+<th>Databank: </th>
+<td>oracle, seachange </td>
+</tr>
+
+<tr class="oneven">
+<th>Tools:</th>
+<td>MS OFFICE-pro, odbc, frontpage, Mcafee, Easyscript, Trio, toegangscontrole (unitime en unipass van Idtech) </td>
+</tr>
+
+<tr class="even">
+<th>Netwerk:</th>
+<td>compaq switches en repeaters op glasvezel- en 10BaseT-UTP-cat 5 netwerk, ISDN, NFS, intranet, lancat 1800, modems, HP Jetdirect
+   </td>
+</tr>
+</table>
+
+</p>
+
+<h4>Taakomschrijving:</h4>
+
+<ul class="4">
+<li>als netwerkbeheerder het ontwerpen, implementeren, uittesten en onderhouden van het nieuwe ethernet-netwerk verdeeld over 11 netwerkkasten  met FDDI, verspreid over de campus, met daaraan 110 PC’s aan 2 unixservers, met TCP/IP, buitendiensten met brouters via ISDN, onderhoud pc’s</li>
+<li>selecteren van  leveranciers uit offertes, planningen opstellen, opvolgen van werken en administratie van het nieuw automatiseringssysteem adh van het lastenboek</li>
+<li>opmaken van een efficiënte documentatie en gebruikershandleidingen</li>
+<li>maandelijkse coördinatoren- en werfvergaderingen met leveranciers ter controle en bijsturing</li>
+<li>systeembeheer en beveiliging van gebruikerstoepassingen van ICL en IN2; onderhoud en herstel oud IN2-systeem (unixserver met 20 terminals), overzetten van gegevens, koppeling tijdsregistratie met loonprogramma</li>
+<li>uitbouwen beveiligd filesystem voor gebruikersbestanden via NFS op unixserver</li>
+<li>maken van odbc-koppelingen van Seachange naar Word, Access voor notificaties, ter uitbetaling cliënten</li>
+<li>operator, opvolgen van werken, debugging, support, en verantwoordelijke tijd- en toegangscontrole met C/S (C++) (unitime en unipass van Idtech), op rs/6000 onder unix met Oracle databases (met betaalbadge voor cafetaria, en videosysteem)</li>
+<li>bij vaststellen delict, dit opzoeken met videosysteem en toegangscontrole, en melden aan politie</li>
+<li>opstellen en uitvoeren toegangsbeveiliging van kliniek en rusthuizen op de campus</li>
+<li>analyse-programmatie met MS-ACCESS van zorgregistratie in de rusthuizen, registratie van de volledige implementatie van hard- en software van het netwerk </li>
+<li>bouwen van een intranet voor het beheer van bedrijfsinformatie, verslagen en notulen, voor het uitvoeren van  installaties en updates van software</li> 
+</ul>
+ 
+ 
+ 
+<a name="firma5"></a>  
+<h3>
+<table>
+<tr>
+  <td>17/06/1996 - 28/06/1996 </td>
+  <td>IPO-UFSIA,<br> Kipdorp 19, 2000 Antwerpen,<br> met T-INTERIM </td>
+  <td>helpdesk</td>
+</tr>
+
+</table>
+
+</h3>
+
+<h4>Omgeving:</h4>
+<p class="4">
+
+<table>
+
+<tr class="oneven">
+<th>Hardware:</th>
+<td>Macintosh, rs/6000  </td>
+</tr>
+
+<tr class="even">
+<th>OS:</th>
+<td>OS7, unix </td>
+</tr>
+
+<tr class="oneven">
+<th>Programmeertalen:</th>
+<td>excel macro's, sql </td>
+</tr>
+
+<tr class="even">
+<th>Databank: </th>
+<td>Oracle </td>
+</tr>
+
+<tr class="oneven">
+<th>Tools:</th>
+<td>excel, sequelink </td>
+</tr>
+
+<tr class="even">
+<th>Netwerk:</th>
+<td>10BaseT-UTP-cat 5 netwerk + coax 10 Mbit   </td>
+</tr>
+</table>
+
+</p>
+
+<h4>Taakomschrijving:</h4>
+<p class="4">
+Opvragen en bijsturen met SQL en excel van Oracle databases op macintosh-netwerk,
+via rs/6000 onder unix, doorsturen van adresgegevens via modem naar Ketels voor verzending van folders, 
+en support gebruikers.<br>
+</p>
+ 
+  
+ 
+<a name="firma4"></a>  
+<h3>
+<table>
+<tr>
+  <td>30/10/1995 - 08/01/1996<br>15/01/1996 - 16/01/1996  </td>
+  <td>SUPERCLUB RETAIL N.V.,<br> Van Kerckhovenstraat 110, <br>2880 Bornem,<br> met INTERLABOR</td>
+  <td>edp-operator</td>
+</tr>
+
+</table>
+
+</h3>
+
+<h4>Omgeving:</h4>
+<p class="4">
+
+<table>
+
+<tr class="oneven">
+<th>Hardware:</th>
+<td>PC  </td>
+</tr>
+
+<tr class="even">
+<th>OS:</th>
+<td>WFW, novell </td>
+</tr>
+
+<tr class="oneven">
+<th>Programmeertalen:</th>
+<td>cobol, clipper </td>
+</tr>
+
+<tr class="even">
+<th>Databank: </th>
+<td>cobol </td>
+</tr>
+
+<tr class="oneven">
+<th>Tools:</th>
+<td>MS OFFICE, FPA </td>
+</tr>
+
+<tr class="even">
+<th>Netwerk:</th>
+<td>10BaseT-UTP-cat 5 netwerk + coax 10 Mbit   </td>
+</tr>
+</table>
+
+</p>
+
+<h4>Taakomschrijving:</h4>
+<p class="4">
+Documenteren en analyse, aanpassen in cobol voor franchising  van winkelpakket.
+</p>
+ 
+ 
+<a name="firma3"></a>  
+<h3>
+<table>
+<tr>
+  <td>02/05/1995 - 11/06/1995</td>
+  <td>CM GENT, <br>Hoogstraat 38, 9000 Gent</td>
+  <td>analyst-programmeur, contract bepaalde duur</td>
+</tr>
+
+</table>
+
+</h3>
+
+<h4>Omgeving:</h4>
+<p class="4">
+
+<table>
+
+<tr class="oneven">
+<th>Hardware:</th>
+<td>PC  </td>
+</tr>
+
+<tr class="even">
+<th>OS:</th>
+<td>WFW </td>
+</tr>
+
+<tr class="oneven">
+<th>Programmeertalen:</th>
+<td>MS-ACCESS </td>
+</tr>
+
+<tr class="even">
+<th>Databank: </th>
+<td>MS-ACCESS </td>
+</tr>
+
+<tr class="oneven">
+<th>Tools:</th>
+<td>MS OFFICE </td>
+</tr>
+
+<tr class="even">
+<th>Netwerk:</th>
+<td>10BaseT-UTP-cat 5 netwerk + coax 10 Mbit   </td>
+</tr>
+</table>
+
+</p>
+
+<h4>Taakomschrijving:</h4>
+<p class="4">
+Analyse en programmatie gegevens interne organisatie.
+</p>
+ 
+ 
+<a name="firma2"></a> 
+<h3>
+<table>
+<tr>
+  <td>01/08/1994 - 30/11/1994</td>
+  <td>CPG <br>te Ministerie van Financiën <br>BTW, Registratie en Domeinen, CIV,<br> Financietoren, Kruidtuinlaan 50,<br> bus 45, 1010 Brussel</td>
+  <td>adjunct-verificateur met contract bepaalde duur</td>
+</tr>
+
+</table>
+
+</h3>
+
+<h4>Omgeving:</h4>
+<p class="4">
+
+<table>
+
+<tr class="oneven">
+<th>Hardware:</th>
+<td>PC, Siemensserver  </td>
+</tr>
+
+<tr class="even">
+<th>OS:</th>
+<td>MS WINDOWS, BS2000 </td>
+</tr>
+
+
+
+
+</table>
+
+</p>
+
+<h4>Taakomschrijving:</h4>
+<p class="4">
+Behandelen (inlezen, controleren, terugzenden en administratie) btw-magneetdragers +<br>
+Siemensoperateur (BS2000) + microfiches maken.
+</p>
+ 
+ 
+<a name="firma1"></a> 
+<h3>
+<table>
+<tr>
+  <td>01/02/1993 - 10/06/1993  </td>
+  <td>MPI Landegem - Schoolstage</td>
+  <td>analist-programmeur</td>
+</tr>
+
+</table>
+
+</h3>
+
+<h4>Omgeving:</h4>
+<p class="4">
+
+<table>
+
+<tr class="oneven">
+<th>Hardware:</th>
+<td>PC, MACINTOSH </td>
+</tr>
+
+<tr class="even">
+<th>OS:</th>
+<td>MS WINDOWS, OS7 </td>
+</tr>
+
+<tr class="oneven">
+<th>Programmeertalen:</th>
+<td>MS-FOXPRO 2.5, omnis7 </td>
+</tr>
+
+<tr class="even">
+<th>Databank: </th>
+<td>MS-FOXPRO 2.5, omnis7 </td>
+</tr>
+
+<tr class="oneven">
+<th>Tools:</th>
+<td>MS OFFICE, SDW, Abc-flow </td>
+</tr>
+
+
+</table>
+
+</p>
+
+<h4>Taakomschrijving:</h4>
+<p class="4">
+Analyse & programmatie van de Administratie der Medische en School Dossiers.
+</p>
+ 
+  
+
+ 
+
+
+
+
+
+
+</body>
+
+</html>

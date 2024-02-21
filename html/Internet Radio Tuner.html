@@ -1,0 +1,95 @@
+<html>
+<!-- ONE STEP TO INSTALL JS INTERNET RADIO TUNER:
+
+  1.  Copy the coding into the BODY of your HTML document  -->
+
+<!-- STEP ONE: Paste this code into the BODY of your HTML document  -->
+
+<BODY>
+
+<!-- This script and many more are available free online at -->
+<!-- The JavaScript Source!! http://javascript.internet.com -->
+<!-- Original:  Dick James (dick.james@blasiussolutions.net.co.nr) -->
+<!-- Web Site:  http://blasiussolutions.net.co.nr -->
+<!-- Free JavaScript Internet Radio Tuner. -->
+<!-- Produced by Blasius Solutions.  http://blasiussolutions.net.co.nr -->
+<SCRIPT type=text/javascript>
+      <!-- hide
+      function radioHome(url)
+      {
+      if(url==""){
+      alert("Please select station first.");
+      }
+      else{
+      spliturl = url.split("/");
+      window.open("http://"+spliturl[2]);
+      
+      }
+      }
+      function nothing(){
+      // prevents errors when clicking on a blank link in IE.
+      }
+      // end -->
+    </SCRIPT>
+
+	<FORM name=radio>
+	<B> Internet Radio Tuner</B>
+	 <BR>
+	 <SELECT class=inputbox onchange=window.location=this.value; name=list>
+		  <OPTION value="" selected>Select Radio Station...
+		  
+		  <OPTION value=http://internetradio.vrt.be/dab/hoeluisteren/pc/help/gebruiksvoorwaarden/stream_11.m3U>radio 1
+		  <OPTION value=http://internetradio.vrt.be/dab/hoeluisteren/pc/help/gebruiksvoorwaarden/stream_24.m3U>radio 2 ovl
+		  <OPTION value=http://internetradio.vrt.be/dab/hoeluisteren/pc/help/gebruiksvoorwaarden/stream_31.m3U>radio klara
+		  <OPTION value=http://internetradio.vrt.be/dab/hoeluisteren/pc/help/gebruiksvoorwaarden/stream_32.m3U>radio klara continue
+		  <OPTION value=http://internetradio.vrt.be/dab/hoeluisteren/pc/help/gebruiksvoorwaarden/stream_51.m3U>radio donna
+		  <OPTION value=http://internetradio.vrt.be/dab/hoeluisteren/pc/help/gebruiksvoorwaarden/stream_52.m3U>radio donna hitbits
+		  <OPTION value=http://internetradio.vrt.be/dab/hoeluisteren/pc/help/gebruiksvoorwaarden/stream_41.m3U>radio stubru
+		  <OPTION value=http://internetradio.vrt.be/dab/hoeluisteren/pc/help/gebruiksvoorwaarden/stream_12.m3U>radio sporza
+		  
+		 
+		  <OPTION value=http://www4.rtbf.be/rtbf_2000/radios/radio21.m3u>radio21
+		  <OPTION value=http://www.bbc.co.uk/radio1/realaudio/media/r1livev7.ram>BBC Radio 1
+		  <OPTION value=http://www.bbc.co.uk/radio2/realmedia/fmg2.ram>BBC Radio 2
+		  <OPTION value=http://www.bbc.co.uk/radio3/ram/r3g2.ram>BBC Radio 3
+		  <OPTION value=http://www.bbc.co.uk/6music/ram/dsatg2.ram>BBC 6 Music
+		  <OPTION value=http://www.smgradio.com/core/audio/real/live.smi?service=vr>Virgin Radio
+		  <OPTION value=http://www.smgradio.com/core/audio/real/live.smi?service=lq>Liquid: nonstop alt.pop
+		  <OPTION value=http://audio.musicradio.com/tuner.asp?station=classic>Classic FM
+		  <OPTION value=http://193.201.220.87:8000>Trance
+		  <OPTION value=http://66.28.214.138:8032>Latin
+		  <OPTION value=http://205.188.234.65:8026>Salsa
+		  <OPTION value=http://24.73.241.37:7998>Salsa World
+		  <OPTION value=http://rs3.radiostreamer.com:8370>radiomilkavache
+
+		   
+		  </OPTION>
+	  </SELECT>
+	  <BR>
+	  <A id=radiolink onclick=radioHome(list.value) href="javascript:nothing();">open radio station homepage</A><BR>
+	  <A href="http://www.real.com/" target=_new>requires free Real One player</A> 
+  </FORM>
+
+
+<!-- Script Size:  2.10 KB -->
+
+<br>
+<br>
+<iframe src="http://www.luisterradio.nl/popup/weblog.php" width="388" height="327" frameborder="no" scrolling="no"></iframe>
+
+<br><br><br>
+
+<a href='#' onClick="window.open('http://www.luisterradio.nl/popup/weblog.php','radio_popup','width=388 height=327'); return false;"><img src='../images/radio.gif' alt='Luister Radio' border='0'></a>
+<br><br><br>
+
+<a href="http://www.luisterradio.nl/popup/weblog.php" target="_blank"><img src='../images/radio.gif' alt='Luister Radio' border='0'></a>
+<br>
+
+<script src=http://www.luisterradio.nl/radio-tuner/luisterradio_blauw.js></script>
+
+<br>
+<iframe src="http://www.luisterradio.nl/opuwsite/index1_1.php" width="84" height="14" frameborder="no" scrolling="no"></iframe>
+
+
+</body>
+</html>

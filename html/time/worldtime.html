@@ -1,0 +1,214 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>World Timer</title>
+<style type = "text/css">
+BODY             { BACKGROUND-COLOR: #003300; }
+
+.inputForm        {
+                  BORDER-TOP:    0px; 
+                  BORDER-RIGHT:  0px; 
+                  BORDER-BOTTOM: 0px; 
+                  BORDER-LEFT:   0px; 
+                  WIDTH: 260px; 
+                  HEIGHT: 20px; 
+                  COLOR: black; 
+                  BACKGROUND-COLOR: white; 
+                  FONT-FAMILY: fixedsys;
+                  FONT-SIZE: 12px;
+}
+.inputForm1       {
+                  BORDER-TOP:    0px; 
+                  BORDER-RIGHT:  0px; 
+                  BORDER-BOTTOM: 0px; 
+                  BORDER-LEFT:   0px; 
+                  WIDTH:  16px; 
+                  HEIGHT: 15px; 
+                  COLOR: #000000; 
+                  BACKGROUND-COLOR: #FF7F7F; 
+                  FONT-FAMILY: fixedsys;
+                  FONT-SIZE: 10px;
+}
+.inputForm2       {
+                  BORDER-TOP:    0px; 
+                  BORDER-RIGHT:  0px; 
+                  BORDER-BOTTOM: 0px; 
+                  BORDER-LEFT:   0px; 
+                  WIDTH:  16px; 
+                  HEIGHT: 15px; 
+                  COLOR: #000000; 
+                  BACKGROUND-COLOR: #007FBF; 
+                  FONT-FAMILY: fixedsys;
+                  FONT-SIZE: 10px;
+}
+.inputForm3       {
+                  BORDER-TOP:    0px; 
+                  BORDER-RIGHT:  0px; 
+                  BORDER-BOTTOM: 0px; 
+                  BORDER-LEFT:   0px; 
+                  WIDTH:  16px; 
+                  HEIGHT: 15px; 
+                  COLOR: #000000; 
+                  BACKGROUND-COLOR: #B0B800; 
+                  FONT-FAMILY: fixedsys;
+                  FONT-SIZE: 10px;
+}
+.inputForm4       {
+                  BORDER-TOP:    0px; 
+                  BORDER-RIGHT:  0px; 
+                  BORDER-BOTTOM: 0px; 
+                  BORDER-LEFT:   0px; 
+                  WIDTH:  16px; 
+                  HEIGHT: 15px; 
+                  COLOR: #000000; 
+                  BACKGROUND-COLOR: #007F7E; 
+                  FONT-FAMILY: fixedsys;
+                  FONT-SIZE: 10px;
+}
+</style>
+<script type = "text/javascript">
+var tempHour = 0;
+function convertTime(gmtHour, factor) {
+  var converted;
+  converted = gmtHour + factor;
+  if (converted < 0)  converted += 24;
+  if (converted > 24) converted -= 24;
+  if (converted < 10) converted = "0" + converted;
+  return converted;
+}
+function tick() {
+  var years,    months,    dates,    hours,    minutes,    seconds   ;
+  var intYears, intMonths, intDates, intHours, intMinutes, intSeconds;
+  var today;
+  today = new Date();
+  intYears   = today.getUTCFullYear();
+  intMonths  = today.getUTCMonth()   ;
+  intDates   = today.getUTCDate()    ;
+  intHours   = today.getUTCHours()   ;
+  intMinutes = today.getUTCMinutes() ;
+  intSeconds = today.getUTCSeconds() ;
+  years  = intYears+" " ;
+  switch (intMonths) {
+    case  0: months = "January "  ; break;
+    case  1: months = "February " ; break;
+    case  2: months = "March "    ; break;
+    case  3: months = "April "    ; break;
+    case  4: months = "May "      ; break;
+    case  5: months = "June "     ; break;
+    case  6: months = "July "     ; break;
+    case  7: months = "August "   ; break;
+    case  8: months = "September "; break;
+    case  9: months = "October "  ; break;
+    case 10: months = "November " ; break;
+    case 11: months = "December " ; break;
+  }
+  dates  = intDates+", " ;
+  if (intHours   < 10) { hours   = "0"+intHours  +":"; } else { hours   = intHours+":"  ; }
+  if (intMinutes < 10) { minutes = "0"+intMinutes+":"; } else { minutes = intMinutes+":"; }
+  if (intSeconds < 10) { seconds = "0"+intSeconds+" "; } else { seconds = intSeconds+" "; } 
+  timeString = years+months+dates+hours+minutes+seconds+" GMT";
+  document.formClock.gmt.value  = timeString;
+  if (intHours != tempHour) {
+    document.formClock.m10.value  = convertTime(intHours, -10);
+    document.formClock.m9.value   = convertTime(intHours,  -9);
+    document.formClock.m8.value   = convertTime(intHours,  -8);
+    document.formClock.m7.value   = convertTime(intHours,  -7);
+    document.formClock.m6.value   = convertTime(intHours,  -6);
+    document.formClock.m5.value   = convertTime(intHours,  -5);
+    document.formClock.m4.value   = convertTime(intHours,  -4);
+    document.formClock.m3.value   = convertTime(intHours,  -3);
+    document.formClock.m2.value   = convertTime(intHours,  -2);
+    document.formClock.m1.value   = convertTime(intHours,  -1);
+    document.formClock.zero.value = convertTime(intHours,   0);
+    document.formClock.p1.value   = convertTime(intHours,   1);
+    document.formClock.p2.value   = convertTime(intHours,   2);
+    document.formClock.p3.value   = convertTime(intHours,   3);
+    document.formClock.p4.value   = convertTime(intHours,   4);
+    document.formClock.p5.value   = convertTime(intHours,   5);
+    document.formClock.p6.value   = convertTime(intHours,   6);
+    document.formClock.p7.value   = convertTime(intHours,   7);
+    document.formClock.p8.value   = convertTime(intHours,   8);
+    document.formClock.p9.value   = convertTime(intHours,   9);
+    document.formClock.p10.value  = convertTime(intHours,  10);
+    document.formClock.p11.value  = convertTime(intHours,  11);
+    document.formClock.p12.value  = convertTime(intHours,  12);
+    tempHour = intHours;
+  }
+  window.setTimeout("tick();", 1000);
+}
+</script>
+</head>
+
+<body onload="tick();">
+<center><form name="formClock"><table width="700" border="0" cellpadding="0" cellspacing="0" bgcolor="white">
+          <tr>
+              <td rowspan="4" bgcolor="#003300"><img src="blank.gif" alt="" border="0" height="1" width="50" /></td>
+
+              <td height="1" width="18"></td>
+              <td height="1" width="25"></td>
+              <td height="1" width="25"></td>
+              <td height="1" width="25"></td>
+              <td height="1" width="25"></td>
+              <td height="1" width="25"></td>
+              <td height="1" width="25"></td>
+              <td height="1" width="25"></td>
+              <td height="1" width="25"></td>
+              <td height="1" width="25"></td>
+              <td height="1" width="25"></td>
+              <td height="1" width="25"></td>
+              <td height="1" width="25"></td>
+              <td height="1" width="25"></td>
+              <td height="1" width="25"></td>
+              <td height="1" width="25"></td>
+              <td height="1" width="25"></td>
+              <td height="1" width="25"></td>
+              <td height="1" width="25"></td>
+              <td height="1" width="25"></td>
+              <td height="1" width="25"></td>
+              <td height="1" width="25"></td>
+              <td height="1" width="25"></td>
+              <td height="1" width="25"></td>
+              <td height="1" width="7" ></td>
+
+              <td rowspan="4" bgcolor="#003300"><img src="blank.gif" alt="" border="0" height="1" width="50" /></td>
+          </tr>
+          <tr>
+              <td bgcolor="#007F7E"></td>
+              <td align="center" bgcolor="#FF7F7F"><input class="inputForm1" type="text" name="m10"  /></td>
+              <td align="center" bgcolor="#007FBF"><input class="inputForm2" type="text" name="m9"   /></td>
+              <td align="center" bgcolor="#B0B800"><input class="inputForm3" type="text" name="m8"   /></td>
+              <td align="center" bgcolor="#007F7E"><input class="inputForm4" type="text" name="m7"   /></td>
+              <td align="center" bgcolor="#FF7F7F"><input class="inputForm1" type="text" name="m6"   /></td>
+              <td align="center" bgcolor="#007FBF"><input class="inputForm2" type="text" name="m5"   /></td>
+              <td align="center" bgcolor="#B0B800"><input class="inputForm3" type="text" name="m4"   /></td>
+              <td align="center" bgcolor="#007F7E"><input class="inputForm4" type="text" name="m3"   /></td>
+              <td align="center" bgcolor="#FF7F7F"><input class="inputForm1" type="text" name="m2"   /></td>
+              <td align="center" bgcolor="#007FBF"><input class="inputForm2" type="text" name="m1"   /></td>
+              <td align="center" bgcolor="#B0B800"><input class="inputForm3" type="text" name="zero" /></td>
+              <td align="center" bgcolor="#007F7E"><input class="inputForm4" type="text" name="p1"   /></td>
+              <td align="center" bgcolor="#FF7F7F"><input class="inputForm1" type="text" name="p2"   /></td>
+              <td align="center" bgcolor="#007FBF"><input class="inputForm2" type="text" name="p3"   /></td>
+              <td align="center" bgcolor="#B0B800"><input class="inputForm3" type="text" name="p4"   /></td>
+              <td align="center" bgcolor="#007F7E"><input class="inputForm4" type="text" name="p5"   /></td>
+              <td align="center" bgcolor="#FF7F7F"><input class="inputForm1" type="text" name="p6"   /></td>
+              <td align="center" bgcolor="#007FBF"><input class="inputForm2" type="text" name="p7"   /></td>
+              <td align="center" bgcolor="#B0B800"><input class="inputForm3" type="text" name="p8"   /></td>
+              <td align="center" bgcolor="#007F7E"><input class="inputForm4" type="text" name="p9"   /></td>
+              <td align="center" bgcolor="#FF7F7F"><input class="inputForm1" type="text" name="p10"  /></td>
+              <td align="center" bgcolor="#007FBF"><input class="inputForm2" type="text" name="p11"  /></td>
+              <td align="center" bgcolor="#B0B800"><input class="inputForm3" type="text" name="p12"  /></td>
+              <td bgcolor="#007F7E"></td>
+          </tr>
+          <tr>
+              <td colspan="25" align="center"><input class="inputForm" type="text" name="gmt" /></td>
+          </tr>
+          <tr>
+              <td colspan="25" valign="top" height="340"><img src="timezoneMap.png" usemap="#eTechKorea" alt="" border="0" height="329" width="600" /><map name="eTechKorea"><area href="http://www.etechkr.com/" shape="rect" coords="510,0,590,20" /></map>
+              </td>
+          </tr>
+      </table></form></center>
+</body>
+</html>
+

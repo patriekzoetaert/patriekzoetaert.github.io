@@ -1,0 +1,44 @@
+X-Mozilla-Status: 0001
+X-Mozilla-Status2: 00000000
+X-Mozilla-Keys:                                                                                
+Date: Fri, 18 Apr 2008 15:20:33 +0100
+Message-Id: <http://www.zdnet.be/news.cfm?id=83828&mxp=200@localhost.localdomain>
+From: <ZDNet.be news>
+MIME-Version: 1.0
+Subject: PayPal wil onveilige browsers weigeren
+Content-Transfer-Encoding: 8bit
+Content-Base: http://www.zdnet.be/news.cfm?id=83828&mxp=200
+Content-Type: text/html; charset=UTF-8
+
+
+<html>
+  <head>
+    <title>PayPal wil onveilige browsers weigeren</title>
+    <base href="http://www.zdnet.be/news.cfm?id=83828&mxp=200">
+    <style type="text/css">
+      
+      body {
+        margin: 0;
+        border: none;
+        padding: 0;
+      }
+      iframe {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+    </style>
+  </head>
+  <body>
+    
+    <iframe id ="_mailrssiframe" src="http://www.zdnet.be/news.cfm?id=83828&mxp=200">
+      <img src="http://www.zdnet.be/images/nw0511/051122_bittorrent_50.gif" border="0" align="left" hspace="2" alt="image" />PayPal  wil op termijn de toegang verbieden aan gebruikers met onveilige browsers. Beveiligingshoofd Michael Barrett van het betalingsbedrijf wil een waarschuwing voor phishing-sites, maar ook Safari van Apple ligt onder vuur. 
+    </iframe>
+
+  </body>
+</html>
+

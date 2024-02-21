@@ -1,0 +1,53 @@
+<html>
+<head>
+
+
+	<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+	<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+	<title>ACV LOKEREN</title>
+	<meta name="description" content="ACV ZELE">
+	<meta name="keywords" content="acv,zele">
+	<meta name="robots" content="index,follow">
+
+
+<link rel="shortcut icon" href="favicon.ICO" /><link>
+</head>
+<body>
+<script>
+
+function checkServerStatus( url ,url2)
+{
+    var script = document.body.appendChild(document.createElement("script"));
+    script.onload = function()
+    {
+       // alert( url + " is online");
+        document.open();
+       document.write('<html><head><title>ACV ZELE</title><meta name="description" content="ACV ZELE"><link rel="shortcut icon" href="favicon.ICO" /><link></head><body>');
+	           document.write("<iframe title='ACV ZELE'  width=100% height=100% frameborder=0 framespacing=0 border=0  src="+url+"></iframe>");
+        document.write("</body></html>");
+        document.close();
+
+    };
+    script.onerror = function()
+    {
+       document.open();
+	  document.write('<html><head><title>ACV ZELE</title><meta name="description" content="ACV ZELE"><link rel="shortcut icon" href="favicon.ICO" /><link></head><body>');
+	 	           document.write("<iframe title='ACV ZELE'  width=100% height=100% frameborder=0 framespacing=0 border=0  src="+url+"></iframe>");
+        document.write("</body></html>");
+       document.close();
+       url = url2;
+    };
+
+	script.src = url;
+}
+
+
+checkServerStatus("http://acv-zele.000webhostapp.com/", "http://acvzele.cmshost.nl/" );
+
+<!--
+,"http://acv-zele.000webhostapp.com/"
+-->
+</script>
+</body>

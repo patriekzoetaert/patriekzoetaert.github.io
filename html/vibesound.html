@@ -1,0 +1,30 @@
+<html>
+
+<body bgcolor="000000" text="FBFF46">
+
+
+<bgsound id="sound1">
+<bgsound id="sound2">
+
+<script>
+function play(){
+  sound1.src=source.value
+  sound2.src=source.value
+}
+
+function stop(){
+  sound1.src=""
+  sound2.src=""
+}
+</script>
+
+<center>
+Simply browse on your machine to an mp3 or wav file and then click play to sample.<br><br>
+
+<input id="source" type="file" style="width:600;text:ffffff;background:FFCC33"><br>
+<input onclick="play()" value="play" type="button" style="background:00FF00"><input onclick="stop();stoptimer();" value="stop" type="button" style="background:FF3333">
+
+</body>
+</html>
+
+

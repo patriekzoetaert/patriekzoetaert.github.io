@@ -1,0 +1,376 @@
+<html>
+<head>
+
+<title>Feestdagen</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="Patriek Zoetaert">
+<meta name="keywords" content="JavaScript programmeur, progress, analist-programmeur, cobol, webdsign, praticles, zpower">
+<meta name="author" content="Patriek Zoetaert">
+<meta name="company" content="ZPOWER">
+<meta name="copyright" content="Copyright © 2003 Patriek Zoetaert. All rights reserved">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="../css/stijl.css" type="text/css">
+
+<script type="text/javascript" src="js/navsec.js"></script>
+
+<script type="text/javascript" src="datumfuncties.js"></script>
+
+<script type="text/javascript"> 
+
+
+
+
+
+
+function putlijn(datum,oms,even){
+	document.write('<tr class=' + even + '>');
+	
+	document.write('<td>');
+	document.write(oms);
+	document.write('</td>');
+	
+	document.write('<td>');
+	document.write(dagkort(datum));
+	document.write('</td>');
+	document.write('<td>');
+	document.write(weekdag(datum));
+	document.write('</td>');
+	document.write('<td>');
+	document.write(maandnaam(datum));
+	document.write('</td>');
+	
+	document.write('<td>');
+	document.write(weeknr(datum));
+	document.write('</td>');
+	
+	document.write('<td>');
+	document.write(dagjaarnummer(datum));
+	document.write('</td>');
+	
+	document.write('<td>');
+	document.write(dagentoteindjaar(datum));
+	document.write('</td>');
+	
+	
+	
+	
+	document.write('</tr>');
+
+}
+
+
+function popupwin() {
+	
+   	var even;
+	
+	var now;
+	var dagnr;
+	var vandaag;
+	var morgen;
+	var gisteren;
+	var year;
+	var month;
+	var date;
+	var dag;
+	var nMonth;
+	var uur;
+	var min;
+	var sek;
+	var tijd;
+	var one_day=1000*60*60*24;
+	var eenuur=1 *60*60*1000;
+	var days = new Array("Zondag", "Maandag",  "Dinsdag",  "Woensdag",  "Donderdag",  "Vrijdag",  "Zaterdag");
+	var months = new Array(
+		"January",		"February",		"March",			"April",		"May",				"June",
+		"July",				"August",			"September",	"October",	"November",	"December"  );
+
+
+	now = new Date();
+	dag = now.getDate();
+	dagnr = now.getDay();
+	dagnaam = days[now.getDay()];
+	year = now.getFullYear();
+	month = now.getMonth();
+	var maand = now.getMonth() + 1;
+//	var maandnaam = months[now.getMonth()];
+	
+	 var nu = new Date(year,month,dag,0,0,0);
+   	 var nieuwjaar = new Date(year,0,1);
+	
+	
+	tijd = now.getTime();
+
+
+	// make it year 2000 compliant
+	
+	if (year < 2000){
+		if (year < 50) {	
+			year = year + 2000	
+		} else {	
+			year = year + 1900	
+		}
+	};
+
+	vandaag = now ;
+	var mt=0;
+	
+	uur = vandaag.getHours();
+	min = vandaag.getMinutes();
+	sek = vandaag.getSeconds();
+
+	var nutijd = nu.getTime();
+	
+	
+//	morgen = new Date(nutijd + (1 * one_day));
+	morgen = datumplus(vandaag,1);
+//	alert(morgen);
+//	gisteren = new Date(nutijd - (1 * one_day));
+	gisteren = datumplus(vandaag, - 1);
+//	alert(gisteren);
+
+
+
+	pasen=calcpasen(year);
+	
+	
+	paasmaandag=datumplus(pasen, 1);
+	ohhemelvaart=datumplus(pasen, 39);
+	pinksteren=datumplus(ohhemelvaart, 10);
+	pinksteren2=datumplus(ohhemelvaart, 11);
+	
+	aswoensdag= datumplus(pasen, - 46 + 1 / 24);
+	//new Date(pasen  - (46* one_day - eenuur));
+	
+	
+	nieuwjaar = new Date(year,1 - 1,1);
+	arbeid = new Date(year,5 - 1,1);
+	kerst = new Date(year,12 - 1,25);
+	wapenstilstand = new Date(year,11 - 1,11);
+	allerheiligen = new Date(year,11 - 1,1);
+	olvhemelvaart = new Date(year,8 - 1,15);
+	befeestdag = new Date(year,7 - 1,21);
+	vlfeestdag =new Date(year,7 - 1,11);
+
+	
+	
+	
+// ******************** put ***********************************	
+	
+	document.write('<html>\n');
+	document.write('<head>\n');
+	document.write('<title>Feestdagen</title>');
+	document.write('<link rel="stylesheet" href="../css/stijl.css" type="text/css">');
+//	document.write('<meta http-equiv="Refresh" Content="1;Url=feestdag.html">');
+	document.write('<script type="text\/javascript" src="js\/navsec.js"><\/script>\n');
+
+	document.write('</head>\n');
+	document.write('<body>\n');
+	
+	
+	
+	
+	
+	
+	
+	document.write('<b>Vandaag : '+ weekdag(vandaag) + ' ' + dagkort(vandaag) + ' ' + tijdkort(vandaag) + ' ' + zomerwinteruur(vandaag) + '</b><br> Week : ' + weeknr(vandaag) + ' , Jaardagnr : ' + dagjaarnummer(vandaag) + ' , Dagen te gaan : ' + dagentoteindjaar(vandaag) + ' <br> '  + schrikkeljaar(vandaag) + ' , ' + schrikkeljaar_yn(vandaag) + ' <br> ' + weekend(vandaag) + ' ' + werkdag(vandaag) + feestdag(vandaag) + '<br>' );
+	document.write('<br>');
+	
+	
+	document.write('<table>');
+	
+	document.write('<tr>');
+	
+	document.write('<th>');
+	document.write('Feestdag: ');
+	document.write('</th>');
+	
+	document.write('<th>');
+	document.write('Datum');
+	document.write('</th>');
+	
+	document.write('<th>');
+	document.write('Weekdag');
+	document.write('</th>');
+	document.write('<th>');
+	document.write('Maand');
+	document.write('</th>');
+	
+	document.write('<th>');
+	document.write('Weeknr');
+	document.write('</th>');
+	
+	document.write('<th>');
+	document.write('Jaardagnr');
+	document.write('</th>');
+	
+	document.write('<th>');
+	document.write('Dagen te gaan');
+	document.write('</th>');
+	
+	
+	document.write('</tr>');
+	
+//**************	
+	
+	putlijn(nieuwjaar,"Nieuwjaar","oneven");
+	putlijn(aswoensdag,"Aswoensdag","even");
+	putlijn(pasen,"Pasen","oneven");
+	putlijn(paasmaandag,"Paasmaandag","even");
+	putlijn(arbeid,"Feest van de arbeid","oneven");
+	putlijn(ohhemelvaart,"Onze Lieve Heer Hemelvaart","even");
+	putlijn(pinksteren,"Pinksteren","oneven");
+	putlijn(pinksteren2,"2e Pinksteren","even");	
+	putlijn(vlfeestdag,"Feest Vlaamse Gemeenschap","oneven");
+	putlijn(befeestdag,"Nationale feestdag","even");
+	putlijn(olvhemelvaart,"Onze Lieve Vrouw Hemelvaart","oneven");
+	putlijn(allerheiligen,"Allerheiligen","even");
+	putlijn(wapenstilstand,"Wapenstilstand","oneven");
+	putlijn(kerst,"Kerst","even");
+	
+		
+	
+	
+	
+	
+	document.write('</table>');
+//**************		
+	document.write('<br>');
+	
+	
+/*	document.write('Zomeruur: ' + zomeruurdag(vandaag) +' <br>');
+	document.write('Winteruur: ' + winteruurdag(vandaag) +' <br>');
+	
+	document.write('Nu: ' + datumtussen(vandaag, zomeruurdag(vandaag), winteruurdag(vandaag)) +' <br>');
+	
+	document.write("maandnaam" +  maandnaam_m(maand)  + '<br>');
+	document.write("nn"+ maandaantaldagen(maand,year) + '<br>');
+	document.write("mwd"+ maandaantalwerkdagen(maand,year) + '<br>');
+	document.write("mzatd"+ maandaantalzaterdagen(maand,year) + '<br>');
+	document.write("mrszd"+ maandaantalrszdagen(maand,year) + '<br>');
+*/	
+	
+	
+	document.write('<table>');
+	
+	document.write('<tr>');
+	
+	document.write('<th>');
+	document.write('Nr');
+	document.write('</th>');
+	
+	document.write('<th>');
+	document.write('Maand');
+	document.write('</th>');
+	
+	document.write('<th>');
+	document.write('Aantal dagen');
+	document.write('</th>');
+	
+	document.write('<th>');
+	document.write('Aantal werkdagen');
+	document.write('</th>');
+	document.write('<th>');
+	document.write('Aantal zaterdagen');
+	document.write('</th>');
+	document.write('<th>');
+	document.write('Aantal rszdagen');
+	document.write('</th>');
+	document.write('</tr>');
+	
+	
+	var tot_ndagen=0;
+	var tot_wdagen=0;
+	var tot_zdagen=0;
+	var tot_rszdagen=0;
+	
+
+			
+	
+	
+	for (mt=1; mt<=12;mt++) {
+		if (mod(mt,2)==0) {even='even';} else {even='oneven';};
+	
+
+		
+		
+		document.write('<tr class=' + even + '>');
+		document.write('<td>');
+		document.write(mt);
+		document.write('</td>');
+		
+		document.write('<td>');
+		document.write(maandnaam_m(mt));
+		document.write('</td>');
+		
+		document.write('<td>');
+		document.write(maandaantaldagen(mt,year));
+		document.write('</td>');
+		tot_ndagen=tot_ndagen + maandaantaldagen(mt,year);
+		
+		document.write('<td>');
+		document.write(maandaantalwerkdagen(mt,year));
+		document.write('</td>');
+		
+		tot_wdagen=tot_wdagen+maandaantalwerkdagen(mt,year);
+		
+		document.write('<td>');
+		document.write(maandaantalzaterdagen(mt,year));
+		document.write('</td>');
+		tot_zdagen=tot_zdagen+maandaantalzaterdagen(mt,year);
+		
+		document.write('<td>');
+		document.write(maandaantalrszdagen(mt,year));
+		document.write('</td>');
+		tot_rszdagen=tot_rszdagen+maandaantalrszdagen(mt,year);
+		
+		document.write('</tr>');
+
+	};	
+		
+	document.write('<tr>');
+	
+	document.write('<th>');
+	document.write('');
+	document.write('</th>');
+	
+	document.write('<th>');
+	document.write('Totaal');
+	document.write('</th>');
+	
+	document.write('<th>');
+	document.write(tot_ndagen);
+	document.write('</th>');
+	
+	document.write('<th>');
+	document.write(tot_wdagen);
+	document.write('</th>');
+	document.write('<th>');
+	document.write(tot_zdagen);
+	document.write('</th>');
+	document.write('<th>');
+	document.write(tot_rszdagen);
+	document.write('</th>');
+	document.write('</tr>');
+	
+	
+	
+	document.write('</table>');
+	
+	document.write('</body>\n');
+	document.write('</html>\n');
+	
+	document.close();
+	
+}
+	
+</script>
+
+</head>
+
+<body onload="popupwin()">
+
+loading
+</body>
+
+</html>

@@ -1,0 +1,285 @@
+<html>
+<head>
+<title>jlGui Player Applet</title>
+</head>
+<SCRIPT LANGUAGE="JavaScript"><!--
+function pressStart()
+{
+	document.player.pressStart();
+}
+function pressPause()
+{
+	document.player.pressPause();
+	if (document.panel.pause.value=="Resume/Pause") document.panel.pause.value="Pause/Resume";
+	else document.panel.pause.value="Resume/Pause";
+}
+function pressStop()
+{
+	document.player.pressStop();
+}
+function pressShuffle()
+{
+	document.player.pressShuffle();
+}
+function pressRepeat()
+{
+	document.player.pressRepeat();
+}
+
+function pressNext()
+{
+	document.player.pressNext();
+}
+function pressPrevious()
+{
+	document.player.pressPrevious();
+}
+function loadSkin()
+{
+	var skinURL = document.panel.skinselect.options[document.panel.skinselect.selectedIndex].value;
+	if (skinURL != "") document.player.loadSkin(getBaseURL()+"skins/"+skinURL);
+}
+function loadPlaylist()
+{
+	var playlistURL = document.panel.playlist.value;
+	if (playlistURL != "")
+	{
+	   document.player.loadPlaylist(playlistURL);
+	   document.player.resetPlaylist();
+	}
+}
+function getBaseURL()
+{
+	var baseURL = location.href;
+	baseURL = baseURL.substring(0,(baseURL.lastIndexOf("/"))+1);
+	return baseURL;
+}
+function getPlaylist()
+{
+	var playlist = document.player.getPlaylistDump();
+	alert(playlist);
+}
+function getCurrentState()
+{
+	var state = document.player.getPlayerState();
+	if (state == 0) state = "INIT";
+	else if (state == 1) state = "OPEN";
+	else if (state == 2) state = "PLAY";
+	else if (state == 3) state = "PAUSE";
+	else if (state == 4) state = "STOP";
+	alert(state);
+}
+function getCurrentSong()
+{
+	var song = document.player.getCurrentSongName()+"\n"+document.player.getCurrentSongPath();
+	alert(unescape(song));
+}
+
+function init()
+{
+  DumpPlaylist();
+}
+
+function DumpPlaylist()
+{
+ var playlist = document.player.getPlaylistDump();
+ var playlist_array = playlist.split("#");
+ with (document.frames.myiframe.document)
+ {
+  open("text/html");
+  clear();
+  write("<html><head><title>Blank</title></head><body leftmargin=0 topmargin=0 marginwidth=0 marginheight=0>\n");
+  for (var loop=0; loop < playlist_array.length; loop++)
+  {
+    var data_array = playlist_array[loop].split("|");
+    var col = "#000000";
+    for (var loopd=0; loopd < data_array.length; loopd++)
+    {
+     if (loopd == 0) col = "#000000";
+     else col = "#AAAAAA";
+     if (data_array[loopd].length > 0) writeln("<font face=Verdana size=-2 color="+col+">"+unescape(data_array[loopd])+"</font><br>");
+    }
+  }
+  write("</body></html>\n");
+  close();
+  }
+
+}
+//--></SCRIPT>
+<body bgcolor="#FFFFFF" link="#000066" vlink="#000066" alink="#000066" text="#000000" onLoad="init()">
+<div align="center">
+  <table width="100%" border="0" cellspacing="1" cellpadding="1">
+    <tr>
+      <td align="center">
+        <table width="400" border="0" cellspacing="1" cellpadding="1">
+          <tr bgcolor="#000000">
+            <td>
+              <table width="400" border="0" cellspacing="0" cellpadding="0">
+                <tr bgcolor="#669999" align="center">
+                  <td bgcolor="#EEEEEE">
+                    <p><font face="Verdana, Arial, Helvetica, sans-serif" size="-1"><b><font color="#FFFFFF"><br>
+                      <font color="#0000FF">- jlGui 2.2 Applet (328 KB) - </font></font></b></font></p>
+                    <p><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#0033FF">Learn
+                      more at <a href="http://www.javazoom.net/applets/jlguiapplet/">jlGui
+                      Applet homepage</a></font><font face="Verdana, Arial, Helvetica, sans-serif" size="-1"><br>
+                      <b><br>
+                      </b>To play any MP3 or Ogg Vorbis File/Stream <br>
+                      (e.g. : 44Khz, 128Kbps),<br>
+                      you need<b> </b>a browser JavaSound 1.0 compliant<b>. <br>
+                      </b>Netscape 6.x<b>+</b> or<b> </b>IE 4.x<b>+ </b><br>
+                      with <b>Java Plugin 1.3</b> or higher.</font></p>
+                    <p><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#0000CC"><font size="-2"><font color="#000000">-
+                      Skin by ruben avila fria -</font><font color="#FFFFFF"></font></font></font></p>
+                    <p> <object classid="clsid:8AD9C840-044E-11D1-B3E9-00805F499D93"
+        width = "275"
+        height = "116"
+        codebase="http://java.sun.com/products/plugin/1.3/jinstall-13-win32.cab#Version=1,3,0,0"
+		name="player">
+                        <param name = CODE value = "javazoom.jlGui.applet.Player" >
+                        <param name = ARCHIVE value = "jlGuiApplet2.2.jar,jlGui2.2.jar,jid3.jar,mp3sp.1.6.jar,jl030.jar,vorbisspi0.7.jar,jorbis-0.0.12.jar,jogg-0.0.5.jar" >
+                        <param name="type" value="application/x-java-applet;version=1.3">
+                        <param name="scriptable" value="true">
+                        <param name = "skin" value ="skins/wa021.wsz">
+                        <param name = "start" value ="no">
+                        <param name = "song" value ="playlist.m3u">
+                        <param name = "init" value ="jlgui.ini">
+                        <param name = "location" value ="url">
+                        <param name = "loglevel" value ="2">
+                        <param name = "useragent" value ="winampMPEG/2.7"><comment>
+                        <embed type="application/x-java-applet;version=1.3"
+	   name="player"
+       code = "javazoom.jlGui.applet.Player"
+       archive = "jlGuiApplet2.2.jar,jlGui2.2.jar,jid3.jar,mp3sp.1.6.jar,jl030.jar,vorbisspi0.7.jar,jorbis-0.0.12.jar,jogg-0.0.5.jar"
+       width = "275"
+       height = "116"
+       skin = "skins/wa021.wsz"
+       start = "no"
+       song = "playlist.m3u"
+       init = "jlgui.ini"
+       location = "url"
+       loglevel = "2"
+       useragent = "winampMPEG/2.7"
+       scriptable=true
+       pluginspage="http://java.sun.com/products/plugin/1.3/plugin-install.html">
+                          <noembed> </COMMENT> </noembed>
+                        </embed>
+                      </object> </p>
+                    <p><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#0000CC"><font size="-2"><font color="#FFFFFF"><br>
+                      <a href="http://www.javazoom.net">http://www.javazoom.net</a><br>
+                      <br>
+                      </font></font></font><font face="Verdana, Arial, Helvetica, sans-serif" size="-1" color="#0000CC"><font size="-2"><font color="#0033FF">&copy;
+                      JavaZOOM 1999-2003</font><font color="#FFFFFF"><br>
+                      <br>
+                      </font></font></font></p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td align="center">
+      <form method="post" action="" name="panel">
+        <table border="0" cellspacing="1" cellpadding="1">
+          <tr bgcolor="#000000">
+            <td>
+              <table border="0" cellspacing="0" cellpadding="0">
+                <tr bgcolor="#669999" align="center">
+                  <td bgcolor="#EEEEEE">
+                    <p><font face="Verdana, Arial, Helvetica, sans-serif" size="-1"><b><font color="#FFFFFF"><br>
+                      <font color="#0000FF">&nbsp;- JavaScript Real-Time Panel
+                      (Optional) -&nbsp;<br>
+                      </font></font></b></font><font face="Verdana, Arial, Helvetica, sans-serif" size="-1"><b><br>
+                      </b>Control jlGuiApplet with JavaScript !</font></p>
+
+                      <table width="100%" border="0" cellspacing="1" cellpadding="1">
+                        <tr>
+                          <td align="right">
+                            <select name="skinselect">
+                              <option value="wa021.wsz" selected>WinAmper</option>
+                              <option value="bluev.wsz">Blue Visions</option>
+                              <option value="blizzard2.wsz">Blizzard 2</option>
+                              <option value="tmaster.wsz">Trance Master</option>
+                            </select>
+                          </td>
+                          <td align="left">
+                            <input type="button" name="loadskin" value="Load Skin" onClick="loadSkin()">
+                          </td>
+                        </tr>
+                        <tr align="center">
+                          <td colspan="2"><a href="http://www.1001winampskins.com"><font face="Verdana, Arial, Helvetica, sans-serif" size="-2">More
+                            WinAmp 2.x skins ...</font></a></td>
+                        </tr>
+                      </table>
+                      <hr size="1" noshade>
+                      <table width="100%" border="0" cellspacing="1" cellpadding="1">
+                        <tr align="center">
+                          <td>
+                            <input type="button" name="play" value="Play" onClick="pressStart()">
+                          </td>
+                          <td>
+                            <input type="button" name="pause" value="Resume/Pause" onClick="pressPause()">
+                          </td>
+                          <td>
+                            <input type="button" name="stop" value="Stop" onClick="pressStop()">
+                          </td>
+                        </tr>
+                      </table>
+                      <table width="100%" border="0" cellspacing="1" cellpadding="1">
+                        <tr align="center">
+                          <td width="50%" align="left"> <font size="-2">
+                            <input type="button" name="previous" value="Previous &lt;" onClick="pressPrevious()">
+                            </font></td>
+                          <td width="50%" align="right"> <font size="-2">
+                            <input type="button" name="next" value="&gt; Next" onClick="pressNext()">
+                            </font></td>
+                        </tr>
+                      </table>
+                      <table width="100%" border="0" cellspacing="1" cellpadding="1">
+                        <tr align="center">
+                          <td width="50%" align="left"> <font size="-2">
+                            <input type="button" name="shuffle" value="Shuffle" onClick="pressShuffle();DumpPlaylist()">
+                            </font></td>
+                          <td width="50%" align="right"> <font size="-2">
+                            <input type="button" name="repeat" value="Repeat" onClick="pressRepeat()">
+                            </font></td>
+                        </tr>
+                      </table>
+                      <hr size="1" noshade>
+                      <table width="100%" border="0" cellspacing="1" cellpadding="1">
+                        <tr>
+                          <td align="right">
+                            <input type="text" name="playlist" value="http://users.pandora.be/patriek.zoetaert/java/jlguiapplet/playlist.m3u" size="30">
+                          </td>
+                          <td align="left">
+                            <input type="button" name="loadplaylist" value="Load Playlist" onClick="loadPlaylist();DumpPlaylist()">
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="2"><iframe src="" width="100%" height="80" name="myiframe" nowrap>
+                            </iframe></td>
+                        </tr>
+                      </table>    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td align="left">
+                            <input type="button" name="state" value="Current State" onClick="getCurrentState()">
+                          </td>
+                          <td align="right">
+                            <input type="button" name="current" value="Display Current Song" onClick="getCurrentSong()">
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        </form>
+      </td>
+    </tr>
+  </table>
+  <br>
+</div>
+</body>
+</html>

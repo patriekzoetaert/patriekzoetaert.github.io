@@ -1,0 +1,423 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="GENERATOR" CONTENT="UltraEdit-32">
+<META NAME="Author" CONTENT="Thierry Denèle">
+<META NAME="Date" CONTENT="01-15-2003">
+<TITLE>Commercial Calculator V1</TITLE>
+<style type="text/css">
+/* CSS Styles Table*/
+body {font-size:14px;}
+input {font-size:12px;}
+table	{ border-width: 4pt;border-top-color: #6666FF;border-left-color: #6666FF;border-right-color: #3300CC; border-bottom-color: #3300CC; border-style: outset; background-color: orange;}
+td	{padding: 4pt; border-width: 4pt;border-top-color: #6666FF;border-left-color: #6666FF;border-right-color: #3300CC; border-bottom-color: #3300CC; border-style: inset;}
+tr	{text-align: center;}
+input.BY  {background-color: #00BBBB;color: antiquewhite;font-weight: 700;}
+input.BZ  {background-color: #22BB00;color: #000000;font-weight: 300;}
+input.BB  {background-color: #0000BB;color: antiquewhite;font-weight: 700;}
+input.BR  {background-color: #CC0000;color: antiquewhite;font-weight: 700;}
+input.BBL  {background-color: #000000;color: antiquewhite;font-weight: 700;}
+p	{color: #00257E;}
+</style>
+</HEAD>
+<BODY>
+<br><center>
+<form name="calculat">
+<center>
+<table style="border-width:0px;width:340px">
+<tr>
+	<td style="border-width:0px">
+	<tr>
+		<td style="color: darkblue; font-variant: small-caps;font-size:18px;">
+			<center><b><big>C</big>ommercial Calculator</b>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<table width="80%" style="border-width:0px">
+			<tr>
+				<td style="text-align: right; border-width:0px;">
+				<input type="text" size="35" style="width: 70%;background-color: black; color:#FEEB9B;text-align: right;" name="result" value="0" readonly>
+				</td>
+			</tr>
+				<td width=80% style="text-align:right;border-width:0px;font-family:'Arial', sans-serif;font-size:12px;">Mem reminder: <input type="text" size="30" readonly style="width: 43%;background-color: black; color:#FEEB9B;text-align: right;" name="memoire" value="0">
+				</td>
+			</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<center>
+		<table style = "border-width : 0pt;" cellspacing ="0pt">
+			<tr>
+				<td style="border-width:0pt; margin:2px 0px 2px 0px">
+				<input class="BB" type="button" name="v1"  value="  1 " onClick="addonnee('1');">
+				<input class="BB" type="button" name="v2"  value="  2  " onClick="addonnee('2');">
+				<input class="BB" type="button" name="v3"  value="  3 " onClick="addonnee('3');">
+				<input class="BB" type="button" name="v4"  value="  4  " onClick="addonnee('4');">
+				<input class="BB" type="button" name="v5"  value="  5  " onClick="addonnee('5');">
+				</td>
+			</tr>
+			<tr>
+				<td style="border-width:0pt; margin:2px 0px 2px 0px">
+				<input class="BB" type="button" name="v6"  value="  6 " onClick="addonnee('6');">
+				<input class="BB" type="button" name="v7"  value="  7  " onClick="addonnee('7');">
+				<input class="BB" type="button" name="v8"  value="  8 " onClick="addonnee('8');">
+				<input class="BB" type="button" name="v9"  value="  9  " onClick="addonnee('9');">
+				<input class="BB" type="button" name="v10"  value="  0  " onClick="addonnee('0');">
+				</td>
+			</tr>
+				<td style="border-width:0px; margin:2px 0px 2px 0px">
+				<input class="BB" type="button" name="v11"  value="  .  " onClick="addonnee('.');">
+				<input class="BR" type="button" name="v12"  value="  ?  " onClick="aide();">
+				<input class="BY" type="button" name="v13"  value=" .xx " onClick="arrondi2(document.forms['calculat'].result.value);">
+				<input class="BB" type="button" name="v14"  value="  =  " onClick="calcule();">
+				</td>
+			</tr>
+			<tr>
+				<td style="border-width:0px; margin:2px 0px 2px 0px">
+				<input class="BBL" type="button" name="a1"  value=" M+ "; onClick="memoireplus();">
+				<input class="BBL" type="button" name="a2"  value=" M- " onClick="memoiremoins();">
+				<input class="BBL" type="button" name="a3"  value="RM"; onClick="memoirerap();">
+				<input class="BR" type="button" name="a4"  value="CM" onClick="memoireeff();">
+				<input class="BR" type="button" name="a5"  value=" C " onClick="C();">
+				<input class="BR" type="button" name="a6"  value=" CI " onClick="CI();">
+				<input class="BR" type="button" name="a7"  value= ?  onClick="annul();">
+				</td>
+			</tr>
+			<tr>
+				<td id="event" style="border-width:0px; margin:2px 0px 2px 0px">
+				<input class="BY" type="button" name="a8"  value="  + " onClick="adfunction('+');">
+				<input class="BY" type="button" name="a9"  value="  -  " onClick="adfunction('-');">
+				<input class="BY" type="button" name="a10"  value= ×  onClick="adfunction('*');">
+				<input class="BY" type="button" name="a11"  value= ÷  onClick="adfunction('/');">
+				<input class="BY" type="button" name="a12"  value= ±  onClick="plusmoins(document.forms['calculat'].result.value);">
+				<input class="BY" type="button" name="a13"  value=" % " onClick="Pourcentage(document.forms['calculat'].result.value);">
+				<input class="BZ" type="button" name="a14"  value=€/$ onClick="resultatED(document.forms['calculat'].result.value);">
+				<input class="BZ" type="button" name="a15"  value=$/€ onClick="resultatDE(document.forms['calculat'].result.value);">
+				</td>
+			</tr>
+			<tr>
+				<td id="event" style="border-width:0px; margin:2px 0px 2px 0px">
+				<input class="BZ" type="button" name="TV1"  value="tva6.0" onClick="tva(document.forms['calculat'].result.value,tva1,'x');">
+				<input class="BZ" type="button" name="TV1+"  value="+tva6.0" onClick="tva(document.forms['calculat'].result.value,tva1,'plus');">
+				<input class="BZ" type="button" name="TV2"  value="tva21.0" onClick="tva(document.forms['calculat'].result.value,tva2,'x');">
+				<input class="BZ" type="button" name="TV2+"  value="+tva21.0" onClick="tva(document.forms['calculat'].result.value,tva2,'plus');">
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+</table>
+</form>
+<script language="javascript">
+var clav = new String();
+document.onkeypress = new Function("document.getElementById('event');clav=String.fromCharCode(event.keyCode);clavier(event.keyCode);"); 
+<!--- Declarations -->
+var tauxeuro = 6.1230;
+var calcul = new Number;
+var mem = 0;
+<!--- TVA is Tax on the Valor Add, first at 5.5% and second 19.6% in France. Change this functions with taxes of US.-->
+tva1 = 0.0600;
+tva2 = 0.210;
+var resultat = new String();
+var donnee = new String();
+var retour = new String();
+fonction = new String();
+<!--- algorythm of control actions on calcalator= action : eval, actionF : input a function, actionD : input a data.  -->
+action = 0;
+actionF = 0;
+actionD = 0;
+nombre = new String();
+document.forms['calculat'].result.value = "0";
+nombre = "0";
+calcul = 0;
+donnee = "0";
+function addonnee(nombre) {
+<!--- if eval just done and no function: zero --->
+	if(action == 1 && actionF == 0) {
+		C();
+		}
+if(nombre == ".") {
+		donnee = resultat;
+		resultat = donnee.concat(nombre);
+		document.forms['calculat'].result.value = resultat;
+		}
+	else {
+<!--- erase 0 if result 0 before enter data-->
+	if(resultat == "0") {resultat = "";}
+		donnee = resultat;
+		resultat = donnee.concat(nombre);
+		document.forms['calculat'].result.value = resultat;
+<!--- data input, action done  -->
+		actionD = 1; action = 0;
+
+	}
+}
+function adfunction(nombre) {
+<!-- if function input & no data , it's 2 fonction input -->
+	if(actionD == 0 && actionF == 1) 
+		{ void(0); }
+	else {
+	retour = resultat;
+	<!-- if no data, data at  0 -->
+	if(actionD == 0) 
+		{ resultat = 0; }
+			if(actionD == 1 || actionF == 1) { 
+		calcul = eval(resultat);
+		calcul = Math.round(calcul*100000000)/ 100000000;
+		document.forms['calculat'].result.value = calcul;
+		resultat = calcul;
+		action = 1; actionF = 0; 
+		}
+
+	fonction = document.forms['calculat'].result.value;
+	resultat = fonction.concat(nombre);
+<!--- eval done, no data input--->
+	actionF = 1;  actionD = 0; 
+	}
+}
+function calcule() {
+<!-- if function already input or no data : not a valid function -->
+	if(actionF == 0 || actionD == 0) 
+		{ void(0) 
+		}
+	else
+		{
+			calcul = eval(resultat);
+			calcul = Math.round(calcul*100000000)/ 100000000;
+			document.forms['calculat'].result.value = calcul;
+	<!--- eval done, no function input, no data input--->
+			action = 1; actionF = 0; actionD = 0; 
+			resultat = calcul;
+			calcul = 0;
+		}
+}
+function C() {
+	resultat = "0";
+	nombre = "0";
+	donnee = 0;
+	fonction = "";
+	action = 0;
+	actionF = 0;
+	actionD = 0;
+	document.forms['calculat'].result.value = "0";
+	}
+function annul() {
+	if(action == 0) {
+	donnee = "";
+	if(resultat != document.forms['calculat'].result.value)
+		{ resultat = retour; }
+	donnee = resultat.slice(resultat.length-1,resultat.length);
+	if(isNaN(donnee)) {void(0);}
+		else {
+			resultat = resultat.slice(0,resultat.length-1);
+			document.forms['calculat'].result.value = resultat;
+			}
+		}
+	}	
+function CI() {
+	resultat = retour;
+	document.forms['calculat'].result.value = resultat;
+	calcul = eval(resultat);
+	document.forms['calculat'].result.value = calcul;
+<!--- eval done, no function input, no data input--->
+	action = 1; actionF = 0; actionD = 0; 
+	resultat = calcul;
+	calcul = 0;
+	}
+function resultatED (nombre) {
+<!-- if function already input : not a valid function -->
+	if(actionF == 1) 
+		{ void(0) }
+	else
+	{
+	calcul = eval(nombre);
+        resultat = Math.round(calcul*tauxeuro *100)/100; 
+        document.forms['calculat'].result.value = resultat;
+	donnee =  resultat;
+<!--- eval done, no function input, no data input--->
+		action = 1; actionF = 0; actionD = 0;
+	}
+}
+function resultatDE (nombre) {
+<!-- if function already input: not a valid function -->
+	if(actionF == 1 ) 
+		{ void(0) }
+	else
+	{
+	calcul = eval(nombre);
+        resultat = Math.round(calcul/tauxeuro *100)/100; 
+        document.forms['calculat'].result.value = resultat; 
+	donnee =  resultat;
+<!--- eval done, no function input, no data input--->
+		action = 1; actionF = 0; actionD = 0;
+	}
+}
+<!--- TVA is Tax on the Valor Add, first at 5.5% and second 19.6% in France. Change this functions with taxes of US.-->
+function tva(nombre, tva, ajout) {
+<!-- if function already input or no data : not a valid function -->
+	if(actionF == 1) 
+		{ void(0) }
+	else
+	{
+		if (ajout == "plus") 
+		{
+			calcul = eval(nombre);
+		        resultat = eval(eval(resultat) + eval(resultat * tva));
+		        document.forms['calculat'].result.value = resultat; 
+			donnee =  resultat;
+<!--- eval done, no function input, no data input--->
+			action = 1; actionF = 0; actionD = 0;
+		}
+		else 
+		{
+			if (ajout == "moins") 
+			{
+			calcul = eval(nombre);
+		        resultat = eval(eval(resultat) - eval(resultat * tva));
+		        document.forms['calculat'].result.value = resultat; 
+			donnee =  resultat;
+<!--- eval done, no function input, no data input--->
+			action = 1; actionF = 0; actionD = 0;
+			}
+			else 
+			{
+			calcul = eval(nombre);
+		        resultat = resultat * tva;
+		        document.forms['calculat'].result.value = resultat; 
+			donnee =  resultat;
+<!--- eval done, no function input, no data input--->
+			action = 1; actionF = 0; actionD = 0;
+			}
+		}
+	}
+}
+function Pourcentage(nombre) {
+<!------ possible add or multiply % ----> 
+x = 0;
+y = 0;
+	if (nombre.indexOf("*") != -1 || nombre.indexOf("/") != -1)
+		{ 	resultat = eval(eval(nombre) / 100);
+		        document.forms['calculat'].result.value = resultat; 
+			donnee =  resultat;
+<!--- eval done, no function input, no data input--->
+			action = 1; actionF = 0; actionD = 0;
+		}
+	if (nombre.indexOf("+")!= -1 || nombre.indexOf("-")!= -1)
+		{	x = nombre.indexOf("+");
+			if (x == -1) {x = nombre.indexOf("-"); y = x;}
+			resultat = nombre.slice(0,x);
+			calcul = eval(resultat)*(eval(nombre.slice(x+1,nombre.length))/100);
+			if (y == 0) {
+				resultat = eval(resultat) + calcul;
+			}
+			else {
+				resultat = eval(resultat) - calcul;
+			}
+		        document.forms['calculat'].result.value = resultat; 
+			donnee =  resultat;
+<!--- eval done, no function input, no data input--->
+			action = 1; actionF = 0; actionD = 0;
+		}
+}
+function plusmoins(nombre) {
+<!-- if function already input or no data : not a valid function -->
+	if(actionF == 1) 
+		{ void(0) }
+	else
+	{
+	calcul = eval(nombre);
+	if (calcul < 0) {
+        	resultat = calcul + (-2*calcul);
+        	}
+        	else {
+        	resultat = calcul - 2*calcul;
+        	}
+        document.forms['calculat'].result.value = resultat; 
+	donnee =  resultat;
+<!--- eval done, no function input, no data input--->
+	action = 1; actionF = 0; actionD = 0;
+	}
+}
+function arrondi2(nombre) {
+<!-- if function already input or no data : not a valid function -->
+	if(actionF == 1) 
+		{ void(0) }
+	else
+	{
+	calcul = eval(nombre)*100;
+        calcul = Math.round(calcul);
+        resultat = calcul/100; 
+        document.forms['calculat'].result.value = resultat;
+	donnee =  resultat;
+<!--- eval done, no function input, no data input--->
+		action = 1; actionF = 0; actionD = 0;
+	}
+}
+function memoireplus () {
+if (document.forms['calculat'].result.value == "" )
+		{void(0);}
+	else {
+		mem = mem + eval(document.forms['calculat'].result.value);
+		document.forms['calculat'].memoire.value = mem;
+		}
+}
+function memoiremoins () {
+if (document.forms['calculat'].result.value == "" )
+		{void(0);}
+	else {
+		mem = mem - eval(document.forms['calculat'].result.value);
+		document.forms['calculat'].memoire.value = mem;
+		}
+}
+function memoirerap () {
+addonnee(mem);
+}
+function memoireeff () {
+	mem = 0;
+	document.forms['calculat'].memoire.value = mem;
+}
+function aide() {
+info = window.open ("","aide","width=300pt,height=450pt,scrollbars = yes, tollbar = no, top=50px, left=200px" );
+info.document.write("<p style='width:100%'>Click buttons or pusch keys to enter your number.</p>");
+info.document.write("<p style='width:100%'>CI return to the last result.</p>");
+info.document.write("<p style='width:100%'><- retract the last digit get in.</p>");
+info.document.write("<p>Ara2 : Rond at 2.</p>");
+info.document.write("<p>Short cuts : (Lower or Upper case)</p>");
+info.document.write("<p>Eval by = or Enter </p>");
+info.document.write("<p>Reinit by Echap </p>");
+info.document.write("<p>A for round at 2</p>");
+info.document.write("<p>E for Dollar/Euros</p>");
+info.document.write("<p>D for Euros/Dollar </p>");
+info.document.write("<p>Help by ? </p>");
+info.document.write("<p>Anothers not programmed. You can do it !</p>");
+info.document.write("<p><a href='javascript:window.close();'>Close</a></p>");
+}
+function clavier(code) {
+<!--- Add the keyboard code touch ! remove the // before alert(code); and get the (lower / upper case) code touch. Link it width desired function-->
+//alert(code);
+<!-- data  0  9 --->
+if ((code >= 48 && code <= 57) || code == 46)
+	{addonnee(clav);}
+<!--- operations +-*/ --->
+if (code == 42 || code == 43 || code == 45 || code == 47)
+	{ adfunction(clav); }
+<!--- eval by = or Entr -->
+if (code == 13 || code == 61 ) { calcule(); }
+<!--- return to zero by Echap --->
+if (code == 27) { C(); }
+<!--- A for rounded at 2 -->
+if (code == 65 || code == 97 ) { arrondi2(document.forms['calculat'].result.value); }
+<!--- aide par ? -->
+if (code == 63 ) { aide(); }
+<!--- E for dollar/euros -->
+if (code == 69 || code == 101 ) { resultatDE(document.forms['calculat'].result.value); }
+<!--- D for euros/dollar-->
+if (code == 68 || code == 100 ) { resultatED(document.forms['calculat'].result.value); }
+}
+</script>
+</body>
+</html>
+
