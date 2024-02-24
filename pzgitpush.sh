@@ -1,3 +1,3 @@
 git add --all
-git commit -m "pz"
+git commit -a -m "pz"
 git push -u origin main
